@@ -1,0 +1,731 @@
+﻿\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={A Mobius-binomial C/F bridge and a claim-disciplined theorem-transfer atlas for Apery-like sources},
+  pdfauthor={Oleksiy Babanskyy}
+}
+
+\geometry{margin=2.5cm}
+\pagestyle{plain}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\CT}{CT}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\ord}{ord}
+
+\title{A M\"obius-binomial C/F bridge and a claim-disciplined theorem-transfer atlas for Ap{\'e}ry-like sources}
+
+\author{Oleksiy Babanskyy}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We isolate a direct M\"obius-binomial bridge between Zagier's C and F
+Ap{\'e}ry-like sequences:
+\[
+  F(x)=(1-9x)^{-1} C\!\left(\frac{-x}{1-9x}\right).
+\]
+Equivalently, the bridge is an involutive binomial coefficient transform
+between the two catalog-normalized coefficient sequences; it also transports
+the differential equation of C to that of F and is cross-checked by the known
+Franel transform route.  We then use this bridge as a primitive for a
+theorem-transfer atlas.  The atlas distinguishes closed internal results,
+theorem imports by reference, conditional transfers, finite exact replays,
+source-attached conjectures, proof obligations, blocked rows, bounded
+negatives, watch metadata, and closed metadata.  In particular, we do not
+derive Sun's Conjecture 3.5 from the C/F bridge, do not promote finite
+replays or coefficient matches to theorems, and do not turn Dwork or
+Rowland--Yassawi metadata into unconditional theorem claims.  Sun's raw-C
+conjecture is handled by a separate Franel--Domb bridge proof
+\cite{babanskyy_2026_sun35_bridge}.  The result here is a claim-disciplined
+package for using a proved C/F bridge while keeping adjacent Ap{\'e}ry-like
+source layers separate.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+Ap{\'e}ry-like sequences sit at the intersection of several structures:
+recurrences, modular parametrizations, binomial transforms, constant-term and
+Laurent-polynomial models, supercongruences, and automatic congruences.  These
+structures often appear in clusters, but they do not transfer automatically
+from one sequence to another.  A coefficient match, a shared recurrence shape,
+or a common modular level may suggest a relation; none of these is by itself a
+theorem-transfer mechanism.
+
+This point of view is close in spirit to the tabular literature around
+Calabi--Yau and Ap{\'e}ry-like differential equations, where large lists of
+operators, transformations, and periods are useful only when their
+normalizations and equivalences are explicit
+\cite{almkvist_van_enckevort_van_straten_zudilin_2005_tables,
+almkvist_van_straten_zudilin_2011_clausen}.  Our scope is much narrower: a
+claim-disciplined atlas centered on one proved C/F bridge.
+
+This paper is organized around one case where the transfer mechanism is
+explicit.  We prove and certify a direct M\"obius-binomial bridge between the
+Zagier C and F sequences:
+\[
+  F(x)=(1-9x)^{-1} C\!\left(\frac{-x}{1-9x}\right).
+\]
+The identity gives an involutive coefficient transform, an ODE pullback, and a
+constant-term complement operation.  It is compatible with the known Franel
+network around these sequences.
+
+The second contribution is methodological.  We use the C/F bridge as a
+primitive in a theorem-transfer atlas for nearby Ap{\'e}ry-like source layers.
+The atlas records what can be transferred, what can only be imported by
+reference, what is merely metadata, and what remains a proof obligation.  The
+point is not to claim that all adjacent congruence frameworks become theorems
+of this paper.  Rather, we separate proof, imported theorem, finite replay,
+conjectural source attachment, blocked metadata, watch rows, and bounded
+negative evidence.
+
+The bridge is the mathematical core; the atlas records how far its transport
+consequences extend.  Sections~\ref{sec:sequences}--\ref{sec:normalization}
+give the C/F bridge and its certificate.  Sections
+\ref{sec:contracts}--\ref{sec:package} explain how the bridge is used to build
+a disciplined theorem-transfer atlas.  Appendices contain the theta-gauge
+certificate, the constant-term complement lemma, selected registry rows, open
+problems, and source-status notes.
+
+\section{Zagier C and F}
+\label{sec:sequences}
+
+Let $C_n$ and $F_n$ denote Zagier's C and F Ap{\'e}ry-like sequences in the
+catalog convention used throughout this paper
+\cite{zagier_2009_aperylike,oeis_a002893,oeis_a093388}.  Write
+\[
+  C(x)=\sum_{n\geq0}C_nx^n,\qquad
+  F(x)=\sum_{n\geq0}F_nx^n.
+\]
+The C sequence is given by
+\[
+  C_n=\sum_{k=0}^n\binom{n}{k}^2\binom{2k}{k}.
+\]
+It satisfies
+\[
+  (n+1)^2C_{n+1}
+  =(10n^2+10n+3)C_n-9n^2C_{n-1}.
+\]
+The F sequence satisfies
+\[
+  (n+1)^2F_{n+1}
+  =(17n^2+17n+6)F_n-72n^2F_{n-1}.
+\]
+The atlas below always treats these catalog-normalized objects as the named
+source and target rows.
+
+\section{The C/F M\"obius-binomial bridge}
+\label{sec:bridge}
+
+\subsection{Modular parameter and theta-gauge normalization}
+\label{subsec:theta-normalization}
+
+We use the modular parametrizations recorded by Beukers in the common
+$\Gamma_0(6)$ setting \cite{beukers_2025_supercongruences_modular_forms}.  In
+the C row, let $t_C(q)$ denote the source modular parameter and put
+\[
+  \Theta_C(q)=C(t_C(q)).
+\]
+For the F row, Beukers' source parameter is twist-guarded.  We write it as
+$t_F^{\rm source}(q)$ and use the catalog parameter
+\[
+  t_F(q)=t_F^{\rm cat}(q):=-t_F^{\rm source}(q).
+\]
+The F theta series used below is therefore
+\[
+  \Theta_F(q)=F(t_F(q))
+             =F(-t_F^{\rm source}(q))
+             =\Theta_F^{\rm source}(q).
+\]
+All $q$-expansions, cusp-order checks, and Sturm checks in this paper are in
+this common normalization.  In particular, the two identities used in the
+bridge proof are identities of meromorphic modular functions on $X_0(6)$ in
+this normalization.
+
+\begin{theorem}[Zagier C/F M\"obius-binomial bridge]
+\label{thm:cf-bridge}
+Under the catalog convention used here and the verified F twist transport,
+\[
+  F(x)=(1-9x)^{-1} C\!\left(\frac{-x}{1-9x}\right).
+\]
+\end{theorem}
+
+\begin{proof}
+With the normalization of Section~\ref{subsec:theta-normalization}, the
+theta-gauge identities are
+\[
+  \Theta_F/\Theta_C = 1-9t_C,\qquad
+  \Theta_C/\Theta_F = 1+9t_F.
+\]
+With
+\[
+  u=t_C(q),\qquad x=t_F^{\mathrm{cat}}(q)=\frac{-u}{1-9u},
+\]
+one has
+\[
+  \frac{-x}{1-9x}=u,\qquad (1-9x)^{-1}=1-9u.
+\]
+Thus
+\[
+  F(x)=\Theta_F(q)=(1-9u)\Theta_C(q)
+      =(1-9x)^{-1}C\!\left(\frac{-x}{1-9x}\right).
+\]
+The theta-gauge identities are verified by forward and inverse valence
+certificates, with a cleared-denominator Sturm backup; see
+Appendix~\ref{app:certificate}.
+\end{proof}
+
+\begin{corollary}[Coefficient transform]
+\label{cor:coeff}
+Define
+\[
+  T(a)_m=\sum_{n=0}^m\binom{m}{n}(-1)^n9^{m-n}a_n.
+\]
+Then $T(C)=F$ and $T(F)=C$.
+\end{corollary}
+
+\begin{proof}
+Taking coefficients in Theorem~\ref{thm:cf-bridge} gives $T(C)=F$.  The
+substitution $x\mapsto -x/(1-9x)$ is involutive with the same prefactor
+contract, giving $T(F)=C$.
+\end{proof}
+
+\begin{corollary}[ODE pullback]
+\label{cor:ode}
+Let
+\[
+  L_C=x(x-1)(9x-1)D_x^2+(27x^2-20x+1)D_x+3(3x-1)
+\]
+be the differential operator associated to the C recurrence, and let
+\[
+  L_F=x(72x^2-17x+1)D_x^2+(216x^2-34x+1)D_x+6(12x-1)
+\]
+be the corresponding F operator.  Under
+\[
+  u=-\frac{x}{1-9x},\qquad F(x)=(1-9x)^{-1}C(u),
+\]
+symbolic substitution gives
+\[
+  L_C[C](u)=(9x-1)L_F[F](x).
+\]
+Thus the C equation pulls back to the F equation up to the nonzero rational
+prefactor $9x-1$.
+\end{corollary}
+
+\begin{remark}[Franel route]
+\label{rem:franel}
+Let $R_n=\sum_{k=0}^n\binom{n}{k}^3$.  The known Franel transforms are
+\[
+  C(x)=(1-x)^{-1}R\!\left(\frac{x}{1-x}\right),\qquad
+  F(x)=(1-8x)^{-1}R\!\left(\frac{-x}{1-8x}\right),
+\]
+with provenance through Barrucand, Callan, Verrill, and OEIS
+\cite{barrucand_1975_franel_c,callan_2008_franel_c,verrill_2010_congruences_modular_forms}.
+Composing these formulas gives the same C/F bridge.
+\end{remark}
+
+\section{Certificate and normalization}
+\label{sec:normalization}
+
+The proof depends on four normalization checks.  First, C and F are placed in a
+common $\Gamma_0(6)$ normalization.  Second, the source F parameter is
+transported to the catalog-normalized F twist.  Third, the forward and inverse
+theta-gauge identities are certified by cusp-order and valence arguments.
+Fourth, a cleared-denominator Sturm check gives an independent backup.  The
+main text uses only the resulting identities; the certificate details are
+recorded in Appendix~\ref{app:certificate}.
+
+\section{Transport contracts generated by the bridge}
+\label{sec:contracts}
+
+\subsection{Coefficient transform as transport}
+\label{subsec:coeff-transport}
+
+The coefficient transform in Corollary~\ref{cor:coeff} is the atlas primitive.
+It allows a theorem stated for F to be rewritten as a theorem for $T(C)$.  It
+does not automatically produce a theorem for raw $C_n$.
+
+For example, Sun's source rows include congruences for a sequence $Q_n$ with
+$Q_n=(-1)^nF_n$ in the relevant convention
+\cite{sun_2022_supercongruences}.  The bridge rewrites these as statements
+about $(-1)^nT(C)_n$.  Sun's raw-C conjectural congruence is not a consequence
+of this C/F bridge; it is resolved separately by a Franel--Domb bridge through
+intermediate Franel, Domb, and Rodriguez--Villegas sums
+\cite{babanskyy_2026_sun35_bridge}.
+
+\subsection{Franel network}
+
+Remark~\ref{rem:franel} explains why the bridge is not an isolated accident:
+C and F are both connected to the Franel sequence by known
+M\"obius-binomial transforms.  The theorem-transfer atlas records this as
+known source metadata.  It does not treat every inverse or coefficient replay
+as a new theorem edge.
+
+More concretely, both generating functions are obtained from the same cubic
+Franel series $R(x)=\sum R_nx^n$ by two different fractional-linear changes of
+variable.  The C/F bridge is therefore the composition of two classical
+Franel transforms, not a relation inferred only from matching initial
+coefficients.  This Franel viewpoint is useful in the atlas because it
+separates a known structural network from later theorem-transfer claims.
+
+\subsection{Constant-term complement}
+
+The coefficient transform has a direct constant-term interpretation.
+
+\begin{lemma}[Binomial-complement constant-term transform]
+\label{lem:ct-complement}
+Let $\Lambda$ be a Laurent polynomial and let
+\[
+  A_n=\CT(\Lambda^n).
+\]
+For a scalar $a$, define
+\[
+  B_n=\sum_{k=0}^n\binom{n}{k}(-1)^ka^{n-k}A_k.
+\]
+Then
+\[
+  B_n=\CT((a-\Lambda)^n).
+\]
+\end{lemma}
+
+\begin{proof}
+By the binomial theorem,
+\[
+  (a-\Lambda)^n=\sum_{k=0}^n\binom{n}{k}a^{n-k}(-\Lambda)^k.
+\]
+Taking constant terms gives
+\[
+  \CT((a-\Lambda)^n)
+  =\sum_{k=0}^n\binom{n}{k}(-1)^ka^{n-k}\CT(\Lambda^k)=B_n.
+\]
+\end{proof}
+
+For
+\[
+  \Lambda_C=\frac{(x+y+1)(xy+x+y)}{xy}
+\]
+Gorodetsky records this Laurent model for the C row
+\cite{gorodetsky_2023_sporadic_representations}.  Equivalently, if
+$P=(x+y+1)(xy+x+y)$, then
+\[
+  \CT(\Lambda_C^n)=[x^ny^n]P^n,
+\]
+and the cited model identifies this coefficient with the catalog-normalized
+$C_n$.  Lemma~\ref{lem:ct-complement} gives
+\[
+  F_n=\CT((9-\Lambda_C)^n).
+\]
+This is a constant-term operation.  It is not a Laurent mutation claim and it
+is not a Newton-equivalence claim between $9-\Lambda_C$ and other F-side
+models such as the Gorodetsky replacement model
+\cite{gorodetsky_2023_sporadic_representations}.
+
+\subsection{Rational diagonals and small automata}
+
+The constant-term models also admit rational diagonal contracts, which support
+small automatic-congruence metadata for C/F and related rows.  This paper
+records those automata as metadata.  It does not claim a full
+Rowland--Yassawi theorem-by-reference application, because that would require
+the source-level bad-prime and singularity filters in addition to an explicit
+Cartier-state construction \cite{rowland_yassawi_2015_automatic_congruences}.
+
+\section{Claim classes and atlas discipline}
+\label{sec:claim-classes}
+
+The atlas uses explicit claim classes.  Table~\ref{tab:claim-classes}
+summarizes the ones used in this paper.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{>{\ttfamily}p{0.42\linewidth}p{0.48\linewidth}}
+\hline
+closed\_internal\_result & Proved or certified inside the C/F package.\\
+theorem\_import\_by\_reference & External theorem used with its source label; not renamed as an internal theorem.\\
+conditional\_theorem\_transfer & Transfer valid after an explicit bridge or source assumption.\\
+closed\_metadata & Verified auxiliary record, such as a normalization map, fixed-modulus automaton, source-label reconciliation, or known literature identity; not used as a new theorem unless separately promoted through a proof route.\\
+explicit\_automaton\_metadata & Explicit finite-state or prime-power automaton data recorded as metadata; in the V2 package this is treated as a closed-metadata subtype, not as a theorem-transfer class.\\
+finite\_exact\_replay & Exact finite check used as evidence only.\\
+source\_attached\_conjecture & Conjectural source row attached to the atlas without proof.\\
+proof\_obligation & A precise missing lemma, not a vague direction.\\
+blocked & A known missing contract prevents theorem use.\\
+watch & Interesting metadata without a promotion route.\\
+bounded\_negative & A bounded search failed a stated gate.\\
+\hline
+\end{tabular}
+\caption{Claim classes used in the theorem-transfer atlas.}
+\label{tab:claim-classes}
+\end{table}
+
+The guardrails are simple: finite replay is evidence, not proof; coefficient
+matching is not theorem transfer; and external theorems remain external
+theorems.
+
+\section{The theorem-transfer registry}
+\label{sec:registry}
+
+The registry is an operational table of theorem imports and bridge-generated
+transfers.  The complete table is part of the data package; Appendix
+\ref{app:registry} records the schema and selected rows.  The core examples
+are:
+\begin{enumerate}
+\item the C/F bridge, a closed internal result;
+\item the coefficient involution, a closed internal result;
+\item the ODE pullback, a closed internal result;
+\item Sun's F-side source rows transferred only to $T(C)$;
+\item Sun's raw-C target, retained in the historical V1/V2 atlas as a
+  source-attached conjecture and proof obligation, but now marked in the
+  paper-facing readout as resolved separately by
+  \cite{babanskyy_2026_sun35_bridge};
+\item CT/Newton guardrails, which block mutation or Newton-equivalence claims
+  without an explicit operation.
+\end{enumerate}
+
+\section{Three source-layer examples}
+\label{sec:source-layers}
+
+\subsection{Sun layer}
+
+Sun supplies source congruences for F-side objects and related binomial sums
+\cite{sun_2022_supercongruences}.  The C/F bridge transfers F-side statements
+to $T(C)$.  It does not prove raw-C variants from C/F data.  The raw-C
+Conjecture 3.5 is a separate Franel--Domb theorem
+\cite{babanskyy_2026_sun35_bridge}, and the atlas keeps that proof route
+separate from the C/F theorem-transfer rows.
+
+\subsection{Dwork layer}
+
+Mellit--Vlasenko give Dwork-type congruences for constant terms of powers of
+Laurent polynomials \cite{mellit_vlasenko_2015_dwork}.  The complement model
+$9-\Lambda_C$ gives an additional F-side constant-term witness.  We record it
+as Dwork metadata by reference.  We do not claim a Newton equivalence or a
+Laurent mutation between this complement model and other F-side models.
+
+\subsection{Automatic congruence layer}
+
+Rowland--Yassawi provide the source framework for automatic congruences of
+rational diagonals \cite{rowland_yassawi_2015_automatic_congruences}.  The
+atlas records explicit small automata for Cooper, Franel, and C/F small
+moduli, including C/F mod $2$, mod $3$, mod $4$, and mod $9$ metadata.  These
+are explicit automaton or prime-power metadata; they are not a full
+Rowland--Yassawi theorem import.
+
+Other source layers, including Liu's binomial-transform congruence profile,
+Straub's Gessel--Lucas theorem, and Beukers--Tsai--Ye's modular-form Lucas
+congruence source
+\cite{liu_2025_binomial_transforms,straub_2024_gessel_lucas,beukers_tsai_ye_2025_lucas},
+are summarized in Appendix~\ref{app:sources}.  They are kept brief here
+because their role is source attachment and claim discipline, not the main
+C/F theorem.
+
+\section{Open-problem atlas}
+\label{sec:open-problems}
+
+The open-problem atlas records blockers rather than vague directions.  A
+selection is shown in Table~\ref{tab:open-problems}; a fuller schema appears
+in Appendix~\ref{app:open-problems}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{p{0.25\linewidth}p{0.43\linewidth}p{0.22\linewidth}}
+\hline
+Branch & Blocking lemma or missing contract & Status\\
+\hline
+BTY weight-one rows & row-specific $\chi(w_d)$ values & open\\
+Straub derivative transfer & low-carry identity for the corrected connection & proof obligation\\
+Dwork model comparison & controlled equivalence between complement model and $Q_F$ & open\\
+Rowland--Yassawi source application & bad-prime/singularity filter and source-style Cartier states & inactive\\
+Edge-watch scan & no unresolved V1 watch rows remain & closed metadata\\
+Sun raw-C to RV-108 & Franel--Domb raw-C/RV bridge outside the C/F atlas & resolved separately\\
+A2b global glue & Domb branch-multiplier identity outside the C/F atlas & resolved separately\\
+\hline
+\end{tabular}
+\caption{Selected open-problem and blocker rows.}
+\label{tab:open-problems}
+\end{table}
+
+\section{Edge scan and watch-triage discipline}
+\label{sec:edge-scan}
+
+A bounded C/F-like M\"obius-binomial scan checked $17684$ transforms of the
+form
+\[
+  B(x)=(1-ax)^{-r}A\!\left(\frac{sx}{1-ax}\right).
+\]
+It recovered known or canonical relations and promoted no new theorem edge.
+The eight previous watch hits were subsequently resolved as known metadata:
+six are alias/canonical identity hits for the Ap{\'e}ry zeta(3) and
+Almkvist--Zudilin gamma catalog rows, and two are inverse Franel-transform
+hits.  This is a negative discipline result: coefficient matches are not
+automatically promoted.
+
+\section{Data package and reproducibility}
+\label{sec:package}
+
+The data package contains registry rows, claim classes, source labels, proof
+obligations, open-problem statuses, edge-scan triage records, manifests, and
+readouts.  The paper-facing purpose is reproducibility of claim status: a
+reader should be able to tell which rows are proved internally, which are
+imported by reference, which are finite replays, and which are blocked.
+The package is based on the V2 manifest, with the V1 registry retained as
+immutable provenance for the original C/F theorem-transfer rows.
+Appendix~\ref{app:sources} lists source identifiers and package fields; the
+main text avoids path dependencies.  The final public version will attach this
+curated, repo-relative data package as supplementary material or through a
+public repository before submission.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We do not solve every problem attached to the C/F bridge.  Instead, we give a
+normalized proof of the bridge and a reproducible model for using it without
+overclaiming.  The bridge transports generating functions, coefficients, ODEs,
+and a constant-term complement model.  The atlas records adjacent theorem
+sources, metadata layers, finite checks, conjectures, blockers, and bounded
+negatives with distinct claim classes.  This separation is the main lesson:
+bridge identities are powerful precisely when their scope is explicit.
+
+\appendix
+
+\section{Theta-gauge certificate details}
+\label{app:certificate}
+
+This appendix records the certificate data behind the theta-gauge identities
+used in Theorem~\ref{thm:cf-bridge}.
+
+By the normalization contracts in Section~\ref{subsec:theta-normalization},
+the functions below are meromorphic modular functions on $X_0(6)$ and have no
+interior poles.  Their only possible poles are cuspidal; the cusp-order tables
+bound those poles.
+
+\subsection{Forward valence certificate}
+
+The forward identity is
+\[
+  \Theta_F/\Theta_C = 1-9t_C.
+\]
+Define
+\[
+  H(q)=\Theta_F(q)/\Theta_C(q)-\bigl(1-9t_C(q)\bigr).
+\]
+The cusp-order audit on $\Gamma_0(6)$ gives
+\[
+\begin{array}{c|rrrr}
+\text{object} & 0 & 1/2 & 1/3 & \infty\\
+\hline
+t_C & 0 & -1 & 0 & 1\\
+\Theta_F/\Theta_C & 1 & -1 & 0 & 0 .
+\end{array}
+\]
+Thus the only possible pole of $H$ is at the cusp $1/2$, of order at most
+$1$.  The $q$-expansion replay gives $\ord_\infty(H)\geq201$.  Since this
+exceeds the possible pole order, the valence criterion forces $H=0$.
+
+\subsection{Inverse valence certificate}
+
+The inverse identity is
+\[
+  \Theta_C/\Theta_F = 1+9t_F.
+\]
+Define
+\[
+  K(q)=\Theta_C(q)/\Theta_F(q)-\bigl(1+9t_F(q)\bigr).
+\]
+The inverse cusp-order audit gives
+\[
+\begin{array}{c|rrrr}
+\text{object} & 0 & 1/2 & 1/3 & \infty\\
+\hline
+t_F & -1 & 0 & 0 & 1\\
+\Theta_C/\Theta_F & -1 & 1 & 0 & 0 .
+\end{array}
+\]
+Thus the only possible pole of $K$ is at the cusp $0$, of order at most $1$.
+The $q$-expansion replay gives $\ord_\infty(K)\geq201$, and the valence
+criterion gives $K=0$.
+
+\subsection{Sturm clear-denominator backup}
+
+The same two identities are also checked after clearing the possible cuspidal
+poles.  Use the eta quotient
+\[
+  M(q)=\frac{\eta(q)^3\eta(2q)^3}{\eta(3q)\eta(6q)}.
+\]
+By the Ligozat criterion, the exponent vector of $M$ satisfies the two
+congruences modulo $24$ and the total weight is $2$.  The cusp orders of $M$
+on $\Gamma_0(6)$ are
+\[
+\begin{array}{c|rrrr}
+\text{cusp} & 0 & 1/2 & 1/3 & \infty\\
+\hline
+\ord(M) & 1 & 1 & 0 & 0 .
+\end{array}
+\]
+Thus $M$ is holomorphic at every cusp and vanishes at the two cusps where a
+pole can occur in the preceding valence argument.  The deduction is explicit:
+\begin{itemize}
+\item $H$ has no possible pole except at $1/2$, of order at most $1$, while
+  $\ord_{1/2}(M)=1$; hence $MH$ is holomorphic at $1/2$.
+\item At the other cusps $H$ is holomorphic and $M$ is holomorphic, so $MH$
+  is holomorphic there as well.
+\item $K$ has no possible pole except at $0$, of order at most $1$, while
+  $\ord_{0}(M)=1$; hence $MK$ is holomorphic at $0$.
+\item At the other cusps $K$ is holomorphic and $M$ is holomorphic, so $MK$
+  is holomorphic there as well.
+\end{itemize}
+Since $H$ and $K$ have weight $0$, both $MH$ and $MK$ are holomorphic
+weight-$2$ forms on $\Gamma_0(6)$, with the multiplier or character fixed by
+the same normalization.  Their checked $q$-expansions lie in the rational
+coefficient field used by the certificate, so the ordinary Sturm criterion
+applies to the cleared forms.
+Since
+\[
+  [\mathrm{SL}_2(\mathbb Z):\Gamma_0(6)]=12,\qquad
+  \left\lfloor\frac{2\cdot12}{12}\right\rfloor=2,
+\]
+the Sturm bound is $2$.  The replay gives vanishing at infinity far beyond
+this bound, hence both cleared forms vanish identically.
+
+\subsection{F twist transport dependency}
+
+The F-side parameter in source notation is twist-guarded.  The transport
+contract is
+\[
+  F_{\mathrm{cat}}\bigl(-t_{\mathrm{source}}(q)\bigr)
+  =\Theta_{\mathrm{source}}(q),
+\]
+or equivalently
+\[
+  t_F^{\mathrm{cat}}(q)=-t_F^{\mathrm{source}}(q).
+\]
+This is why Theorem~\ref{thm:cf-bridge} is stated in catalog-normalized F
+notation.
+
+\section{Binomial-complement constant-term lemma}
+\label{app:ct-complement}
+
+Lemma~\ref{lem:ct-complement} is included in the main text because it is the
+cleanest bridge between coefficient transforms and constant-term models.  The
+important guardrail is repeated here: the operation
+\[
+  \Lambda\mapsto a-\Lambda
+\]
+preserves the fact that one has a constant-term sequence, but it is not a
+Laurent mutation claim and does not imply Newton equivalence between two
+chosen Laurent models.
+
+\section{Registry schema and selected rows}
+\label{app:registry}
+
+Each registry row uses the following schema:
+\[
+\begin{array}{ll}
+\texttt{statement\_id} & \text{row identifier}\\
+\texttt{source\_paper} & \text{external or internal source}\\
+\texttt{source\_label} & \text{the theorem, conjecture, or artifact label}\\
+\texttt{source\_object} & \text{source sequence or model}\\
+\texttt{target\_object} & \text{target sequence or model}\\
+\texttt{rewrite} & \text{transport or normalization formula}\\
+\texttt{cf\_role} & \text{how the C/F bridge enters}\\
+\texttt{claim\_level} & \text{claim class}\\
+\texttt{finite\_replay} & \text{finite evidence, if any}\\
+\texttt{literature\_status} & \text{source status}\\
+\texttt{proof\_obligation} & \text{missing lemma, if any}\\
+\texttt{status} & \text{current row status}\\
+\texttt{next\_action} & \text{next audit/proof step}.
+\end{array}
+\]
+
+Selected rows include the C/F bridge, coefficient involution, ODE pullback,
+Sun F-side transfer to $T(C)$, the historical raw-C Sun proof-obligation row
+with a separate-paper resolution note, Dwork complement metadata, Liu
+convention metadata, and the edge-watch triage closeout.
+
+\section{Open problems and blocking lemmas}
+\label{app:open-problems}
+
+The atlas records open work by the mathematical object that is missing.  For
+the Sun branch, the C/F theorem transports F-side statements to $T(C)$, but it
+does not itself supply the raw-C/RV-108 bridge.  In the historical V1/V2 data
+package this appears as a deferred proof obligation.  After that atlas freeze,
+the missing raw-C/RV bridge and its A2b Domb component were supplied by the
+separate Franel--Domb bridge proof of Sun's Conjecture 3.5
+\cite{babanskyy_2026_sun35_bridge}.  We keep the registry row as provenance
+for the C/F atlas rather than reclassifying it as a C/F consequence.
+
+The modular-form and constant-term branches have different blockers.  The
+Beukers--Tsai--Ye weight-one rows require row-specific multiplier data
+$\chi(w_d)$ before they can be used as theorem imports.  The Dwork branch has
+a proved C/F constant-term complement operation, but the stronger comparison
+between the complement model and the Gorodetsky F-side model remains an
+equivalence-or-obstruction problem.  The Rowland--Yassawi branch has explicit
+small automata as metadata, but a full source-theorem application would still
+require a bad-prime/singularity filter and source-style Cartier states.
+
+Finally, the Straub derivative-transfer branch is not closed by the formal
+C/F coefficient involution alone.  The corrected connection term leaves a
+finite low-carry identity as the remaining proof obligation.  The edge-watch
+scan no longer contributes an open problem: its eight watch rows have been
+resolved as known metadata.
+
+\section{Source and bibliography status}
+\label{app:sources}
+
+Zagier and OEIS fix the catalog-normalized C and F rows used throughout the
+paper.  Beukers supplies the modular parametrizations, the common
+$\Gamma_0(6)$ setting, and the F twist caveat used in the theta-gauge
+certificate.  Barrucand, Callan, and Verrill supply the classical Franel
+transform context that explains the C/F bridge as part of a known network
+rather than as an isolated coefficient coincidence.
+
+The remaining sources enter as theorem imports or metadata layers.  Sun
+supplies the source congruence layer and the original Conjecture 3.5 target
+\cite{sun_2022_supercongruences}; the latter is resolved by a separate
+Franel--Domb bridge proof rather than by the C/F bridge
+\cite{babanskyy_2026_sun35_bridge}.  Liu supplies binomial-transform
+congruence metadata with convention guards \cite{liu_2025_binomial_transforms}.
+In the Liu audit, thirteen rows match the normalized catalog directly, while
+the $\eta$ and $s18$ rows are stored with an explicit convention map rather
+than as failures.  Straub's
+Gessel--Lucas theorem is imported by reference where its hypotheses are used,
+but the separate C/F derivative-transfer problem remains guarded by its
+low-carry proof obligation \cite{straub_2024_gessel_lucas}.
+
+The Beukers--Tsai--Ye theorem is used only when row hypotheses are complete
+\cite{beukers_tsai_ye_2025_lucas}.  Mellit--Vlasenko and Gorodetsky provide
+the Dwork and constant-term context, and Rowland--Yassawi provides the source
+contract for automatic congruences
+\cite{mellit_vlasenko_2015_dwork,gorodetsky_2023_sporadic_representations,rowland_yassawi_2015_automatic_congruences}.
+The broader tabular background of Calabi--Yau and Ap{\'e}ry-like operators is
+represented by the Almkvist--van Enckevort--van Straten--Zudilin tables and
+the subsequent transformation literature
+\cite{almkvist_van_enckevort_van_straten_zudilin_2005_tables,
+almkvist_van_straten_zudilin_2011_clausen}.  Before submission, the remaining
+bibliographic work is journal-specific style and final access-date policy for
+web catalog entries.
+
+\bibliographystyle{alpha}
+\bibliography{cf_bridge_relation_atlas_refs}
+
+\end{document}

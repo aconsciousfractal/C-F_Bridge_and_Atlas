@@ -1,0 +1,79 @@
+{
+  "actual": {
+    "cartier_metadata": {
+      "build_bad_count": 0,
+      "build_replay_n_terms": 64,
+      "edge_count": 6,
+      "saved_artifact_replay_n_terms": 16,
+      "saved_replay_bad_count": 0
+    },
+    "edge_scan": {
+      "bounded_negative_count": 17672,
+      "checked_transform_count": 17684,
+      "hit_count": 12,
+      "known_hit_count": 4,
+      "new_promoted_edge_count": 0,
+      "watch_hit_count": 8
+    },
+    "manifest": {
+      "active_or_blocked_open_problem_count": 6,
+      "base_registry_statement_count": 20,
+      "closed_or_reconciled_open_problem_count": 4,
+      "phase7_closed_known_metadata_rows": 8,
+      "phase7_input_watch_rows": 8,
+      "phase7_new_proof_obligations": 0,
+      "phase7_new_theorem_edges": 0,
+      "phase7_still_watch_rows": 0,
+      "ry_level2a_fixed_modulus_certificate_count": 6,
+      "ry_level2b_status": "open",
+      "v2_supplement_count": 11
+    },
+    "opposite_side": {
+      "candidate_count": 20,
+      "classification_counts": {
+        "already_known_in_literature": 1,
+        "blocked_by_missing_source_data": 2,
+        "blocked_by_normalization": 1,
+        "bounded_negative": 1,
+        "closed_metadata": 1,
+        "metadata_ready_with_normalization_guard": 1,
+        "new_corollary_of_CF": 9,
+        "proof_obligation": 4
+      },
+      "high_value_candidate_count": 14,
+      "high_value_with_replay_and_literature_count": 14
+    },
+    "registry": {
+      "blocked_count": 2,
+      "closed_internal_result_count": 3,
+      "conditional_transfer_count": 6,
+      "explicit_automaton_metadata_count": 1,
+      "finite_exact_replay_count": 1,
+      "proof_obligation_count": 2,
+      "source_attached_conjecture_count": 1,
+      "statement_count": 20,
+      "theorem_import_by_reference_count": 5,
+      "watch_count": 0
+    },
+    "rowland_yassawi": {
+      "certificate_count": 6,
+      "cooper_s7_count": 2,
+      "replay_bad_count": 0,
+      "replay_n_terms": 64,
+      "zagier_cf_count": 4
+    },
+    "watch_triage": {
+      "blocked_count": 0,
+      "bounded_negative_count": 0,
+      "closed_known_metadata_count": 8,
+      "decision_counts": {
+        "closed_known_metadata": 8
+      },
+      "phase8_trigger": true,
+      "proof_obligation_candidate_count": 0,
+      "still_watch_count": 0,
+      "watch_input_count": 8
+    }
+  },
+  "status": "pass"
+}

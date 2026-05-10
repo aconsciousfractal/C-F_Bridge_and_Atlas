@@ -1,0 +1,177 @@
+{
+  "artifact": "rowland_yassawi_fixed_modulus_theorem_certificates_v1",
+  "status": "closed_metadata",
+  "claim_level": "theorem_import_by_reference_fixed_modulus",
+  "rowland_yassawi_level": "2a",
+  "date": "2026-05-06",
+  "scope": "selected source-locked rational diagonal models at fixed p and alpha",
+  "product_status": "internal_only",
+  "active_transfer": false,
+  "theorem_import_by_reference": true,
+  "full_all_prime_theorem_import": false,
+  "guardrails": [
+    "fixed modulus only",
+    "not an all-prime Rowland-Yassawi theorem import",
+    "not an all-alpha claim",
+    "not a public product route",
+    "finite replay supports the artifact but does not replace the source theorem"
+  ],
+  "source_theorem": {
+    "paper": "Rowland-Yassawi 2015",
+    "algorithm": "Algorithm 1",
+    "digit_order": "lsb",
+    "initial_state_formula": "R*Q^(p^(alpha-1)-1) mod p^alpha",
+    "transition_formula": "Cartier_(d,...,d)(state*Q^(p^alpha-p^(alpha-1))) mod p^alpha",
+    "output_formula": "constant_term(state) mod p^alpha"
+  },
+  "summary": {
+    "certificate_count": 6,
+    "cooper_s7_count": 2,
+    "zagier_cf_count": 4,
+    "replay_n_terms": 64,
+    "replay_bad_count": 0
+  },
+  "certificates": [
+    {
+      "edge_id": "ry2a_cooper_s7_mod4_alpha2",
+      "sequence_id": "cooper_s7",
+      "model_id": "cooper_s7_oeis_A183204_diagonal",
+      "source": "cooper_s7:oeis_A183204_diagonal",
+      "target": "cooper_s7:source_cartier_mod4_alpha2_automaton",
+      "p": 2,
+      "alpha": 2,
+      "modulus": 4,
+      "status": "closed_metadata",
+      "claim_level": "theorem_import_by_reference_fixed_modulus",
+      "rowland_yassawi_level": "2a",
+      "certificate_path": "outputs/_validation/automatic_congruence_ry27b_cooper_s7_mod4_theorem_certificate.json",
+      "provenance": {
+        "kind": "direct_rq_model",
+        "required": false
+      }
+    },
+    {
+      "edge_id": "ry2a_cooper_s7_mod9_alpha2",
+      "sequence_id": "cooper_s7",
+      "model_id": "cooper_s7_oeis_A183204_diagonal",
+      "source": "cooper_s7:oeis_A183204_diagonal",
+      "target": "cooper_s7:source_cartier_mod9_alpha2_automaton",
+      "p": 3,
+      "alpha": 2,
+      "modulus": 9,
+      "status": "closed_metadata",
+      "claim_level": "theorem_import_by_reference_fixed_modulus",
+      "rowland_yassawi_level": "2a",
+      "certificate_path": "outputs/_validation/automatic_congruence_ry28_cooper_s7_mod9_theorem_certificate.json",
+      "provenance": {
+        "kind": "direct_rq_model",
+        "required": false
+      }
+    },
+    {
+      "edge_id": "ry2a_zagier_c_mod4_alpha2",
+      "sequence_id": "zagier_c_a002893",
+      "model_id": "zagier_c_rational_diagonal_R_C",
+      "source": "zagier_c_a002893:rational_diagonal_R_C",
+      "target": "zagier_c_a002893:source_cartier_mod4_alpha2_automaton",
+      "p": 2,
+      "alpha": 2,
+      "modulus": 4,
+      "state_count": 2,
+      "transition_count": 4,
+      "replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "status": "closed_metadata",
+      "claim_level": "theorem_import_by_reference_fixed_modulus",
+      "rowland_yassawi_level": "2a",
+      "certificate_path": "outputs/_validation/automatic_congruence_ry30_zagier_c_mod4_theorem_certificate.json",
+      "provenance": {
+        "kind": "ct_to_diagonal_contract",
+        "required": true,
+        "claim_level": "rational_diagonal_contract"
+      }
+    },
+    {
+      "edge_id": "ry2a_zagier_f_mod4_alpha2",
+      "sequence_id": "zagier_f_a093388",
+      "model_id": "zagier_f_rational_diagonal_R_CF",
+      "source": "zagier_f_a093388:rational_diagonal_R_CF",
+      "target": "zagier_f_a093388:source_cartier_mod4_alpha2_automaton",
+      "p": 2,
+      "alpha": 2,
+      "modulus": 4,
+      "state_count": 5,
+      "transition_count": 10,
+      "replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "status": "closed_metadata",
+      "claim_level": "theorem_import_by_reference_fixed_modulus",
+      "rowland_yassawi_level": "2a",
+      "certificate_path": "outputs/_validation/automatic_congruence_ry30_zagier_f_mod4_theorem_certificate.json",
+      "provenance": {
+        "kind": "ct_to_diagonal_contract",
+        "required": true,
+        "claim_level": "rational_diagonal_contract"
+      }
+    },
+    {
+      "edge_id": "ry2a_zagier_c_mod9_alpha2",
+      "sequence_id": "zagier_c_a002893",
+      "model_id": "zagier_c_rational_diagonal_R_C",
+      "source": "zagier_c_a002893:rational_diagonal_R_C",
+      "target": "zagier_c_a002893:source_cartier_mod9_alpha2_automaton",
+      "p": 3,
+      "alpha": 2,
+      "modulus": 9,
+      "state_count": 6,
+      "transition_count": 18,
+      "replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "status": "closed_metadata",
+      "claim_level": "theorem_import_by_reference_fixed_modulus",
+      "rowland_yassawi_level": "2a",
+      "certificate_path": "outputs/_validation/automatic_congruence_ry30_zagier_c_mod9_theorem_certificate.json",
+      "provenance": {
+        "kind": "ct_to_diagonal_contract",
+        "required": true,
+        "claim_level": "rational_diagonal_contract"
+      }
+    },
+    {
+      "edge_id": "ry2a_zagier_f_mod9_alpha2",
+      "sequence_id": "zagier_f_a093388",
+      "model_id": "zagier_f_rational_diagonal_R_CF",
+      "source": "zagier_f_a093388:rational_diagonal_R_CF",
+      "target": "zagier_f_a093388:source_cartier_mod9_alpha2_automaton",
+      "p": 3,
+      "alpha": 2,
+      "modulus": 9,
+      "state_count": 4,
+      "transition_count": 12,
+      "replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "status": "closed_metadata",
+      "claim_level": "theorem_import_by_reference_fixed_modulus",
+      "rowland_yassawi_level": "2a",
+      "certificate_path": "outputs/_validation/automatic_congruence_ry30_zagier_f_mod9_theorem_certificate.json",
+      "provenance": {
+        "kind": "ct_to_diagonal_contract",
+        "required": true,
+        "claim_level": "rational_diagonal_contract"
+      }
+    }
+  ],
+  "next_action": "RY-31 should sync theorem-certificate overlays into the atlas readout/manifest or decide whether to revisit the deferred public alpha=2 fixture route."
+}

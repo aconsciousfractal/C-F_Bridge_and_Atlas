@@ -1,0 +1,170 @@
+{
+  "artifact": "cf_like_edge_watch_triage_v1",
+  "claim_level": "triage_metadata",
+  "date": "2026-05-05",
+  "decisions": [
+    {
+      "claim_level": "closed_known_metadata",
+      "coefficient_replay": {
+        "n_terms": 80,
+        "status": "pass"
+      },
+      "decision": "closed_known_metadata",
+      "edge_id": "watch_001_apery_zeta3_to_az_gamma_r1_a0_s1",
+      "reason": "identity_transform_on_catalog_alias",
+      "source": "apery_zeta3",
+      "target": "az_gamma",
+      "transform": {
+        "a": 0,
+        "r": 1,
+        "s": 1
+      }
+    },
+    {
+      "claim_level": "closed_known_metadata",
+      "coefficient_replay": {
+        "n_terms": 80,
+        "status": "pass"
+      },
+      "decision": "closed_known_metadata",
+      "edge_id": "watch_002_apery_zeta3_to_az_gamma_r2_a0_s1",
+      "reason": "identity_transform_on_catalog_alias",
+      "source": "apery_zeta3",
+      "target": "az_gamma",
+      "transform": {
+        "a": 0,
+        "r": 2,
+        "s": 1
+      }
+    },
+    {
+      "claim_level": "closed_known_metadata",
+      "coefficient_replay": {
+        "n_terms": 80,
+        "status": "pass"
+      },
+      "decision": "closed_known_metadata",
+      "edge_id": "watch_003_apery_zeta3_to_az_gamma_r3_a0_s1",
+      "reason": "identity_transform_on_catalog_alias",
+      "source": "apery_zeta3",
+      "target": "az_gamma",
+      "transform": {
+        "a": 0,
+        "r": 3,
+        "s": 1
+      }
+    },
+    {
+      "claim_level": "closed_known_metadata",
+      "coefficient_replay": {
+        "n_terms": 80,
+        "status": "pass"
+      },
+      "decision": "closed_known_metadata",
+      "edge_id": "watch_004_az_gamma_to_apery_zeta3_r1_a0_s1",
+      "reason": "identity_transform_on_catalog_alias",
+      "source": "az_gamma",
+      "target": "apery_zeta3",
+      "transform": {
+        "a": 0,
+        "r": 1,
+        "s": 1
+      }
+    },
+    {
+      "claim_level": "closed_known_metadata",
+      "coefficient_replay": {
+        "n_terms": 80,
+        "status": "pass"
+      },
+      "decision": "closed_known_metadata",
+      "edge_id": "watch_005_az_gamma_to_apery_zeta3_r2_a0_s1",
+      "reason": "identity_transform_on_catalog_alias",
+      "source": "az_gamma",
+      "target": "apery_zeta3",
+      "transform": {
+        "a": 0,
+        "r": 2,
+        "s": 1
+      }
+    },
+    {
+      "claim_level": "closed_known_metadata",
+      "coefficient_replay": {
+        "n_terms": 80,
+        "status": "pass"
+      },
+      "decision": "closed_known_metadata",
+      "edge_id": "watch_006_az_gamma_to_apery_zeta3_r3_a0_s1",
+      "reason": "identity_transform_on_catalog_alias",
+      "source": "az_gamma",
+      "target": "apery_zeta3",
+      "transform": {
+        "a": 0,
+        "r": 3,
+        "s": 1
+      }
+    },
+    {
+      "claim_level": "closed_known_metadata",
+      "coefficient_replay": {
+        "n_terms": 80,
+        "status": "pass"
+      },
+      "decision": "closed_known_metadata",
+      "edge_id": "watch_007_zagier_c_a002893_to_franel_a000172_r1_a-1_s1",
+      "reason": "known_inverse_franel_to_c",
+      "source": "zagier_c_a002893",
+      "target": "franel_a000172",
+      "transform": {
+        "a": -1,
+        "r": 1,
+        "s": 1
+      }
+    },
+    {
+      "claim_level": "closed_known_metadata",
+      "coefficient_replay": {
+        "n_terms": 80,
+        "status": "pass"
+      },
+      "decision": "closed_known_metadata",
+      "edge_id": "watch_008_zagier_f_a093388_to_franel_a000172_r1_a8_s-1",
+      "reason": "known_inverse_franel_to_f",
+      "source": "zagier_f_a093388",
+      "target": "franel_a000172",
+      "transform": {
+        "a": 8,
+        "r": 1,
+        "s": -1
+      }
+    }
+  ],
+  "guardrails": [
+    "no generic Mobius-binomial rescan was run",
+    "coefficient replay is a gate, not a theorem claim",
+    "alias identities are calibration metadata",
+    "inverse Franel rows are known metadata, not new theorem edges",
+    "no Beta/TDA evidence is used for promotion"
+  ],
+  "input_scan": "data/relation_atlas/cf_like_mobius_binomial_edge_scan_v1.json",
+  "method": {
+    "generic_rescan": false,
+    "promotion_rule": "coefficient match alone cannot promote",
+    "targeted_replay_terms": 80
+  },
+  "phase": "Phase 7 - Edge Watch Triage Only",
+  "status": "complete",
+  "summary": {
+    "blocked_count": 0,
+    "bounded_negative_count": 0,
+    "closed_known_metadata_count": 8,
+    "decision_counts": {
+      "closed_known_metadata": 8
+    },
+    "phase8_trigger": true,
+    "proof_obligation_candidate_count": 0,
+    "still_watch_count": 0,
+    "watch_input_count": 8
+  }
+}

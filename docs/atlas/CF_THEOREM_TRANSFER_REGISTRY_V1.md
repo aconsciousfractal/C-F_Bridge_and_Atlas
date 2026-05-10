@@ -1,0 +1,481 @@
+# C/F Theorem-Transfer Registry V1
+
+**Date:** 2026-05-03
+**Validation date:** 2026-05-05
+**Roadmap:** `ROADMAP_V3.md`, Phase 2
+**Status:** Phase 1 reconciled registry V1
+**Claim level:** guarded theorem-transfer registry, not a proof artifact
+
+This registry is the operational table of theorem imports and C/F-transfer
+rows. It separates closed internal C/F consequences, theorem imports by
+reference, conditional theorem transfers, finite replays, proof obligations,
+blocked rows, and watch rows.
+
+Machine-readable companion:
+
+```text
+projects/Apery/data/relation_atlas/cf_theorem_transfer_registry_v1.json
+```
+
+Phase 1 closeout source:
+
+```text
+projects/Apery/docs/02_modular_cf/00_paper_note/PHASE1_CF_PAPER_NOTE_CLOSEOUT.md
+```
+
+## Schema
+
+Each row uses:
+
+```yaml
+statement_id:
+source_paper:
+source_label:
+source_object:
+target_object:
+rewrite:
+cf_role:
+claim_level:
+finite_replay:
+literature_status:
+missing_opposite:
+proof_obligation:
+status:
+next_action:
+```
+
+Allowed `claim_level` and `status` values are the Roadmap V3 classes:
+
+```text
+closed_internal_result
+theorem_import_by_reference
+conditional_theorem_transfer
+finite_exact_replay
+source_attached_conjecture
+proof_obligation
+bounded_negative
+blocked
+watch
+```
+
+## Summary
+
+```yaml
+registry_version: cf_theorem_transfer_registry.v1
+statement_count: 20
+closed_internal_result_count: 3
+conditional_transfer_count: 6
+source_attached_conjecture_count: 1
+theorem_import_by_reference_count: 5
+finite_exact_replay_count: 1
+proof_obligation_count: 2
+blocked_count: 2
+watch_count: 0
+```
+
+## Rows
+
+### `phase1_cf_mobius_binomial_bridge`
+
+```yaml
+statement_id: phase1_cf_mobius_binomial_bridge
+source_paper: "PAPP Phase 1 C/F paper note"
+source_label: "Theorem 1"
+source_object: "Zagier C generating function C(x)"
+target_object: "Zagier F generating function F(x)"
+rewrite: "F(x)=(1-9x)^(-1) C(-x/(1-9x))"
+cf_role: "closed internal C/F bridge used as the registry transport primitive"
+claim_level: closed_internal_result
+finite_replay: "coefficient and transform-network replays attached in Phase 1 note context"
+literature_status: "internal closed result with external Zagier sequence provenance"
+missing_opposite: "none for the bridge itself"
+proof_obligation: "none inside PAPP; publication still needs source citations for sequence provenance"
+status: closed_internal_result
+next_action: "use as the transport primitive for all C/F theorem-transfer rows"
+```
+
+### `phase1_cf_coefficient_transform_involution`
+
+```yaml
+statement_id: phase1_cf_coefficient_transform_involution
+source_paper: "PAPP Phase 1 C/F paper note"
+source_label: "Corollary 1"
+source_object: "C_n coefficients"
+target_object: "F_n coefficients and inverse transform"
+rewrite: "F_n=sum_{k<=n} binom(n,k)(-1)^k 9^(n-k) C_k, with inverse C_n=sum_{k<=n} binom(n,k)(-1)^k 9^(n-k) F_k"
+cf_role: "coefficient-level C/F transfer contract"
+claim_level: closed_internal_result
+finite_replay: "coefficient replay attached in Phase 1 note context"
+literature_status: "internal corollary of the C/F bridge"
+missing_opposite: "none"
+proof_obligation: "none after Theorem 1"
+status: closed_internal_result
+next_action: "use to normalize finite coefficient checks and row-level transforms"
+```
+
+### `phase1_cf_ode_pullback`
+
+```yaml
+statement_id: phase1_cf_ode_pullback
+source_paper: "PAPP Phase 1 C/F paper note"
+source_label: "Corollary 2"
+source_object: "C differential equation"
+target_object: "F differential equation"
+rewrite: "pull back the C operator along x -> -x/(1-9x) and apply the prefactor (1-9x)^(-1)"
+cf_role: "ODE-level C/F transfer contract"
+claim_level: closed_internal_result
+finite_replay: "operator/generating-function replay attached in Phase 1 note context"
+literature_status: "internal corollary of the C/F bridge"
+missing_opposite: "none"
+proof_obligation: "none after Theorem 1"
+status: closed_internal_result
+next_action: "use as the guardrail for ODE-style theorem imports"
+```
+
+### `phase1_cf_sun_q_to_tc_transfer_contract`
+
+```yaml
+statement_id: phase1_cf_sun_q_to_tc_transfer_contract
+source_paper: "PAPP Phase 1 C/F paper note"
+source_label: "Corollary 3"
+source_object: "Sun Q_n source-side congruence rows"
+target_object: "T(C)_n transformed-C rows"
+rewrite: "Q_n=(-1)^n T(C)_n; source Q_n/a^n rows transfer to T(C)_n/(-a)^n"
+cf_role: "generic Sun Q-to-T(C) transfer contract behind the specific Sun rows"
+claim_level: conditional_theorem_transfer
+finite_replay: "specific d=8, d=9, and Theorem 3.4 rows carry finite replays"
+literature_status: "depends on imported Sun source theorems"
+missing_opposite: "does not produce raw C statements"
+proof_obligation: "none for the sign rewrite; source theorems remain external"
+status: conditional_theorem_transfer
+next_action: "keep specific Sun rows as theorem-carrying instances; use this row as the contract"
+```
+
+### `phase1_cf_ct_newton_guardrail`
+
+```yaml
+statement_id: phase1_cf_ct_newton_guardrail
+source_paper: "PAPP Phase 1 novelty and literature guardrail"
+source_label: "CT/Newton guardrail"
+source_object: "sequence-level C/F bridge"
+target_object: "constant-term and Newton-polytope theorem transfers"
+rewrite: "the C/F sequence bridge does not by itself give a direct CT/Newton equivalence"
+cf_role: "prevents false promotion of Dwork or CT metadata across the C/F bridge"
+claim_level: blocked
+finite_replay: "not applicable; this is a wording and theorem-use guardrail"
+literature_status: "local guardrail tied to Phase 1 note and Dwork metadata rows"
+missing_opposite: "direct CT/Newton operation remains absent"
+proof_obligation: "find an explicit Laurent/diagonal operation before any CT/Newton transfer claim"
+status: blocked
+next_action: "keep visible while validating Dwork and Rowland-Yassawi downstream rows"
+```
+
+### `sun_2022_intro_1_3_minus8`
+
+```yaml
+statement_id: sun_2022_intro_1_3_minus8
+source_paper: "Sun 2022, Supercongruences involving Apery-like numbers and binomial coefficients"
+source_label: "Introduction congruence (1.3), d=8"
+source_object: "Q_n/(-8)^n"
+target_object: "T(C)_n/8^n"
+rewrite: "Q_n=(-1)^n T(C)_n, hence Q_n/(-8)^n=T(C)_n/8^n"
+cf_role: "C/F bridge transfers the source theorem from Q/F-side notation to transformed C"
+claim_level: conditional_theorem_transfer
+finite_replay: "pass for primes 5..97 in CF_SUN_SYMBOLIC_TRANSFER_CERTIFICATE_2026-04-29.md"
+literature_status: "source theorem imported from Sun by reference"
+missing_opposite: "raw C version is not produced by this row"
+proof_obligation: "none for the rewrite; source theorem remains external"
+status: conditional_theorem_transfer
+next_action: "use as Phase 3 opposite-side seed: ask whether a raw-C theorem exists"
+```
+
+### `sun_2022_intro_1_3_minus9`
+
+```yaml
+statement_id: sun_2022_intro_1_3_minus9
+source_paper: "Sun 2022, Supercongruences involving Apery-like numbers and binomial coefficients"
+source_label: "Introduction congruence (1.3), d=9"
+source_object: "Q_n/(-9)^n"
+target_object: "T(C)_n/9^n"
+rewrite: "Q_n=(-1)^n T(C)_n, hence Q_n/(-9)^n=T(C)_n/9^n"
+cf_role: "C/F bridge transfers the source theorem from Q/F-side notation to transformed C"
+claim_level: conditional_theorem_transfer
+finite_replay: "pass for primes 5..97"
+literature_status: "source theorem imported from Sun by reference"
+missing_opposite: "raw C version is not produced by this row"
+proof_obligation: "none for the rewrite; source theorem remains external"
+status: conditional_theorem_transfer
+next_action: "use as Phase 3 opposite-side seed"
+```
+
+### `sun_2022_theorem_3_4_eq_3_2`
+
+```yaml
+statement_id: sun_2022_theorem_3_4_eq_3_2
+source_paper: "Sun 2022"
+source_label: "Theorem 3.4, equation (3.2)"
+source_object: "sum binom(2k,k) Q_k/(-8(m+2))^k"
+target_object: "sum binom(2k,k) T(C)_k/(8(m+2))^k"
+rewrite: "Q_k/a^k = T(C)_k/(-a)^k"
+cf_role: "parameterized C/F theorem transfer to T(C)"
+claim_level: conditional_theorem_transfer
+finite_replay: "24/24 grid rows pass"
+literature_status: "source theorem imported from Sun by reference"
+missing_opposite: "raw C analogue not extracted"
+proof_obligation: "none for sign rewrite; source theorem external"
+status: conditional_theorem_transfer
+next_action: "mine raw-C or F-native opposite-side variants in Phase 3"
+```
+
+### `sun_2022_theorem_3_4_eq_3_3`
+
+```yaml
+statement_id: sun_2022_theorem_3_4_eq_3_3
+source_paper: "Sun 2022"
+source_label: "Theorem 3.4, equation (3.3)"
+source_object: "sum binom(2k,k) Q_k/(-9(m+2))^k"
+target_object: "sum binom(2k,k) T(C)_k/(9(m+2))^k"
+rewrite: "Q_k/a^k = T(C)_k/(-a)^k"
+cf_role: "parameterized C/F theorem transfer to T(C)"
+claim_level: conditional_theorem_transfer
+finite_replay: "24/24 grid rows pass"
+literature_status: "source theorem imported from Sun by reference"
+missing_opposite: "raw C analogue not extracted"
+proof_obligation: "none for sign rewrite; source theorem external"
+status: conditional_theorem_transfer
+next_action: "mine raw-C or F-native opposite-side variants in Phase 3"
+```
+
+### `sun_2022_theorem_3_4_eq_3_4`
+
+```yaml
+statement_id: sun_2022_theorem_3_4_eq_3_4
+source_paper: "Sun 2022"
+source_label: "Theorem 3.4, equation (3.4)"
+source_object: "sum binom(2k,k) Q_k/(-9m+14)^k"
+target_object: "sum binom(2k,k) T(C)_k/(9m-14)^k"
+rewrite: "Q_k/a^k = T(C)_k/(-a)^k; corrected source denominator is -9m+14"
+cf_role: "parameterized C/F theorem transfer to T(C)"
+claim_level: conditional_theorem_transfer
+finite_replay: "21/21 grid rows pass"
+literature_status: "source theorem imported from Sun by reference"
+missing_opposite: "raw C analogue not extracted"
+proof_obligation: "none for sign rewrite; source theorem external"
+status: conditional_theorem_transfer
+next_action: "mine raw-C or F-native opposite-side variants in Phase 3"
+```
+
+### `sun_2022_conjecture_3_5_raw_c`
+
+```yaml
+statement_id: sun_2022_conjecture_3_5_raw_c
+source_paper: "Sun 2022"
+source_label: "Conjecture 3.5"
+source_object: "raw C central-binomial sum"
+target_object: "Rodriguez-Villegas 108 supercongruence target"
+rewrite: "raw_C_54 is replay-equivalent to R_p=sum binom(2k,k)^2 binom(3k,k)/108^k mod p^2"
+cf_role: "C/F gives context and shadows, but not a closed proof"
+claim_level: source_attached_conjecture
+finite_replay: "raw/RV bridge replay passes for 166 primes 5<=p<=997"
+literature_status: "source-attached conjecture; exact proof not found in local trace"
+missing_opposite: "closed T(C) theorem transfer does not prove raw C"
+proof_obligation: "prove raw_C_54 == R_p mod p^2"
+status: source_attached_conjecture
+next_action: "carry as Phase 4/5 open problem, non-blocking for atlas"
+```
+
+### `liu_2025_binomial_transform_profile`
+
+```yaml
+statement_id: liu_2025_binomial_transform_profile
+source_paper: "Liu 2025, On the binomial transforms of Apery-like sequences"
+source_label: "15 sporadic congruence profile"
+source_object: "u_n == u_1^n mod N_{u_1}"
+target_object: "PAPP 15-family catalog metadata"
+rewrite: "C and F both pass Liu profile with N_u1=6"
+cf_role: "contextual congruence metadata around the C/F bridge"
+claim_level: theorem_import_by_reference
+finite_replay: "13/15 rows pass directly; eta and s18 are convention-mapped metadata"
+literature_status: "theorem-backed metadata, not a C/F proof source"
+missing_opposite: "no direct theorem transfer row yet beyond metadata"
+proof_obligation: "none for classified metadata; clean unqualified 15/15 import remains false"
+status: theorem_import_by_reference_with_normalization_guard
+v4_update: "Phase 5 closes eta and s18 as convention-mapped metadata: 13 direct replay-pass rows, 2 guarded rows, 0 unresolved failures; clean unqualified 15/15 import remains false."
+next_action: "keep row-level normalization guards in Paper B and future data exports"
+```
+
+### `straub_2023_theorem_1_1`
+
+```yaml
+statement_id: straub_2023_theorem_1_1
+source_paper: "Straub 2023, Gessel-Lucas congruences for sporadic sequences"
+source_label: "Theorem 1.1"
+source_object: "15 sporadic Apery-like sequences A(n)"
+target_object: "two-term p^r supercongruence metadata"
+rewrite: "A(p^r*n) == A(p^(r-1)*n) mod p^(2r)"
+cf_role: "global sporadic metadata including C and F rows"
+claim_level: theorem_import_by_reference
+finite_replay: "not run"
+literature_status: "source theorem imported by reference"
+missing_opposite: "no C/F-specific opposite-side theorem mined yet"
+proof_obligation: "none for metadata import"
+status: theorem_import_by_reference
+next_action: "Phase 3 should ask whether C/F transform preserves useful Straub row forms"
+```
+
+### `straub_2023_theorem_1_3`
+
+```yaml
+statement_id: straub_2023_theorem_1_3
+source_paper: "Straub 2023"
+source_label: "Theorem 1.3"
+source_object: "A(p*n+k) Gessel-Lucas row"
+target_object: "A(k)A(n)+p*n*A'(k)A(n) mod p^2"
+rewrite: "requires source-defined formal derivative A'(k)"
+cf_role: "global sporadic metadata including C/F; derivative artifacts pending for most rows"
+claim_level: theorem_import_by_reference
+finite_replay: "Cooper s7 derivative finite replay pass exists; not global"
+literature_status: "source theorem imported by reference"
+missing_opposite: "C/F derivative-transfer behavior not mined"
+proof_obligation: "encode A'(k) artifacts for target rows before row-level replay"
+status: theorem_import_by_reference
+next_action: "defer broad derivative mining until Phase 3 candidate selection"
+```
+
+### `bty_2024_theorem_1_1_row_registry`
+
+```yaml
+statement_id: bty_2024_theorem_1_1_row_registry
+source_paper: "Beukers-Tsai-Ye, Lucas congruences using modular forms"
+source_label: "Theorem 1.1"
+source_object: "modular-form-defined sequences satisfying BTY hypotheses"
+target_object: "7 row-level Lucas-ready records"
+rewrite: "direct Gamma0 route for az_eta; Atkin-Lehner orbit route for apery_zeta3, az_alpha, az_delta, az_epsilon, az_gamma, az_zeta"
+cf_role: "modular theorem metadata adjacent to C/F atlas"
+claim_level: theorem_import_by_reference
+finite_replay: "finite BTY sanity replays are separate diagnostics"
+literature_status: "BTY theorem imported by reference"
+missing_opposite: "Cooper rows pending; C/F weight-1 rows belong to Theorem 1.3 gap"
+proof_obligation: "respect row-level hypotheses and prime exclusions"
+status: theorem_import_by_reference
+next_action: "carry ready rows into Phase 3 mining with row-level hypothesis labels"
+```
+
+### `bty_2024_theorem_1_3_weight1_rows`
+
+```yaml
+statement_id: bty_2024_theorem_1_3_weight1_rows
+source_paper: "Beukers-Tsai-Ye"
+source_label: "Theorem 1.3 weight-1 branch"
+source_object: "franel, B, C, E, F eta-quotient rows"
+target_object: "admissible-prime Lucas branch requiring chi(w_d)"
+rewrite: "local eta square class is derivable; Atkin-Lehner multiplier chi(w_d) is not encoded"
+cf_role: "C/F rows are in the weight-1 gap"
+claim_level: proof_obligation
+finite_replay: "diagnostic only; chi_values_ready_count=0"
+literature_status: "source theorem known, row application pending"
+missing_opposite: "C/F BTY weight-1 theorem rows not ready"
+proof_obligation: "derive row-specific chi(w_d) values"
+status: proof_obligation
+next_action: "turn into Phase 4 open problem and optional finite diagnostic replay"
+```
+
+### `dwork_mellit_vlasenko_ct_metadata`
+
+```yaml
+statement_id: dwork_mellit_vlasenko_ct_metadata
+source_paper: "Mellit-Vlasenko 2016, Dwork's congruences for constant terms"
+source_label: "Theorem 1"
+source_object: "b_n=CT(Lambda^n)"
+target_object: "C, F via Q_F, and Franel CT candidate rows"
+rewrite: "Dwork ratio and polynomial congruence metadata attach after CT identity, p-integrality, unique-origin Newton condition, and prime contract"
+cf_role: "C and F both have Dwork candidate metadata, but no direct C/F Newton equivalence"
+claim_level: finite_exact_replay
+finite_replay: "candidate rows pass finite replay on primes 2,3,5 with max_s=2"
+literature_status: "Mellit-Vlasenko theorem imported by reference"
+missing_opposite: "Dwork transfer beyond sequence-level C/F bridge is open"
+proof_obligation: "find explicit Laurent/diagonal operation or keep guardrail"
+status: finite_exact_replay
+next_action: "Phase 3 should classify Dwork opposite-side candidates and blocked Newton rows"
+```
+
+### `dwork_catalog_f_p_blocked`
+
+```yaml
+statement_id: dwork_catalog_f_p_blocked
+source_paper: "Mellit-Vlasenko 2016 / PAPP row audit"
+source_label: "F catalog P_F row"
+source_object: "zagier_f_a093388:catalog_P_F"
+target_object: "Dwork CT theorem row"
+rewrite: "CT identity passes but unique-origin Newton obligation fails"
+cf_role: "prevents false C/F CT/Newton promotion"
+claim_level: blocked
+finite_replay: "CT identity pass; Newton obligation fail"
+literature_status: "blocked local row; replacement is Gorodetsky Q_F"
+missing_opposite: "no Dwork-ready catalog P_F opposite row"
+proof_obligation: "none unless a new F Laurent model is proposed"
+status: blocked
+next_action: "keep visible as blocked row in Phase 3 and Phase 4"
+```
+
+### `rowland_yassawi_2015_contract`
+
+```yaml
+statement_id: rowland_yassawi_2015_contract
+source_paper: "Rowland-Yassawi 2015, Automatic congruences for diagonals of rational functions"
+source_label: "source contract"
+source_object: "diagonal of a rational power series"
+target_object: "finite automata modulo p^alpha for all but finitely many primes"
+rewrite: "requires rational diagonal model, prime exception filter, automaton trace, finite replay"
+cf_role: "automatic-congruence metadata layer for Cooper s7 and C/F rational diagonal contract rows"
+claim_level: theorem_import_by_reference
+finite_replay: "not run"
+literature_status: "source theorem imported by reference"
+missing_opposite: "C/F mod 2 and mod 3 automata are closed as explicit metadata; C/F prime-power automata remain unconstructed"
+proof_obligation: "for further C/F automata choose target prime powers, source-safe prime filters, and transition/Cartier constructions before automaton claims"
+status: theorem_import_by_reference
+next_action: "keep as source contract; C/F mod 2 and mod 3 are explicit metadata, while prime-power automata remain future diagnostic work"
+```
+
+### `rowland_yassawi_cooper_s7_pilot`
+
+```yaml
+statement_id: rowland_yassawi_cooper_s7_pilot
+source_paper: "Rowland-Yassawi 2015 plus Cooper s7 public diagonal provenance"
+source_label: "cooper_s7 pilot-ready row"
+source_object: "diag 1/(1-(w*x*y+w*x*z+w*y*z+x*y+x*z+y+z))"
+target_object: "small automaton or bounded congruence replay"
+rewrite: "explicit diagonal row has closed mod 2 and mod 3 automaton metadata; full source theorem import remains prime-filter blocked"
+cf_role: "pilot row for the automatic layer, not a C/F bridge claim"
+claim_level: explicit_automaton_metadata
+finite_replay: "V4 probe verifies first 80 diagonal terms against mod 2 and mod 3 automata"
+literature_status: "direct automaton artifacts plus guarded Rowland-Yassawi source context"
+missing_opposite: "C/F rational diagonal contracts are closed in Phase 6x.3 and C/F mod 2/mod 3 automata are closed in Phase 6x.4-6x.6; prime-power behavior remains unclassified"
+proof_obligation: "full Rowland-Yassawi theorem application still requires source-level finite bad-prime/singularity filter"
+status: closed_metadata
+next_action: "keep as Cooper pilot metadata; C/F has rational diagonal contracts but still needs modulus selection, prime/singularity guardrails, and transition construction; Franel has separate Lucas/binomial automaton metadata outside the Rowland-Yassawi theorem import"
+```
+
+## Guardrails
+
+```text
+No source theorem is reproved in this registry.
+Sun transfers target T(C), not raw C.
+Liu and Straub are metadata layers unless a concrete C/F rewrite is specified.
+BTY row-level use requires hypothesis audits and missing chi(w_d) values.
+Dwork rows are CT theorem metadata, not direct Newton equivalence.
+Rowland-Yassawi rows need explicit diagonal models before automata claims.
+No Beta/TDA promotion follows from this registry.
+```
+
+## Phase 2 Exit Check
+
+```text
+Markdown registry exists: yes.
+JSON registry exists: yes.
+Every source row has claim level and next action: yes.
+Minimum rows from Roadmap V3 are represented: yes.
+Phase 1 closeout source layer is represented: yes.
+Markdown/JSON statement ids match: yes.
+JSON schema/count audit passes: yes.
+```

@@ -1,0 +1,16 @@
+﻿cff-version: 1.2.0
+message: "If you use this companion package, please cite the associated paper."
+title: "C/F Bridge And Relation Atlas Companion"
+authors:
+  - family-names: "Babanskyy"
+    given-names: "Oleksiy"
+year: 2026
+license: MIT
+repository-code: "https://github.com/aconsciousfractal/C-F_Bridge_and_Atlas"
+preferred-citation:
+  type: article
+  title: "A Mobius-binomial C/F bridge and a claim-disciplined theorem-transfer atlas for Apery-like sources"
+  authors:
+    - family-names: "Babanskyy"
+      given-names: "Oleksiy"
+  year: 2026

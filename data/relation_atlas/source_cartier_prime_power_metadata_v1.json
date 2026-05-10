@@ -1,0 +1,262 @@
+{
+  "artifact": "source_cartier_prime_power_metadata_v1",
+  "status": "closed_metadata",
+  "claim_level": "explicit_prime_power_automaton_metadata",
+  "date": "2026-05-06",
+  "scope": "internal fixed-modulus alpha=2 source-Cartier artifacts",
+  "product_status": "internal_only",
+  "theorem_import_by_reference": false,
+  "prime_filter": {
+    "source_safe": false,
+    "status": "not_implemented",
+    "reason": "bad-prime/singularity filter is not implemented"
+  },
+  "rowland_yassawi_theorem_application": {
+    "status": "inactive",
+    "reason": "source-safe bad-prime/singularity filter is not implemented",
+    "rowland_yassawi_level": 1
+  },
+  "guardrails": [
+    "not a public product route",
+    "not a full Rowland-Yassawi theorem-by-reference application",
+    "fixed p and alpha only",
+    "no all-prime claim",
+    "no all-alpha claim",
+    "finite replay supports the artifact but does not create theorem import",
+    "prime_filter.source_safe remains false"
+  ],
+  "source_algorithm_contract": {
+    "algorithm": "Rowland-Yassawi Algorithm 1",
+    "initial_state_formula": "R*Q^(p^(alpha-1)-1) mod p^alpha",
+    "transition_formula": "Cartier_(d,...,d)(state*Q^(p^alpha-p^(alpha-1))) mod p^alpha",
+    "output_formula": "constant_term(state) mod p^alpha",
+    "digit_order": "lsb"
+  },
+  "summary": {
+    "edge_count": 6,
+    "build_replay_n_terms": 64,
+    "saved_artifact_replay_n_terms": 16,
+    "build_bad_count": 0,
+    "saved_replay_bad_count": 0
+  },
+  "edges": [
+    {
+      "edge_id": "source_cartier_cooper_s7_mod4_alpha2",
+      "source": "cooper_s7:oeis_A183204_diagonal",
+      "target": "cooper_s7:source_cartier_mod4_alpha2_automaton",
+      "sequence_id": "cooper_s7",
+      "model_id": "cooper_s7_oeis_A183204_diagonal",
+      "p": 2,
+      "alpha": 2,
+      "modulus": 4,
+      "state_count": 3,
+      "transition_count": 6,
+      "status": "closed_metadata",
+      "active_transfer": false,
+      "atlas_claim_level": "explicit_prime_power_automaton_metadata",
+      "engine_claim_level": "explicit_automaton_metadata",
+      "rowland_yassawi_level": 1,
+      "artifact_path": "outputs/_validation/prime_power_artifacts/cooper_s7_mod4_artifact.json",
+      "build_report_path": "outputs/_validation/prime_power_artifacts/cooper_s7_mod4_build.json",
+      "saved_replay_report_path": "outputs/_validation/prime_power_artifacts/cooper_s7_mod4_replay.json",
+      "build_replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "saved_artifact_replay": {
+        "n_terms": 16,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "guardrails": [
+        "not all-prime",
+        "not all-alpha",
+        "not a theorem import",
+        "not a replacement for Phase 6 alpha=1 metadata"
+      ]
+    },
+    {
+      "edge_id": "source_cartier_zagier_c_mod4_alpha2",
+      "source": "zagier_c_a002893:rational_diagonal_R_C",
+      "target": "zagier_c_a002893:source_cartier_mod4_alpha2_automaton",
+      "sequence_id": "zagier_c_a002893",
+      "model_id": "zagier_c_rational_diagonal_R_C",
+      "p": 2,
+      "alpha": 2,
+      "modulus": 4,
+      "state_count": 2,
+      "transition_count": 4,
+      "status": "closed_metadata",
+      "active_transfer": false,
+      "atlas_claim_level": "explicit_prime_power_automaton_metadata",
+      "engine_claim_level": "explicit_automaton_metadata",
+      "rowland_yassawi_level": 1,
+      "artifact_path": "outputs/_validation/prime_power_artifacts/zagier_c_mod4_artifact.json",
+      "build_report_path": "outputs/_validation/prime_power_artifacts/zagier_c_mod4_build.json",
+      "saved_replay_report_path": "outputs/_validation/prime_power_artifacts/zagier_c_mod4_replay.json",
+      "build_replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "saved_artifact_replay": {
+        "n_terms": 16,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "guardrails": [
+        "not all-prime",
+        "not all-alpha",
+        "not a theorem import",
+        "coexists with the independent C mod4 popcount theorem metadata"
+      ]
+    },
+    {
+      "edge_id": "source_cartier_zagier_f_mod4_alpha2",
+      "source": "zagier_f_a093388:rational_diagonal_R_CF",
+      "target": "zagier_f_a093388:source_cartier_mod4_alpha2_automaton",
+      "sequence_id": "zagier_f_a093388",
+      "model_id": "zagier_f_rational_diagonal_R_CF",
+      "p": 2,
+      "alpha": 2,
+      "modulus": 4,
+      "state_count": 5,
+      "transition_count": 10,
+      "status": "closed_metadata",
+      "active_transfer": false,
+      "atlas_claim_level": "explicit_prime_power_automaton_metadata",
+      "engine_claim_level": "explicit_automaton_metadata",
+      "rowland_yassawi_level": 1,
+      "artifact_path": "outputs/_validation/prime_power_artifacts/zagier_f_mod4_artifact.json",
+      "build_report_path": "outputs/_validation/prime_power_artifacts/zagier_f_mod4_build.json",
+      "saved_replay_report_path": "outputs/_validation/prime_power_artifacts/zagier_f_mod4_replay.json",
+      "build_replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "saved_artifact_replay": {
+        "n_terms": 16,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "guardrails": [
+        "not all-prime",
+        "not all-alpha",
+        "not a theorem import",
+        "coexists with the independent F mod4 Thue-Morse theorem metadata"
+      ]
+    },
+    {
+      "edge_id": "source_cartier_cooper_s7_mod9_alpha2",
+      "source": "cooper_s7:oeis_A183204_diagonal",
+      "target": "cooper_s7:source_cartier_mod9_alpha2_automaton",
+      "sequence_id": "cooper_s7",
+      "model_id": "cooper_s7_oeis_A183204_diagonal",
+      "p": 3,
+      "alpha": 2,
+      "modulus": 9,
+      "state_count": 9,
+      "transition_count": 27,
+      "status": "closed_metadata",
+      "active_transfer": false,
+      "atlas_claim_level": "explicit_prime_power_automaton_metadata",
+      "engine_claim_level": "explicit_automaton_metadata",
+      "rowland_yassawi_level": 1,
+      "artifact_path": "outputs/_validation/prime_power_artifacts/cooper_s7_mod9_artifact.json",
+      "build_report_path": "outputs/_validation/prime_power_artifacts/cooper_s7_mod9_build.json",
+      "saved_replay_report_path": "outputs/_validation/prime_power_artifacts/cooper_s7_mod9_replay.json",
+      "build_replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "saved_artifact_replay": {
+        "n_terms": 16,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "guardrails": [
+        "not all-prime",
+        "not all-alpha",
+        "not a theorem import",
+        "not a mod27 claim"
+      ]
+    },
+    {
+      "edge_id": "source_cartier_zagier_c_mod9_alpha2",
+      "source": "zagier_c_a002893:rational_diagonal_R_C",
+      "target": "zagier_c_a002893:source_cartier_mod9_alpha2_automaton",
+      "sequence_id": "zagier_c_a002893",
+      "model_id": "zagier_c_rational_diagonal_R_C",
+      "p": 3,
+      "alpha": 2,
+      "modulus": 9,
+      "state_count": 6,
+      "transition_count": 18,
+      "status": "closed_metadata",
+      "active_transfer": false,
+      "atlas_claim_level": "explicit_prime_power_automaton_metadata",
+      "engine_claim_level": "explicit_automaton_metadata",
+      "rowland_yassawi_level": 1,
+      "artifact_path": "outputs/_validation/prime_power_artifacts/zagier_c_mod9_artifact.json",
+      "build_report_path": "outputs/_validation/prime_power_artifacts/zagier_c_mod9_build.json",
+      "saved_replay_report_path": "outputs/_validation/prime_power_artifacts/zagier_c_mod9_replay.json",
+      "build_replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "saved_artifact_replay": {
+        "n_terms": 16,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "guardrails": [
+        "not all-prime",
+        "not all-alpha",
+        "not a theorem import",
+        "coexists with the independent C mod9 Straub/digit-rule metadata"
+      ]
+    },
+    {
+      "edge_id": "source_cartier_zagier_f_mod9_alpha2",
+      "source": "zagier_f_a093388:rational_diagonal_R_CF",
+      "target": "zagier_f_a093388:source_cartier_mod9_alpha2_automaton",
+      "sequence_id": "zagier_f_a093388",
+      "model_id": "zagier_f_rational_diagonal_R_CF",
+      "p": 3,
+      "alpha": 2,
+      "modulus": 9,
+      "state_count": 4,
+      "transition_count": 12,
+      "status": "closed_metadata",
+      "active_transfer": false,
+      "atlas_claim_level": "explicit_prime_power_automaton_metadata",
+      "engine_claim_level": "explicit_automaton_metadata",
+      "rowland_yassawi_level": 1,
+      "artifact_path": "outputs/_validation/prime_power_artifacts/zagier_f_mod9_artifact.json",
+      "build_report_path": "outputs/_validation/prime_power_artifacts/zagier_f_mod9_build.json",
+      "saved_replay_report_path": "outputs/_validation/prime_power_artifacts/zagier_f_mod9_replay.json",
+      "build_replay": {
+        "n_terms": 64,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "saved_artifact_replay": {
+        "n_terms": 16,
+        "bad_count": 0,
+        "status": "pass"
+      },
+      "guardrails": [
+        "not all-prime",
+        "not all-alpha",
+        "not a theorem import",
+        "coexists with the independent F mod9 C/F-transform metadata"
+      ]
+    }
+  ],
+  "closed_metadata_meaning": "The fixed artifact is built, replayed, validator-backed, and source-Cartier traceable. It does not certify all-prime or all-alpha Rowland-Yassawi applicability.",
+  "next_action": "RY-26 closes the built-in p in {2,3}, alpha=2 fixture grid as internal metadata. The next step is an alpha=2 product-route decision or a Level 2a theorem-certificate trial, not a broad search."
+}

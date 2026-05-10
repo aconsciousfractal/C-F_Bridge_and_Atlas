@@ -1,0 +1,62 @@
+{
+  "bad_count": 0,
+  "bound": 30,
+  "checked_terms": 31,
+  "checks": {
+    "C_matches_Franel_route": {
+      "bad_count": 0,
+      "first_bad": []
+    },
+    "F_matches_Franel_route": {
+      "bad_count": 0,
+      "first_bad": []
+    },
+    "T_C_equals_F_recurrence": {
+      "bad_count": 0,
+      "first_bad": []
+    },
+    "T_is_involutive_on_C": {
+      "bad_count": 0,
+      "first_bad": []
+    }
+  },
+  "sample_coefficients": {
+    "C": [
+      1,
+      3,
+      15,
+      93,
+      639,
+      4653,
+      35169,
+      272835,
+      2157759,
+      17319837
+    ],
+    "F": [
+      1,
+      6,
+      42,
+      312,
+      2394,
+      18756,
+      149136,
+      1199232,
+      9729882,
+      79527084
+    ],
+    "Franel": [
+      1,
+      2,
+      10,
+      56,
+      346,
+      2252,
+      15184,
+      104960,
+      739162,
+      5280932
+    ]
+  },
+  "status": "pass"
+}
