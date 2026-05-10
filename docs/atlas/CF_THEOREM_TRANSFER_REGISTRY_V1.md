@@ -14,13 +14,13 @@ blocked rows, and watch rows.
 Machine-readable companion:
 
 ```text
-projects/Apery/data/relation_atlas/cf_theorem_transfer_registry_v1.json
+data/relation_atlas/cf_theorem_transfer_registry_v1.json
 ```
 
 Phase 1 closeout source:
 
 ```text
-projects/Apery/docs/02_modular_cf/00_paper_note/PHASE1_CF_PAPER_NOTE_CLOSEOUT.md
+paper/cf_bridge_relation_atlas.tex
 ```
 
 ## Schema
@@ -79,7 +79,7 @@ watch_count: 0
 
 ```yaml
 statement_id: phase1_cf_mobius_binomial_bridge
-source_paper: "PAPP Phase 1 C/F paper note"
+source_paper: "C/F bridge paper note"
 source_label: "Theorem 1"
 source_object: "Zagier C generating function C(x)"
 target_object: "Zagier F generating function F(x)"
@@ -89,7 +89,7 @@ claim_level: closed_internal_result
 finite_replay: "coefficient and transform-network replays attached in Phase 1 note context"
 literature_status: "internal closed result with external Zagier sequence provenance"
 missing_opposite: "none for the bridge itself"
-proof_obligation: "none inside PAPP; publication still needs source citations for sequence provenance"
+proof_obligation: "none for this bridge; publication still needs source citations for sequence provenance"
 status: closed_internal_result
 next_action: "use as the transport primitive for all C/F theorem-transfer rows"
 ```
@@ -98,7 +98,7 @@ next_action: "use as the transport primitive for all C/F theorem-transfer rows"
 
 ```yaml
 statement_id: phase1_cf_coefficient_transform_involution
-source_paper: "PAPP Phase 1 C/F paper note"
+source_paper: "C/F bridge paper note"
 source_label: "Corollary 1"
 source_object: "C_n coefficients"
 target_object: "F_n coefficients and inverse transform"
@@ -117,7 +117,7 @@ next_action: "use to normalize finite coefficient checks and row-level transform
 
 ```yaml
 statement_id: phase1_cf_ode_pullback
-source_paper: "PAPP Phase 1 C/F paper note"
+source_paper: "C/F bridge paper note"
 source_label: "Corollary 2"
 source_object: "C differential equation"
 target_object: "F differential equation"
@@ -136,7 +136,7 @@ next_action: "use as the guardrail for ODE-style theorem imports"
 
 ```yaml
 statement_id: phase1_cf_sun_q_to_tc_transfer_contract
-source_paper: "PAPP Phase 1 C/F paper note"
+source_paper: "C/F bridge paper note"
 source_label: "Corollary 3"
 source_object: "Sun Q_n source-side congruence rows"
 target_object: "T(C)_n transformed-C rows"
@@ -155,7 +155,7 @@ next_action: "keep specific Sun rows as theorem-carrying instances; use this row
 
 ```yaml
 statement_id: phase1_cf_ct_newton_guardrail
-source_paper: "PAPP Phase 1 novelty and literature guardrail"
+source_paper: "C/F bridge paper guardrail"
 source_label: "CT/Newton guardrail"
 source_object: "sequence-level C/F bridge"
 target_object: "constant-term and Newton-polytope theorem transfers"
@@ -291,7 +291,7 @@ statement_id: liu_2025_binomial_transform_profile
 source_paper: "Liu 2025, On the binomial transforms of Apery-like sequences"
 source_label: "15 sporadic congruence profile"
 source_object: "u_n == u_1^n mod N_{u_1}"
-target_object: "PAPP 15-family catalog metadata"
+target_object: "15-family catalog metadata"
 rewrite: "C and F both pass Liu profile with N_u1=6"
 cf_role: "contextual congruence metadata around the C/F bridge"
 claim_level: theorem_import_by_reference
@@ -403,7 +403,7 @@ next_action: "Phase 3 should classify Dwork opposite-side candidates and blocked
 
 ```yaml
 statement_id: dwork_catalog_f_p_blocked
-source_paper: "Mellit-Vlasenko 2016 / PAPP row audit"
+source_paper: "Mellit-Vlasenko 2016 / row audit"
 source_label: "F catalog P_F row"
 source_object: "zagier_f_a093388:catalog_P_F"
 target_object: "Dwork CT theorem row"

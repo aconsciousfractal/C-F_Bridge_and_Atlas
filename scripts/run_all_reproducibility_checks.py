@@ -16,6 +16,7 @@ CHECKS = [
     "run_atlas_schema_check.py",
     "run_atlas_count_replay.py",
     "run_claim_class_audit.py",
+    "run_public_repo_audit.py",
 ]
 
 

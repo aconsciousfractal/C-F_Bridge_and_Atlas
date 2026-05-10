@@ -4,7 +4,7 @@
 **Status:** complete
 **Claim level:** triage metadata
 **Input scan:** `data/relation_atlas/cf_like_mobius_binomial_edge_scan_v1.json`
-**Script:** `scripts/cf_like_edge_watch_triage.py`
+**Public replay:** `scripts/run_atlas_count_replay.py` and `scripts/run_claim_class_audit.py`
 
 ## Summary
 
@@ -85,8 +85,8 @@ ct_diagonal_compatibility:
 literature_overlay:
   status: local_atlas_alias_found
   sources:
-    - docs/05_relation_atlas/06_exports_reconciliations/APERY_DISCOVERY_QUEUE_STATUS_2026-04-29.md
-    - docs/05_relation_atlas/00_status_readouts/RELATION_ATLAS_V1_2026-04-30.md
+    - data/relation_atlas/cf_like_edge_watch_triage_v1.json
+    - docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V1.md
     - docs/04_theorem_congruence/06_mod_p_galois/MOD_P_GALOIS_SIGNATURES_2026-04-29.md
 decision:
   status: closed_known_metadata
@@ -133,7 +133,7 @@ literature_overlay:
   sources:
     - docs/03_franel_sun_liu/01_franel_cf_transforms/MOBIUS_BINOMIAL_TRANSFORM_SEARCH_2026-04-30.md
     - docs/03_franel_sun_liu/01_franel_cf_transforms/FRANEL_LITERATURE_TRACE_2026-04-29.md
-    - docs/05_relation_atlas/04_edge_scan/CF_LIKE_MOBIUS_BINOMIAL_EDGE_SCAN_REPORT.md
+    - data/relation_atlas/cf_like_mobius_binomial_edge_scan_v1.json
 decision:
   status: closed_known_metadata
   claim_level: closed_known_metadata

@@ -1,61 +1,61 @@
 {
-  "artifact": "cf_theorem_atlas_v2_package_manifest",
-  "claim_level": "package_manifest",
-  "date": "2026-05-06",
-  "guardrails": [
-    "package manifest only, not a proof artifact",
-    "no new theorem-transfer edge introduced by Phase 8",
-    "RY fixed-modulus theorem certificates are Level 2a only",
-    "no all-good-primes/all-alpha Rowland-Yassawi Level 2b claim",
-    "V1 scan artifacts remain immutable provenance",
-    "V2 supplement artifacts keep their own claim levels"
-  ],
-  "phase": "Phase 8 - Atlas V2 Package",
-  "status": "complete",
-  "summary": {
-    "active_or_blocked_open_problem_count": 6,
-    "base_registry_statement_count": 20,
-    "closed_or_reconciled_open_problem_count": 4,
-    "phase7_closed_known_metadata_rows": 8,
-    "phase7_input_watch_rows": 8,
-    "phase7_new_proof_obligations": 0,
-    "phase7_new_theorem_edges": 0,
-    "phase7_still_watch_rows": 0,
-    "v2_supplement_count": 11,
-    "ry_level2a_fixed_modulus_certificate_count": 6,
-    "ry_level2b_status": "open"
-  },
-  "trigger": {
-    "reason": "Phase 7 changed 8 watch rows to closed_known_metadata; RY-30 added fixed-modulus Level 2a theorem certificates",
-    "triggered": true
-  },
-  "v2_core_artifacts": {
-    "manifest": "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_PACKAGE_MANIFEST.md",
-    "master_status": "docs/05_relation_atlas/00_status_readouts/CF_THEOREM_ATLAS_MASTER_STATUS.md",
-    "open_problem_atlas_v2": "docs/05_relation_atlas/02_open_problems/CF_OPEN_PROBLEM_ATLAS_V2.md",
-    "readout_v2": "docs/05_relation_atlas/00_status_readouts/CF_THEOREM_ATLAS_V2_READOUT.md",
-    "registry_base_v1": "docs/05_relation_atlas/01_registry/CF_THEOREM_TRANSFER_REGISTRY_V1.md",
-    "registry_v2_index": "docs/05_relation_atlas/01_registry/CF_THEOREM_TRANSFER_REGISTRY_V2.md"
-  },
-  "v2_data_artifacts": {
-    "edge_scan_v1": "data/relation_atlas/cf_like_mobius_binomial_edge_scan_v1.json",
-    "edge_watch_triage_v1": "data/relation_atlas/cf_like_edge_watch_triage_v1.json",
-    "package_manifest": "data/relation_atlas/cf_theorem_atlas_v2_package_manifest.json",
-    "source_cartier_prime_power_metadata": "data/relation_atlas/source_cartier_prime_power_metadata_v1.json",
-    "rowland_yassawi_fixed_modulus_theorem_certificates": "data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json",
-    "registry_v1": "data/relation_atlas/cf_theorem_transfer_registry_v1.json"
-  },
-  "v2_supplements": [
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_DWORK_CF_COMPLEMENT_MODEL.md",
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_LIU_CONVENTION_REPAIRED_METADATA.md",
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_COOPER_S7_AUTOMATON_METADATA.md",
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_FRANEL_AUTOMATON_METADATA.md",
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_CF_DIAGONAL_CONTRACT_METADATA.md",
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_CF_AUTOMATON_METADATA.md",
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_CF_PRIME_POWER_AUTOMATON_METADATA.md",
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_SOURCE_CARTIER_PRIME_POWER_METADATA.md",
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_RY_FIXED_MODULUS_THEOREM_CERTIFICATES.md",
-    "docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_GESSEL_LUCAS_DERIVATIVE_METADATA_2026-04-30.md",
-    "docs/05_relation_atlas/04_edge_scan/CF_LIKE_EDGE_WATCH_TRIAGE_V1.md"
-  ]
+    "artifact":  "cf_theorem_atlas_v2_package_manifest",
+    "claim_level":  "package_manifest",
+    "date":  "2026-05-06",
+    "guardrails":  [
+                       "package manifest only, not a proof artifact",
+                       "no new theorem-transfer edge introduced by Phase 8",
+                       "RY fixed-modulus theorem certificates are Level 2a only",
+                       "no all-good-primes/all-alpha Rowland-Yassawi Level 2b claim",
+                       "V1 scan artifacts remain immutable provenance",
+                       "V2 supplement artifacts keep their own claim levels"
+                   ],
+    "phase":  "Phase 8 - Atlas V2 Package",
+    "status":  "complete",
+    "summary":  {
+                    "active_or_blocked_open_problem_count":  6,
+                    "base_registry_statement_count":  20,
+                    "closed_or_reconciled_open_problem_count":  4,
+                    "phase7_closed_known_metadata_rows":  8,
+                    "phase7_input_watch_rows":  8,
+                    "phase7_new_proof_obligations":  0,
+                    "phase7_new_theorem_edges":  0,
+                    "phase7_still_watch_rows":  0,
+                    "v2_supplement_count":  11,
+                    "ry_level2a_fixed_modulus_certificate_count":  6,
+                    "ry_level2b_status":  "open"
+                },
+    "trigger":  {
+                    "reason":  "Phase 7 changed 8 watch rows to closed_known_metadata; RY-30 added fixed-modulus Level 2a theorem certificates",
+                    "triggered":  true
+                },
+    "v2_core_artifacts":  {
+                              "manifest":  "docs/atlas/RELATION_ATLAS_V2_PACKAGE_MANIFEST.md",
+                              "master_status":  "docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md",
+                              "open_problem_atlas_v2":  "docs/atlas/CF_OPEN_PROBLEM_ATLAS_V2.md",
+                              "readout_v2":  "docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md",
+                              "registry_base_v1":  "docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V1.md",
+                              "registry_v2_index":  "docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V2.md"
+                          },
+    "v2_data_artifacts":  {
+                              "edge_scan_v1":  "data/relation_atlas/cf_like_mobius_binomial_edge_scan_v1.json",
+                              "edge_watch_triage_v1":  "data/relation_atlas/cf_like_edge_watch_triage_v1.json",
+                              "package_manifest":  "data/relation_atlas/cf_theorem_atlas_v2_package_manifest.json",
+                              "source_cartier_prime_power_metadata":  "data/relation_atlas/source_cartier_prime_power_metadata_v1.json",
+                              "rowland_yassawi_fixed_modulus_theorem_certificates":  "data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json",
+                              "registry_v1":  "data/relation_atlas/cf_theorem_transfer_registry_v1.json"
+                          },
+    "v2_supplements":  [
+                           "docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md",
+                           "docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V2.md",
+                           "docs/atlas/CF_OPEN_PROBLEM_ATLAS_V2.md",
+                           "docs/atlas/CF_LIKE_EDGE_WATCH_TRIAGE_V1.md",
+                           "docs/atlas/SUN_3_5_SEPARATE_PAPER_STATUS_UPDATE.md",
+                           "docs/atlas/EXECUTABLE_REPLAY_SCOPE.md",
+                           "data/relation_atlas/cf_theorem_transfer_registry_v1.json",
+                           "data/relation_atlas/cf_like_edge_watch_triage_v1.json",
+                           "data/relation_atlas/cf_opposite_side_candidates.json",
+                           "data/relation_atlas/source_cartier_prime_power_metadata_v1.json",
+                           "data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json"
+                       ]
 }

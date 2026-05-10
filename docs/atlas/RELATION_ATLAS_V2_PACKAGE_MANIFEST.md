@@ -1,38 +1,27 @@
-# Relation Atlas V2 Package Manifest
+# Relation Atlas V2 Public Package Manifest
 
 **Date:** 2026-05-06
-**Roadmap:** `ROADMAP_V4.md`, Phase 8 + RY-31 sync
-**Status:** complete with RY fixed-modulus theorem-certificate overlay
-**Claim level:** package manifest
+**Public package update:** 2026-05-10
+**Roadmap lineage:** Phase 8 + RY-31 sync
+**Status:** curated public companion package with RY fixed-modulus theorem-certificate overlay
+**Claim level:** package manifest, not a proof artifact
 
-## Core V2 Package
+This file is the public-package manifest for the companion repository.  It keeps
+the V2 atlas counts and claim classes from the development atlas, but all paths
+below are paths that exist in this standalone repository.
+
+## Core Public Package
 
 | role | artifact |
 | --- | --- |
-| Registry base | `docs/05_relation_atlas/01_registry/CF_THEOREM_TRANSFER_REGISTRY_V1.md` |
-| Registry V2 index | `docs/05_relation_atlas/01_registry/CF_THEOREM_TRANSFER_REGISTRY_V2.md` |
-| Open problem atlas V2 | `docs/05_relation_atlas/02_open_problems/CF_OPEN_PROBLEM_ATLAS_V2.md` |
-| V2 readout | `docs/05_relation_atlas/00_status_readouts/CF_THEOREM_ATLAS_V2_READOUT.md` |
-| Master status | `docs/05_relation_atlas/00_status_readouts/CF_THEOREM_ATLAS_MASTER_STATUS.md` |
+| Registry base | `docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V1.md` |
+| Registry V2 index | `docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V2.md` |
+| Open problem atlas V2 | `docs/atlas/CF_OPEN_PROBLEM_ATLAS_V2.md` |
+| V2 readout | `docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md` |
+| Sun 3.5 separate-paper status note | `docs/atlas/SUN_3_5_SEPARATE_PAPER_STATUS_UPDATE.md` |
 | Package manifest JSON | `data/relation_atlas/cf_theorem_atlas_v2_package_manifest.json` |
 
-## V2 Metadata Supplements
-
-| artifact | purpose |
-| --- | --- |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_DWORK_CF_COMPLEMENT_MODEL.md` | Dwork C/F complement metadata |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_LIU_CONVENTION_REPAIRED_METADATA.md` | Liu convention repair |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_COOPER_S7_AUTOMATON_METADATA.md` | Cooper s7 automata |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_FRANEL_AUTOMATON_METADATA.md` | Franel automata |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_CF_DIAGONAL_CONTRACT_METADATA.md` | C/F rational diagonal contract |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_CF_AUTOMATON_METADATA.md` | C/F mod 2/mod 3 automata |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_CF_PRIME_POWER_AUTOMATON_METADATA.md` | C/F mod 4/mod 9 automata |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_SOURCE_CARTIER_PRIME_POWER_METADATA.md` | source-Cartier alpha=2 fixed-modulus metadata |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_RY_FIXED_MODULUS_THEOREM_CERTIFICATES.md` | Rowland-Yassawi Level 2a fixed-modulus theorem certificates |
-| `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_GESSEL_LUCAS_DERIVATIVE_METADATA_2026-04-30.md` | Straub derivative metadata/proof obligation |
-| `docs/05_relation_atlas/04_edge_scan/CF_LIKE_EDGE_WATCH_TRIAGE_V1.md` | Phase 7 edge watch triage |
-
-## Data Artifacts
+## Public Metadata Artifacts
 
 | artifact | purpose |
 | --- | --- |
@@ -41,7 +30,23 @@
 | `data/relation_atlas/cf_like_edge_watch_triage_v1.json` | Phase 7 triage companion |
 | `data/relation_atlas/source_cartier_prime_power_metadata_v1.json` | source-Cartier alpha=2 metadata companion |
 | `data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json` | Rowland-Yassawi Level 2a fixed-modulus theorem-certificate companion |
+| `data/relation_atlas/cf_opposite_side_candidates.json` | opposite-side C/F candidate classifications |
 | `data/relation_atlas/cf_theorem_atlas_v2_package_manifest.json` | Phase 8 package manifest |
+
+## V2 Supplement Coverage
+
+The original V2 atlas contains 11 supplement classes.  In this public companion
+package, those classes are represented by the registry/readout documents and by
+the curated JSON artifacts above rather than by copying every development note as
+a separate Markdown file.
+
+| supplement class | public representation |
+| --- | --- |
+| Dwork C/F complement, Liu convention, Cooper and Franel automata, C/F diagonal and automata metadata | `docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md` and `docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V2.md` |
+| Source-Cartier alpha=2 fixed-modulus metadata | `data/relation_atlas/source_cartier_prime_power_metadata_v1.json` |
+| Rowland-Yassawi fixed-modulus theorem certificates | `data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json` |
+| Straub derivative transport proof-obligation metadata | `docs/atlas/CF_OPEN_PROBLEM_ATLAS_V2.md` |
+| Phase 7 edge-watch triage | `docs/atlas/CF_LIKE_EDGE_WATCH_TRIAGE_V1.md` and `data/relation_atlas/cf_like_edge_watch_triage_v1.json` |
 
 ## Phase 8 Trigger
 
@@ -59,7 +64,7 @@ not_triggered_by:
 
 - This manifest is a package index, not a proof.
 - V1 scan artifacts remain immutable provenance.
-- V2 supplement artifacts keep their own claim levels.
+- V2 supplement classes keep their own claim levels.
 - No new theorem-transfer edge is introduced by Phase 8.
 - The RY overlay is fixed-modulus Level 2a only; no all-good-primes/all-alpha
   Level 2b import is claimed.

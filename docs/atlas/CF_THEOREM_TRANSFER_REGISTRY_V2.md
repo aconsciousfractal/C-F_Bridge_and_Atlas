@@ -1,18 +1,20 @@
 # C/F Theorem-Transfer Registry V2
 
 **Date:** 2026-05-06
-**Roadmap:** `ROADMAP_V4.md`, Phase 8 + RY-31 sync
+**Public package update:** 2026-05-10
+**Roadmap lineage:** Phase 8 + RY-31 sync
 **Status:** V2 package/readout synchronization with RY fixed-modulus theorem-certificate overlay
 **Claim level:** guarded theorem-transfer registry index, not a proof artifact
 
 This V2 registry does not replace the V1 theorem-transfer registry row by row.
-It treats V1 as the stable base and records the V4 supplemental metadata
-closures that changed claim class, blocker status, or package status.
+It treats V1 as the stable base and records the supplemental metadata closures
+that changed claim class, blocker status, or package status.  All paths in this
+public edition point to artifacts included in this repository.
 
 Base registry:
 
 ```text
-docs/05_relation_atlas/01_registry/CF_THEOREM_TRANSFER_REGISTRY_V1.md
+docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V1.md
 data/relation_atlas/cf_theorem_transfer_registry_v1.json
 ```
 
@@ -31,21 +33,21 @@ ry_level2a_fixed_modulus_certificate_count: 6
 ry_level2b_all_good_primes_status: open
 ```
 
-## V2 Supplemental Artifacts
+## V2 Supplemental Coverage
 
-| supplement | artifact | claim level | status |
+| supplement class | public artifact | claim level | status |
 | --- | --- | --- | --- |
-| Dwork C/F complement model | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_DWORK_CF_COMPLEMENT_MODEL.md` | theorem import by reference metadata | metadata ready by reference |
-| Liu convention repair | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_LIU_CONVENTION_REPAIRED_METADATA.md` | convention-mapped theorem metadata | closed metadata |
-| Cooper s7 automata | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_COOPER_S7_AUTOMATON_METADATA.md` | explicit finite automaton metadata | closed metadata |
-| Franel automata | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_FRANEL_AUTOMATON_METADATA.md` | Lucas/binomial automaton metadata | closed metadata |
-| C/F rational diagonal contracts | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_CF_DIAGONAL_CONTRACT_METADATA.md` | rational diagonal contract metadata | closed metadata |
-| C/F mod 2 and mod 3 automata | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_CF_AUTOMATON_METADATA.md` | explicit automaton metadata | closed metadata |
-| C/F mod 4 and mod 9 prime-power automata | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_CF_PRIME_POWER_AUTOMATON_METADATA.md` | explicit prime-power automaton metadata | closed metadata |
-| Source-Cartier alpha=2 artifacts | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_SOURCE_CARTIER_PRIME_POWER_METADATA.md` | explicit prime-power automaton metadata | closed metadata, internal only |
-| Rowland-Yassawi fixed-modulus theorem certificates | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_RY_FIXED_MODULUS_THEOREM_CERTIFICATES.md` | theorem import by reference at fixed modulus | closed Level 2a metadata |
-| Straub derivative transport artifact | `docs/05_relation_atlas/05_v2_metadata/RELATION_ATLAS_V2_GESSEL_LUCAS_DERIVATIVE_METADATA_2026-04-30.md` | proof-obligation metadata | blocked by `HYP-LOW-CARRY-ID` |
-| Phase 7 edge watch triage | `docs/05_relation_atlas/04_edge_scan/CF_LIKE_EDGE_WATCH_TRIAGE_V1.md` | triage metadata | closed known metadata |
+| Dwork C/F complement model | `docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md` | theorem import by reference metadata | metadata ready by reference |
+| Liu convention repair | `docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md` | convention-mapped theorem metadata | closed metadata |
+| Cooper s7 automata | `docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md` | explicit finite automaton metadata | closed metadata |
+| Franel automata | `docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md` | Lucas/binomial automaton metadata | closed metadata |
+| C/F rational diagonal contracts | `docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md` | rational diagonal contract metadata | closed metadata |
+| C/F mod 2 and mod 3 automata | `docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md` | explicit automaton metadata | closed metadata |
+| C/F mod 4 and mod 9 prime-power automata | `docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md` | explicit prime-power automaton metadata | closed metadata |
+| Source-Cartier alpha=2 artifacts | `data/relation_atlas/source_cartier_prime_power_metadata_v1.json` | explicit prime-power automaton metadata | closed metadata, public companion data |
+| Rowland-Yassawi fixed-modulus theorem certificates | `data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json` | theorem import by reference at fixed modulus | closed Level 2a metadata |
+| Straub derivative transport artifact | `docs/atlas/CF_OPEN_PROBLEM_ATLAS_V2.md` | proof-obligation metadata | blocked by `HYP-LOW-CARRY-ID` |
+| Phase 7 edge watch triage | `docs/atlas/CF_LIKE_EDGE_WATCH_TRIAGE_V1.md` | triage metadata | closed known metadata |
 
 ## Phase 7 Registry Impact
 
@@ -68,7 +70,8 @@ transfer.
 - V2 does not upgrade finite replay to theorem proof.
 - V2 declares only fixed-modulus Rowland-Yassawi Level 2a theorem certificates.
 - V2 does not declare all-good-primes/all-alpha Rowland-Yassawi Level 2b.
-- V2 treats public source-Cartier alpha=2 product exposure as deferred.
+- V2 treats source-Cartier alpha=2 product exposure as deferred beyond the
+  included fixed-modulus metadata.
 - V2 does not treat Dwork metadata as an active C/F theorem transfer.
 - V2 does not create new C/F-like edges from the Phase 7 watch rows.
 - V2 keeps `HYP-LOW-CARRY-ID` as the Straub derivative-transfer blocker.

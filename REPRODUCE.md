@@ -1,4 +1,4 @@
-﻿# Reproducing The Companion Checks
+# Reproducing The Companion Checks
 
 This repository is a standalone public companion for the combined C/F bridge
 and theorem-transfer atlas paper.
@@ -16,9 +16,10 @@ python scripts/run_cf_bridge_replay.py
 python scripts/run_atlas_schema_check.py
 python scripts/run_atlas_count_replay.py
 python scripts/run_claim_class_audit.py
+python scripts/run_public_repo_audit.py
 ```
 
-The scripts use only the Python standard library.  Successful runs write:
+The scripts use only the Python standard library. Successful runs write:
 
 ```text
 results/cf_bridge_replay.json
@@ -36,5 +37,6 @@ pdflatex -interaction=nonstopmode -halt-on-error cf_bridge_relation_atlas.tex
 pdflatex -interaction=nonstopmode -halt-on-error cf_bridge_relation_atlas.tex
 ```
 
-These checks are computational reproducibility aids.  They do not replace the
-mathematical arguments in the paper.
+These checks are computational reproducibility aids. They do not replace the
+mathematical arguments in the paper. The exact executable scope is recorded in
+`docs/atlas/EXECUTABLE_REPLAY_SCOPE.md`.

@@ -178,7 +178,7 @@
       "known_side": "Liu 15-family congruence metadata",
       "opposite_side": "row-level clean C/F congruence-transfer metadata",
       "transformation_used": "C and F share Liu maximum-modulus bucket N_u1=6",
-      "formula_candidate": "C and F rows both satisfy u_n == u_1^n mod 6 under PAPP catalog rows",
+      "formula_candidate": "C and F rows both satisfy u_n == u_1^n mod 6 under catalog rows",
       "finite_replay_status": "13/15 rows pass directly; eta and s18 are convention-mapped metadata",
       "literature_search_status": "theorem-backed metadata, not a C/F proof source",
       "classification": "metadata_ready_with_normalization_guard",
