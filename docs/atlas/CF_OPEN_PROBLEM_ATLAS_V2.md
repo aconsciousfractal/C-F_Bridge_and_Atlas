@@ -29,8 +29,8 @@ phase7_watch_rows_remaining: 0
 
 | problem | status | blocking issue | next action |
 | --- | --- | --- | --- |
-| `OP-CF-001` Sun 3.5 raw-C to RV-108 bridge | resolved separately after V2 freeze | Franel--Domb raw-C/RV bridge outside the C/F atlas | cite the separate Sun 3.5 paper; do not reclassify as a C/F consequence |
-| `OP-CF-002` A2b global BM-core glue | resolved separately after V2 freeze | Domb branch-multiplier identity outside the C/F atlas | cite the separate Sun 3.5 paper; retain V2 row as provenance |
+| `OP-CF-001` Sun 3.5 raw-C to RV-108 bridge | addressed in companion Sun 3.5 paper after V2 freeze | Franel--Domb raw-C/RV bridge outside the C/F atlas | cite the separate Sun 3.5 paper; do not reclassify as a C/F consequence |
+| `OP-CF-002` A2b global BM-core glue | addressed in companion Sun 3.5 paper after V2 freeze | Domb branch-multiplier identity outside the C/F atlas | cite the separate Sun 3.5 paper; retain V2 row as provenance |
 | `OP-CF-003` BTY weight-1 `chi(w_d)` rows | open | missing row-specific Atkin-Lehner multipliers | extract/evaluate `chi(w_d)` table |
 | `OP-CF-004b` Dwork complement vs Gorodetsky `Q_F` equivalence | open | no controlled mutation/birational equivalence yet | invariant audit before any search |
 | `OP-CF-008` Straub derivative transport | blocked proof obligation | `HYP-LOW-CARRY-ID` | only reopen under bounded WZ/adjoint proof plan |
@@ -69,8 +69,7 @@ Franel transform trace.
   Cooper and C/F rows.
 - The Rowland-Yassawi all-good-primes/all-alpha Level 2b layer remains open.
 - Source-Cartier alpha=2 public product exposure remains deferred.
-- The Sun 3.5 rows are retained as V2 provenance but are resolved separately by
-  the Franel-Domb Sun 3.5 paper, not by this C/F atlas.
+- The Sun 3.5 rows are retained as V2 provenance but are addressed in the\n  companion Franel-Domb Sun 3.5 paper, not by this C/F atlas.
 
 ## Next Action
 

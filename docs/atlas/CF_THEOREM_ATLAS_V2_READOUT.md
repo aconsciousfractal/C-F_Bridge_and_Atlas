@@ -81,6 +81,4 @@ ry_level2a_overlay: RELATION_ATLAS_V2_RY_FIXED_MODULUS_THEOREM_CERTIFICATES.md
   alpha=2 product route is activated.
 - V2 keeps Dwork and Liu layers as theorem metadata, not active C/F proof
   inputs.
-- V2 keeps Straub proof obligations separate from the closed C/F bridge.  The
-  Sun target is retained as V2 provenance but is resolved separately by the
-  Franel-Domb Sun 3.5 paper, not by the C/F bridge.
+- V2 keeps Straub proof obligations separate from the closed C/F bridge.  The\n  Sun target is retained as V2 provenance but is addressed in the companion\n  Franel-Domb Sun 3.5 paper, not by the C/F bridge.

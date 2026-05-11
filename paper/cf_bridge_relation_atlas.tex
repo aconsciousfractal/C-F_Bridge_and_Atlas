@@ -1,4 +1,4 @@
-﻿\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -55,7 +55,7 @@ negatives, watch metadata, and closed metadata.  In particular, we do not
 derive Sun's Conjecture 3.5 from the C/F bridge, do not promote finite
 replays or coefficient matches to theorems, and do not turn Dwork or
 Rowland--Yassawi metadata into unconditional theorem claims.  Sun's raw-C
-conjecture is handled by a separate Franel--Domb bridge proof
+conjecture is addressed in a separate Franel--Domb bridge manuscript
 \cite{babanskyy_2026_sun35_bridge}.  The result here is a claim-disciplined
 package for using a proved C/F bridge while keeping adjacent Ap{\'e}ry-like
 source layers separate.
@@ -104,8 +104,8 @@ consequences extend.  Sections~\ref{sec:sequences}--\ref{sec:normalization}
 give the C/F bridge and its certificate.  Sections
 \ref{sec:contracts}--\ref{sec:package} explain how the bridge is used to build
 a disciplined theorem-transfer atlas.  Appendices contain the theta-gauge
-certificate, the constant-term complement lemma, selected registry rows, open
-problems, and source-status notes.
+certificate, the constant-term complement guardrail, selected registry rows,
+open problems, and source-status notes.
 
 \section{Zagier C and F}
 \label{sec:sequences}
@@ -126,7 +126,7 @@ It satisfies
   (n+1)^2C_{n+1}
   =(10n^2+10n+3)C_n-9n^2C_{n-1}.
 \]
-The F sequence satisfies
+The F sequence is normalized by $F_0=1$, $F_1=6$, and satisfies
 \[
   (n+1)^2F_{n+1}
   =(17n^2+17n+6)F_n-72n^2F_{n-1}.
@@ -158,9 +158,17 @@ The F theta series used below is therefore
              =\Theta_F^{\rm source}(q).
 \]
 All $q$-expansions, cusp-order checks, and Sturm checks in this paper are in
-this common normalization.  In particular, the two identities used in the
-bridge proof are identities of meromorphic modular functions on $X_0(6)$ in
-this normalization.
+this common normalization.  The two F parameters are kept distinct:
+\[
+  t_F^{\rm source}=\frac{t_C}{1-9t_C},\qquad
+  t_F^{\rm cat}=-\frac{t_C}{1-9t_C}.
+\]
+Consequently
+\[
+  1+9t_F^{\rm source}=1-9t_F^{\rm cat}=\frac{1}{1-9t_C}.
+\]
+In particular, the two identities used in the bridge proof are identities of
+meromorphic modular functions on $X_0(6)$ in this normalization.
 
 \begin{theorem}[Zagier C/F M\"obius-binomial bridge]
 \label{thm:cf-bridge}
@@ -175,9 +183,9 @@ With the normalization of Section~\ref{subsec:theta-normalization}, the
 theta-gauge identities are
 \[
   \Theta_F/\Theta_C = 1-9t_C,\qquad
-  \Theta_C/\Theta_F = 1+9t_F.
+  \Theta_C/\Theta_F = 1+9t_F^{\rm source}=1-9t_F^{\rm cat}.
 \]
-With
+The second form is the one compatible with the catalog parameter.  With
 \[
   u=t_C(q),\qquad x=t_F^{\mathrm{cat}}(q)=\frac{-u}{1-9u},
 \]
@@ -205,9 +213,12 @@ Then $T(C)=F$ and $T(F)=C$.
 \end{corollary}
 
 \begin{proof}
-Taking coefficients in Theorem~\ref{thm:cf-bridge} gives $T(C)=F$.  The
-substitution $x\mapsto -x/(1-9x)$ is involutive with the same prefactor
-contract, giving $T(F)=C$.
+Taking coefficients in Theorem~\ref{thm:cf-bridge} gives $T(C)=F$.  Let
+$g(x)=-x/(1-9x)$.  Then $g(g(x))=x$ and
+\[
+  (1-9x)^{-1}(1-9g(x))^{-1}=1.
+\]
+Applying the same transform a second time therefore gives $T(F)=C$.
 \end{proof}
 
 \begin{corollary}[ODE pullback]
@@ -228,8 +239,8 @@ symbolic substitution gives
 \[
   L_C[C](u)=(9x-1)L_F[F](x).
 \]
-Thus the C equation pulls back to the F equation up to the nonzero rational
-prefactor $9x-1$.
+Thus the C equation pulls back to the F equation up to the rational factor
+$9x-1$, which is nonzero as a rational function.
 \end{corollary}
 
 \begin{remark}[Franel route]
@@ -269,7 +280,7 @@ For example, Sun's source rows include congruences for a sequence $Q_n$ with
 $Q_n=(-1)^nF_n$ in the relevant convention
 \cite{sun_2022_supercongruences}.  The bridge rewrites these as statements
 about $(-1)^nT(C)_n$.  Sun's raw-C conjectural congruence is not a consequence
-of this C/F bridge; it is resolved separately by a Franel--Domb bridge through
+of this C/F bridge; it is addressed separately by a Franel--Domb bridge through
 intermediate Franel, Domb, and Rodriguez--Villegas sums
 \cite{babanskyy_2026_sun35_bridge}.
 
@@ -395,7 +406,7 @@ are:
 \item Sun's F-side source rows transferred only to $T(C)$;
 \item Sun's raw-C target, retained in the historical V1/V2 atlas as a
   source-attached conjecture and proof obligation, but now marked in the
-  paper-facing readout as resolved separately by
+  paper-facing readout as addressed separately by
   \cite{babanskyy_2026_sun35_bridge};
 \item CT/Newton guardrails, which block mutation or Newton-equivalence claims
   without an explicit operation.
@@ -457,8 +468,8 @@ Straub derivative transfer & low-carry identity for the corrected connection & p
 Dwork model comparison & controlled equivalence between complement model and $Q_F$ & open\\
 Rowland--Yassawi source application & bad-prime/singularity filter and source-style Cartier states & inactive\\
 Edge-watch scan & no unresolved V1 watch rows remain & closed metadata\\
-Sun raw-C to RV-108 & Franel--Domb raw-C/RV bridge outside the C/F atlas & resolved separately\\
-A2b global glue & Domb branch-multiplier identity outside the C/F atlas & resolved separately\\
+Sun raw-C to RV-108 & Franel--Domb raw-C/RV bridge outside the C/F atlas & companion manuscript\\
+A2b global glue & Domb branch-multiplier identity outside the C/F atlas & companion manuscript\\
 \hline
 \end{tabular}
 \caption{Selected open-problem and blocker rows.}
@@ -473,6 +484,9 @@ form
 \[
   B(x)=(1-ax)^{-r}A\!\left(\frac{sx}{1-ax}\right).
 \]
+The scan used exact integer arithmetic on $12$ coefficients, the $16$ catalog
+families recorded in the companion data, $r\in\{1,2,3\}$,
+$-200\le a\le200$, and nonzero integers $s$ with $|s|\le20$.
 It recovered known or canonical relations and promoted no new theorem edge.
 The eight previous watch hits were subsequently resolved as known metadata:
 six are alias/canonical identity hits for the Ap{\'e}ry zeta(3) and
@@ -490,10 +504,14 @@ reader should be able to tell which rows are proved internally, which are
 imported by reference, which are finite replays, and which are blocked.
 The package is based on the V2 manifest, with the V1 registry retained as
 immutable provenance for the original C/F theorem-transfer rows.
-Appendix~\ref{app:sources} lists source identifiers and package fields; the
-main text avoids path dependencies.  The final public version will attach this
-curated, repo-relative data package as supplementary material or through a
-public repository before submission.
+Appendix~\ref{app:sources} lists source identifiers and package fields.  The
+curated companion package is available at
+\[
+  \text{\url{https://github.com/aconsciousfractal/C-F_Bridge_and_Atlas}},
+\]
+with the paper source in \texttt{paper/}, JSON artifacts in
+\texttt{data/relation\_atlas/}, replay scripts in \texttt{scripts/}, and the
+executable-scope note in \texttt{docs/atlas/EXECUTABLE\_REPLAY\_SCOPE.md}.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -517,7 +535,22 @@ used in Theorem~\ref{thm:cf-bridge}.
 By the normalization contracts in Section~\ref{subsec:theta-normalization},
 the functions below are meromorphic modular functions on $X_0(6)$ and have no
 interior poles.  Their only possible poles are cuspidal; the cusp-order tables
-bound those poles.
+bound those poles.  The certificate uses the following public data contract.
+\[
+\begin{array}{c|c|c|c|c}
+\text{object} & \text{expression} & \text{weight} & \text{character} & \text{audit source}\\
+\hline
+t_C & \text{Beukers }X_0(6)\text{ parameter} & 0 & 1 & \text{cusp orders and }q\text{-replay}\\
+t_F^{\rm source} & t_C/(1-9t_C) & 0 & 1 & \text{twist-source contract}\\
+t_F^{\rm cat} & -t_F^{\rm source} & 0 & 1 & \text{catalog twist contract}\\
+\Theta_F/\Theta_C & 1-9t_C & 0 & 1 & \text{forward valence certificate}\\
+\Theta_C/\Theta_F & 1-9t_F^{\rm cat} & 0 & 1 & \text{inverse valence certificate}
+\end{array}
+\]
+The checked $q$-expansion orders are recorded here as certificate data.  The
+public companion scripts reproduce the finite coefficient and atlas checks;
+larger q-expansion/Sturm certificate automation is outside the executable
+scope declared in the companion repository.
 
 \subsection{Forward valence certificate}
 
@@ -544,20 +577,20 @@ exceeds the possible pole order, the valence criterion forces $H=0$.
 
 \subsection{Inverse valence certificate}
 
-The inverse identity is
+The inverse identity, written in the catalog parameter, is
 \[
-  \Theta_C/\Theta_F = 1+9t_F.
+  \Theta_C/\Theta_F = 1-9t_F^{\rm cat}.
 \]
 Define
 \[
-  K(q)=\Theta_C(q)/\Theta_F(q)-\bigl(1+9t_F(q)\bigr).
+  K(q)=\Theta_C(q)/\Theta_F(q)-\bigl(1-9t_F^{\rm cat}(q)\bigr).
 \]
 The inverse cusp-order audit gives
 \[
 \begin{array}{c|rrrr}
 \text{object} & 0 & 1/2 & 1/3 & \infty\\
 \hline
-t_F & -1 & 0 & 0 & 1\\
+t_F^{\rm cat} & -1 & 0 & 0 & 1\\
 \Theta_C/\Theta_F & -1 & 1 & 0 & 0 .
 \end{array}
 \]
@@ -594,11 +627,13 @@ pole can occur in the preceding valence argument.  The deduction is explicit:
 \item At the other cusps $K$ is holomorphic and $M$ is holomorphic, so $MK$
   is holomorphic there as well.
 \end{itemize}
-Since $H$ and $K$ have weight $0$, both $MH$ and $MK$ are holomorphic
-weight-$2$ forms on $\Gamma_0(6)$, with the multiplier or character fixed by
-the same normalization.  Their checked $q$-expansions lie in the rational
-coefficient field used by the certificate, so the ordinary Sturm criterion
-applies to the cleared forms.
+Since $H$ and $K$ have weight $0$ and trivial character in the chosen
+normalization, both $MH$ and $MK$ are holomorphic weight-$2$ forms on
+$\Gamma_0(6)$ with the character of the eta quotient $M$.  The Sturm
+criterion used here is the standard one for the corresponding character space;
+their checked $q$-expansions lie in the rational coefficient field used by the
+certificate, so the ordinary coefficient-vanishing test applies to the cleared
+forms.
 Since
 \[
   [\mathrm{SL}_2(\mathbb Z):\Gamma_0(6)]=12,\qquad
@@ -609,18 +644,19 @@ this bound, hence both cleared forms vanish identically.
 
 \subsection{F twist transport dependency}
 
-The F-side parameter in source notation is twist-guarded.  The transport
-contract is
+The F-side parameter in source notation is twist-guarded.  If
+$F(x)=\sum_{n\ge0}F_nx^n$ denotes the catalog-normalized generating function,
+the transport contract is
 \[
-  F_{\mathrm{cat}}\bigl(-t_{\mathrm{source}}(q)\bigr)
-  =\Theta_{\mathrm{source}}(q),
+  F\bigl(-t_F^{\rm source}(q)\bigr)=\Theta_F^{\rm source}(q),
 \]
 or equivalently
 \[
-  t_F^{\mathrm{cat}}(q)=-t_F^{\mathrm{source}}(q).
+  t_F^{\rm cat}(q)=-t_F^{\rm source}(q).
 \]
 This is why Theorem~\ref{thm:cf-bridge} is stated in catalog-normalized F
-notation.
+notation and why the inverse theta-gauge identity is written as
+$\Theta_C/\Theta_F=1-9t_F^{\rm cat}$.
 
 \section{Binomial-complement constant-term lemma}
 \label{app:ct-complement}
@@ -657,10 +693,29 @@ Each registry row uses the following schema:
 \end{array}
 \]
 
-Selected rows include the C/F bridge, coefficient involution, ODE pullback,
-Sun F-side transfer to $T(C)$, the historical raw-C Sun proof-obligation row
-with a separate-paper resolution note, Dwork complement metadata, Liu
-convention metadata, and the edge-watch triage closeout.
+A representative public excerpt is:
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}p{0.18\linewidth}p{0.12\linewidth}p{0.12\linewidth}p{0.22\linewidth}p{0.22\linewidth}@{}}
+\hline
+\texttt{statement\_id} & source & target & rewrite/status & claim level\\
+\hline
+\texttt{cf\_bridge} & C & F & $F=\mathcal{T}(C)$ & closed internal result\\
+\texttt{cf\_involution} & C,F & F,C & $\mathcal{T}^2=1$ & closed internal result\\
+\texttt{cf\_ode\_pullback} & $L_C$ & $L_F$ & rational pullback & closed internal result\\
+\texttt{sun\_f\_to\_tc} & Sun F-side & $T(C)$ & signed transfer only & conditional transfer\\
+\texttt{sun\_raw\_c} & raw C & RV-108 & no C/F transfer & separate proof obligation\\
+\texttt{dwork\_ct} & $\Lambda_C$ & $9-\Lambda_C$ & CT complement & closed metadata\\
+\texttt{ry\_automata} & small moduli & automata & fixed-modulus data & closed metadata\\
+\hline
+\end{tabular}
+\end{center}
+The full machine-readable table is the JSON file
+\begin{center}
+\texttt{data/relation\_atlas/}\\
+\texttt{cf\_theorem\_transfer\_registry\_v1.json}.
+\end{center}
+The excerpt is included only to make the atlas semantics visible in the paper.
 
 \section{Open problems and blocking lemmas}
 \label{app:open-problems}
@@ -669,8 +724,8 @@ The atlas records open work by the mathematical object that is missing.  For
 the Sun branch, the C/F theorem transports F-side statements to $T(C)$, but it
 does not itself supply the raw-C/RV-108 bridge.  In the historical V1/V2 data
 package this appears as a deferred proof obligation.  After that atlas freeze,
-the missing raw-C/RV bridge and its A2b Domb component were supplied by the
-separate Franel--Domb bridge proof of Sun's Conjecture 3.5
+the missing raw-C/RV bridge and its A2b Domb component are recorded in the
+separate Franel--Domb bridge manuscript on Sun's Conjecture 3.5
 \cite{babanskyy_2026_sun35_bridge}.  We keep the registry row as provenance
 for the C/F atlas rather than reclassifying it as a C/F consequence.
 
@@ -701,8 +756,8 @@ rather than as an isolated coefficient coincidence.
 
 The remaining sources enter as theorem imports or metadata layers.  Sun
 supplies the source congruence layer and the original Conjecture 3.5 target
-\cite{sun_2022_supercongruences}; the latter is resolved by a separate
-Franel--Domb bridge proof rather than by the C/F bridge
+\cite{sun_2022_supercongruences}; the latter is addressed in a separate
+Franel--Domb bridge manuscript rather than by the C/F bridge
 \cite{babanskyy_2026_sun35_bridge}.  Liu supplies binomial-transform
 congruence metadata with convention guards \cite{liu_2025_binomial_transforms}.
 In the Liu audit, thirteen rows match the normalized catalog directly, while
