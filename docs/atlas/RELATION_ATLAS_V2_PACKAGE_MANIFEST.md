@@ -2,6 +2,7 @@
 
 **Date:** 2026-05-06
 **Public package update:** 2026-05-10
+**Paper-facing extension addendum:** 2026-06-19
 **Roadmap lineage:** Phase 8 + RY-31 sync
 **Status:** curated public companion package with RY fixed-modulus theorem-certificate overlay
 **Claim level:** package manifest, not a proof artifact
@@ -35,10 +36,13 @@ below are paths that exist in this standalone repository.
 
 ## V2 Supplement Coverage
 
-The original V2 atlas contains 11 supplement classes.  In this public companion
-package, those classes are represented by the registry/readout documents and by
-the curated JSON artifacts above rather than by copying every development note as
-a separate Markdown file.
+The original V2 atlas contains 11 frozen supplement classes.  In this public
+companion package, those classes are represented by the registry/readout
+documents and by the curated JSON artifacts above rather than by copying every
+development note as a separate Markdown file.  The 2026-06-19 paper-facing
+addendum adds five extension rows: Hankel, Liu, Franel, Dwork complement
+wording, and Atkin-Lehner W2 normalization.  These rows do not alter the frozen
+V2 base manifest count.
 
 | supplement class | public representation |
 | --- | --- |
@@ -47,6 +51,17 @@ a separate Markdown file.
 | Rowland-Yassawi fixed-modulus theorem certificates | `data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json` |
 | Straub derivative transport proof-obligation metadata | `docs/atlas/CF_OPEN_PROBLEM_ATLAS_V2.md` |
 | Phase 7 edge-watch triage | `docs/atlas/CF_LIKE_EDGE_WATCH_TRIAGE_V1.md` and `data/relation_atlas/cf_like_edge_watch_triage_v1.json` |
+
+## Public Count Reconciliation
+
+```yaml
+v2_base_supplement_count: 11
+extension_2026_06_19_count: 5
+total_public_registry_extension_rows: 16
+```
+
+The public package keeps the frozen V2 base count and records later
+paper-facing extensions separately.
 
 ## Phase 8 Trigger
 

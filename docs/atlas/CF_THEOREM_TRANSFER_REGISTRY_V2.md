@@ -25,6 +25,9 @@ base_registry_version: cf_theorem_transfer_registry.v1
 base_statement_count: 20
 base_watch_count: 0
 v2_supplement_count: 11
+v2_base_supplement_count: 11
+extension_2026_06_19_count: 5
+total_public_registry_extension_rows: 16
 new_theorem_transfer_edges_promoted_in_phase7: 0
 phase7_watch_rows_reclassified: 8
 phase7_reclassification: closed_known_metadata
@@ -68,7 +71,10 @@ transfer.
 ## 2026-06-19 Extension Addendum
 
 The following easy extensions are now paper-facing or replay-facing
-supplements.  They do not alter the frozen V1 registry count.
+supplements.  They do not alter the frozen V1 registry count or the frozen V2
+base supplement count of 11.  The 2026-06-19 addendum contributes five
+paper-facing extension rows, giving 16 public registry/readout rows when the
+frozen V2 base and the addendum are read together.
 
 | supplement class | public artifact | claim level | status |
 | --- | --- | --- | --- |

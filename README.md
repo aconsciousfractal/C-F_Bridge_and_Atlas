@@ -11,7 +11,8 @@ Author: Oleksiy Babanskyy
 
 This repository contains the paper source/PDF, selected relation-atlas JSON
 artifacts, human-readable atlas notes, and small reproducibility scripts. The
-scripts include finite C/F bridge coefficient replays and atlas audit/count
+scripts include finite C/F bridge coefficient and Hankel replays, the
+Atkin-Lehner W2 eta-multiplier certificate replay, and atlas audit/count
 checks. The package is intentionally curated: it is not a dump of the
 development workspace, and `docs/atlas/EXECUTABLE_REPLAY_SCOPE.md` states
 exactly what is and is not included as an executable certificate.

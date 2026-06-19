@@ -13,6 +13,7 @@ SCRIPTS = ROOT / "scripts"
 
 CHECKS = [
     "run_cf_bridge_replay.py",
+    "run_atkin_lehner_w2_eta_multiplier_certificate.py",
     "run_atlas_schema_check.py",
     "run_atlas_count_replay.py",
     "run_claim_class_audit.py",

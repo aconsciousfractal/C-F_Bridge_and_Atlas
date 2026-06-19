@@ -29,6 +29,9 @@ EXPECTED = {
     "manifest": {
         "base_registry_statement_count": 20,
         "v2_supplement_count": 11,
+        "v2_base_supplement_count": 11,
+        "extension_2026_06_19_count": 5,
+        "total_public_registry_extension_rows": 16,
         "phase7_input_watch_rows": 8,
         "phase7_closed_known_metadata_rows": 8,
         "phase7_still_watch_rows": 0,

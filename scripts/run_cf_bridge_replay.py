@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Replay the finite C/F bridge checks used by the companion package.
 
 The paper proves the bridge mathematically.  This script is only a finite

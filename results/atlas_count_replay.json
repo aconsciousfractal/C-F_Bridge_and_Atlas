@@ -19,6 +19,7 @@
       "active_or_blocked_open_problem_count": 6,
       "base_registry_statement_count": 20,
       "closed_or_reconciled_open_problem_count": 4,
+      "extension_2026_06_19_count": 5,
       "phase7_closed_known_metadata_rows": 8,
       "phase7_input_watch_rows": 8,
       "phase7_new_proof_obligations": 0,
@@ -26,6 +27,8 @@
       "phase7_still_watch_rows": 0,
       "ry_level2a_fixed_modulus_certificate_count": 6,
       "ry_level2b_status": "open",
+      "total_public_registry_extension_rows": 16,
+      "v2_base_supplement_count": 11,
       "v2_supplement_count": 11
     },
     "opposite_side": {

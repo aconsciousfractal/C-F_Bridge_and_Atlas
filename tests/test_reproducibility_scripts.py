@@ -20,6 +20,10 @@ def test_cf_bridge_replay() -> None:
     run_script("run_cf_bridge_replay.py")
 
 
+def test_atkin_lehner_w2_eta_multiplier_certificate() -> None:
+    run_script("run_atkin_lehner_w2_eta_multiplier_certificate.py")
+
+
 def test_count_replay() -> None:
     run_script("run_atlas_count_replay.py")
 

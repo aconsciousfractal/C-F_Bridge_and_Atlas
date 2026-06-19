@@ -1,0 +1,82 @@
+{
+  "factorizations": [
+    {
+      "binary_sqrt_factor": 2,
+      "delta": 1,
+      "eta_R": "-1/3",
+      "gamma": [
+        1,
+        -1,
+        3,
+        -2
+      ],
+      "target_delta": 2
+    },
+    {
+      "binary_sqrt_factor": 1,
+      "delta": 2,
+      "eta_R": "-1/6",
+      "gamma": [
+        2,
+        -1,
+        3,
+        -1
+      ],
+      "target_delta": 1
+    },
+    {
+      "binary_sqrt_factor": 2,
+      "delta": 3,
+      "eta_R": "-1/3",
+      "gamma": [
+        1,
+        -3,
+        1,
+        -2
+      ],
+      "target_delta": 6
+    },
+    {
+      "binary_sqrt_factor": 1,
+      "delta": 6,
+      "eta_R": "-1/6",
+      "gamma": [
+        2,
+        -3,
+        1,
+        -1
+      ],
+      "target_delta": 3
+    }
+  ],
+  "scope": "finite exact eta-multiplier arithmetic used in the paper appendix",
+  "statement": {
+    "Theta_C_slash_W2": "2^(-3/2) Theta_F = (2 sqrt(2))^(-1) Theta_F",
+    "Theta_F_slash_W2": "-2^(3/2) Theta_C = -2 sqrt(2) Theta_C"
+  },
+  "status": "pass",
+  "theta_checks": {
+    "Theta_C_slash_W2": {
+      "binary_constant_exponent": "-3/2",
+      "eta_unit_exponent_mod_2": "0",
+      "residual_tau_exponent": "0",
+      "target_eta_exponents": {
+        "1": 6,
+        "2": -3,
+        "3": -2,
+        "6": 1
+      }
+    },
+    "Theta_F_slash_W2": {
+      "binary_constant_exponent": "3/2",
+      "eta_unit_exponent_mod_2": "1",
+      "residual_tau_exponent": "0",
+      "target_eta_exponents": {
+        "1": -3,
+        "2": 6,
+        "3": 1,
+        "6": -2
+      }
+    }
+  }
+}

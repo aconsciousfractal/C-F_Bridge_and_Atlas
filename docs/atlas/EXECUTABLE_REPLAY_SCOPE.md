@@ -14,7 +14,8 @@ the paper.
 
 | command | purpose |
 | --- | --- |
-| `python scripts/run_cf_bridge_replay.py` | replays the finite C/F bridge coefficient identities over the public prime range |
+| `python scripts/run_cf_bridge_replay.py` | replays finite C/F bridge coefficient identities through `BOUND=30`, including ordinary Hankel determinant equality through order 6 |
+| `python scripts/run_atkin_lehner_w2_eta_multiplier_certificate.py` | reproduces the exact eta-multiplier constants used in the Atkin-Lehner W2 appendix audit |
 | `python scripts/run_atlas_schema_check.py` | validates required JSON keys for the curated atlas package |
 | `python scripts/run_atlas_count_replay.py` | replays the public atlas count summaries |
 | `python scripts/run_claim_class_audit.py` | checks allowed claim classes and known guardrails |
@@ -25,8 +26,11 @@ the paper.
 The paper contains mathematical proofs for the C/F bridge theorem and discusses
 atlas theorem-transfer metadata.  This companion does not currently include a
 full modular-form q-expansion/Sturm/valence proof certificate, nor a complete
-Rowland-Yassawi all-good-primes/all-alpha automaton archive.  Those items are
-outside the scope of this curated public package unless archived separately.
+Rowland-Yassawi all-good-primes/all-alpha automaton archive.  The W2
+eta-multiplier script covers only the finite exact multiplier arithmetic used
+in the paper appendix; it is not a full modular-form proof engine.  The larger
+q-expansion/Sturm/valence and all-primes automaton certificates remain outside
+the scope of this curated public package unless archived separately.
 
 The absence of those larger certificates is reflected in the atlas guardrails:
 finite replay and fixed-modulus metadata are not promoted to new theorem-transfer

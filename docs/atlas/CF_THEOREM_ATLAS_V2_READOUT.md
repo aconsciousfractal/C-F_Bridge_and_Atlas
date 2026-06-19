@@ -21,6 +21,9 @@ Level 2b layer remains open.
 ```yaml
 base_registry_statement_count: 20
 v2_supplement_count: 11
+v2_base_supplement_count: 11
+extension_2026_06_19_count: 5
+total_public_registry_extension_rows: 16
 phase7_input_watch_rows: 8
 phase7_closed_known_metadata_rows: 8
 phase7_still_watch_rows: 0
@@ -50,16 +53,16 @@ rowland_yassawi_level_2b_status: open
 
 ## 2026-06-19 Extension Notes
 
-| extension | status |
-| --- | --- |
-| C/F Hankel determinant invariance | closed as an internal corollary of the involutive binomial bridge; finite replay added through order 6 |
-| Liu normalization bridge | closed as a convention map: $v_m^{(C)}(9)=(-1)^mF_m$ and $v_m^{(F)}(9)=(-1)^mC_m$ |
-| Franel source-layer exposition | strengthened as provenance/context, not as automatic theorem transfer |
-| Dwork complement wording | sharpened to distinguish $\Lambda_{C,1}$, $9-\Lambda_{C,1}$, and the independent F-side model $Q_F$ |
-| Atkin-Lehner W2 normalization | closed as a parameter/theta audit: $t_C|W_2=1-8t_F^{\rm cat}$ and $W_2$ swaps the C/F theta forms up to explicit constants; the catalog bridge remains an affine normalization, not literal $W_2$ |
-| Rowland-Yassawi automata | remains fixed-modulus Level 2a; all-good-primes Level 2b remains open |
-| BTY / Atkin-Lehner $\chi(w_d)$ | remains open pending row-specific multiplier data |
-| periods, mod-p Galois, q-bridge | watch tracks only; no paper claim activated |
+| extension | status | guardrail |
+| --- | --- | --- |
+| C/F Hankel determinant invariance | closed internal result; finite replay through order 6 | ordinary Hankel determinants only |
+| Liu normalization bridge | closed convention map: $v_m^{(C)}(9)=(-1)^mF_m$ and $v_m^{(F)}(9)=(-1)^mC_m$ | no blanket Liu theorem import |
+| Franel source-layer exposition | source provenance/context | no automatic Franel theorem promotion |
+| Dwork complement wording | distinguishes $\Lambda_{C,1}$, $9-\Lambda_{C,1}$, and independent $Q_F$ | no mutation or Newton-equivalence claim |
+| Atkin-Lehner W2 normalization | closed parameter/theta audit: $t_C\vert W_2=1-8t_F^{\rm cat}$ and W2 swaps the C/F theta forms up to explicit constants | catalog bridge is affine-normalized, not literal W2 |
+| Rowland-Yassawi automata | fixed-modulus Level 2a only; all-good-primes Level 2b remains open | no full Rowland-Yassawi import |
+| BTY / Atkin-Lehner $\chi(w_d)$ | remains open pending row-specific multiplier data | W2 audit does not compute BTY multipliers |
+| periods, mod-p Galois, q-bridge | watch tracks only | no paper claim activated |
 
 ## Remaining Hard Blocks
 
@@ -89,6 +92,9 @@ ry_level2a_overlay: RELATION_ATLAS_V2_RY_FIXED_MODULUS_THEOREM_CERTIFICATES.md
 
 - No Phase 7 watch row becomes a new theorem-transfer edge.
 - V2 now records fixed-modulus Rowland-Yassawi Level 2a theorem certificates.
+- This does not conflict with the paper guardrail against a full Rowland-Yassawi
+  theorem import: the overlay is fixed-modulus/prime-power metadata, while the
+  excluded claim is all-good-primes/all-alpha.
 - V2 does not claim all-good-primes/all-alpha Rowland-Yassawi Level 2b import.
 - V2 keeps source-Cartier alpha=2 product exposure internal; no public
   alpha=2 product route is activated.
