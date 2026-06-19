@@ -76,6 +76,7 @@ supplements.  They do not alter the frozen V1 registry count.
 | Liu binomial-transform normalization | `paper/cf_bridge_relation_atlas.tex` | convention-mapped metadata | closed normalization map |
 | Franel source-layer clarification | `paper/cf_bridge_relation_atlas.tex` | source provenance metadata | closed explanatory layer |
 | Dwork complement split | `paper/cf_bridge_relation_atlas.tex` | guardrail metadata | `9 - Lambda_C1` complement witness closed; comparison to `Q_F` open |
+| Atkin-Lehner W2 parameter/theta audit | `paper/cf_bridge_relation_atlas.tex` | closed internal result plus guardrail | `W_2` gives affine parameter normalization and swaps theta forms; catalog bridge is not literally `W_2`; BTY `chi(w_d)` remains open |
 
 ## Guardrails
 

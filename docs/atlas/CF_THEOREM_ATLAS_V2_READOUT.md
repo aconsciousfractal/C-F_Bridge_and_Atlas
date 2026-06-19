@@ -56,6 +56,7 @@ rowland_yassawi_level_2b_status: open
 | Liu normalization bridge | closed as a convention map: $v_m^{(C)}(9)=(-1)^mF_m$ and $v_m^{(F)}(9)=(-1)^mC_m$ |
 | Franel source-layer exposition | strengthened as provenance/context, not as automatic theorem transfer |
 | Dwork complement wording | sharpened to distinguish $\Lambda_{C,1}$, $9-\Lambda_{C,1}$, and the independent F-side model $Q_F$ |
+| Atkin-Lehner W2 normalization | closed as a parameter/theta audit: $t_C|W_2=1-8t_F^{\rm cat}$ and $W_2$ swaps the C/F theta forms up to explicit constants; the catalog bridge remains an affine normalization, not literal $W_2$ |
 | Rowland-Yassawi automata | remains fixed-modulus Level 2a; all-good-primes Level 2b remains open |
 | BTY / Atkin-Lehner $\chi(w_d)$ | remains open pending row-specific multiplier data |
 | periods, mod-p Galois, q-bridge | watch tracks only; no paper claim activated |
@@ -93,4 +94,6 @@ ry_level2a_overlay: RELATION_ATLAS_V2_RY_FIXED_MODULUS_THEOREM_CERTIFICATES.md
   alpha=2 product route is activated.
 - V2 keeps Dwork and Liu layers as theorem metadata, not active C/F proof
   inputs.
-- V2 keeps Straub proof obligations separate from the closed C/F bridge.  The\n  Sun target is retained as V2 provenance but is addressed in the companion\n  Franel-Domb Sun 3.5 paper, not by the C/F bridge.
+- V2 keeps Straub proof obligations separate from the closed C/F bridge.  The
+  Sun target is retained as V2 provenance but is addressed in the companion
+  Franel-Domb Sun 3.5 paper, not by the C/F bridge.

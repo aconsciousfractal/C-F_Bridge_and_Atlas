@@ -106,8 +106,9 @@ consequences extend.  Sections~\ref{sec:sequences}--\ref{sec:normalization}
 give the C/F bridge and its certificate.  Sections
 \ref{sec:contracts}--\ref{sec:package} explain how the bridge is used to build
 a disciplined theorem-transfer atlas.  Appendices contain the theta-gauge
-certificate, the constant-term complement guardrail, selected registry rows,
-open problems, and source-status notes.
+certificate, the Atkin--Lehner normalization audit, the constant-term
+complement guardrail, selected registry rows, open problems, and source-status
+notes.
 
 \section{Zagier C and F}
 \label{sec:sequences}
@@ -202,7 +203,10 @@ Thus
 \]
 The theta-gauge identities are verified by forward and inverse valence
 certificates, with a cleared-denominator Sturm backup; see
-Appendix~\ref{app:certificate}.
+Appendix~\ref{app:certificate}.  The same normalization also has an
+Atkin--Lehner \(W_2\) parameter and theta audit recorded in
+Appendix~\ref{app:al-w2}; this audit is explanatory and is not used as a
+substitute for the M\"obius-binomial bridge proof.
 \end{proof}
 
 \begin{corollary}[Coefficient transform]
@@ -732,6 +736,114 @@ or equivalently
 This is why Theorem~\ref{thm:cf-bridge} is stated in catalog-normalized F
 notation and why the inverse theta-gauge identity is written as
 $\Theta_C/\Theta_F=1-9t_F^{\rm cat}$.
+
+\subsection{Atkin--Lehner W2 parameter and theta audit}
+\label{app:al-w2}
+
+The C/F normalization also admits a precise Atkin--Lehner description.  Put
+\[
+  h=t_F^{\rm source},\qquad t_C=\frac{h}{1+9h},
+  \qquad t_F^{\rm cat}=-h,
+\]
+and let
+\[
+  W_2=\begin{pmatrix}2&-1\\6&-2\end{pmatrix}.
+\]
+For weight-zero functions, \(f|W\) means precomposition with \(W\).  For a
+weight-one form we use the convention
+\[
+  (f|_1W)(\tau)=\det(W)^{1/2}(c\tau+d)^{-1}f(W\tau),
+\]
+with the positive real branch \(\det(W_2)^{1/2}=\sqrt{2}\).
+
+\begin{lemma}[Atkin--Lehner \(W_2\) audit]
+\label{lem:al-w2-audit}
+In the above normalization,
+\[
+  t_C|W_2=1+8t_F^{\rm source}=1-8t_F^{\rm cat},
+\]
+and the theta eta quotients satisfy
+\[
+  \Theta_C|_1W_2=(2\sqrt{2})^{-1}\Theta_F,
+  \qquad
+  \Theta_F|_1W_2=-2\sqrt{2}\,\Theta_C.
+\]
+\end{lemma}
+
+\begin{proof}
+The parameter identity follows by substituting the normalized action
+\[
+  W_2(h)=-\frac{h+1/8}{9(h+1/9)}
+\]
+into \(t_C=h/(1+9h)\).  This gives \(t_C|W_2=1+8h\).
+
+For the theta statement, write \(\eta_d(\tau)=\eta(d\tau)\).  The eta quotients
+are
+\[
+  \Theta_C=\frac{\eta_2^6\eta_3}{\eta_1^3\eta_6^2},
+  \qquad
+  \Theta_F=\frac{\eta_1^6\eta_6}{\eta_2^3\eta_3^2}.
+\]
+The four eta arguments \(dW_2\tau\), for \(d\in\{1,2,3,6\}\), factor
+projectively through \(\mathrm{SL}_2(\mathbb Z)\) matrices as follows:
+\[
+\begin{array}{c|c|c|c}
+d & \gamma_d & \text{factorization} & \text{target eta index}\\
+\hline
+1 & \begin{pmatrix}1&-1\\3&-2\end{pmatrix}
+  & \gamma_1\,\diag(2,1) & 2\\
+2 & \begin{pmatrix}2&-1\\3&-1\end{pmatrix}
+  & \gamma_2\,\diag(1,1) & 1\\
+3 & \begin{pmatrix}1&-3\\1&-2\end{pmatrix}
+  & \gamma_3\,\diag(6,1) & 6\\
+6 & \begin{pmatrix}2&-3\\1&-1\end{pmatrix}
+  & \gamma_6\,\diag(3,1) & 3 .
+\end{array}
+\]
+Using the standard Dedekind eta multiplier formula
+\[
+  \eta(\gamma\tau)=\exp(\pi i R(\gamma))(c\tau+d)^{1/2}\eta(\tau),
+  \qquad
+  R(\gamma)=\frac{a+d}{12c}-s(d,c)-\frac14,
+\]
+the exact exponents are
+\[
+\begin{array}{c|cccc}
+d&1&2&3&6\\
+\hline
+R(\gamma_d)&-1/3&-1/6&-1/3&-1/6 .
+\end{array}
+\]
+For \(\Theta_C\), with eta exponent vector \((-3,6,1,-2)\), the total
+root-of-unity exponent is
+\[
+  -3(-1/3)+6(-1/6)+1(-1/3)-2(-1/6)=0.
+\]
+For \(\Theta_F\), with exponent vector \((6,-3,-2,1)\), it is
+\[
+  6(-1/3)-3(-1/6)-2(-1/3)+1(-1/6)=-1.
+\]
+The remaining \(\tau\)-dependent factors cancel against the weight-one slash
+prefactor.  The residual powers of \(2\) are \(2^{-3/2}\) for \(\Theta_C\) and
+\(-2^{3/2}\) for \(\Theta_F\), giving the two displayed identities.
+\end{proof}
+
+This audit is a normalization statement, not a replacement for the bridge.
+Indeed, in the coordinate \(T=t_C\),
+\[
+  T|W_2=\frac{1-T}{1-9T},
+  \qquad
+  g(T)=-\frac{T}{1-9T},
+\]
+so the catalog C/F bridge map is not literally the Atkin--Lehner action.
+Rather,
+\[
+  g(T)=\frac{1-(T|W_2)}{8}.
+\]
+Thus the F catalog parameter is an affine normalization of the \(W_2\)-translate
+of the C parameter.  This observation also does not compute the row-specific
+BTY multipliers \(\chi(w_d)\), which remain outside the closed claims of this
+paper.
 
 \section{Binomial-complement constant-term lemma}
 \label{app:ct-complement}
