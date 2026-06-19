@@ -65,6 +65,18 @@ under the inert transform `a=0, s=1`. The two C/F-to-Franel watch rows are
 known inverse Franel transform metadata. None is promoted as a new theorem
 transfer.
 
+## 2026-06-19 Extension Addendum
+
+The following easy extensions are now paper-facing or replay-facing
+supplements.  They do not alter the frozen V1 registry count.
+
+| supplement class | public artifact | claim level | status |
+| --- | --- | --- | --- |
+| C/F Hankel determinant invariance | `paper/cf_bridge_relation_atlas.tex`; `scripts/run_cf_bridge_replay.py` | closed internal result | proved in paper; replayed through order 6 |
+| Liu binomial-transform normalization | `paper/cf_bridge_relation_atlas.tex` | convention-mapped metadata | closed normalization map |
+| Franel source-layer clarification | `paper/cf_bridge_relation_atlas.tex` | source provenance metadata | closed explanatory layer |
+| Dwork complement split | `paper/cf_bridge_relation_atlas.tex` | guardrail metadata | `9 - Lambda_C1` complement witness closed; comparison to `Q_F` open |
+
 ## Guardrails
 
 - V2 does not upgrade finite replay to theorem proof.

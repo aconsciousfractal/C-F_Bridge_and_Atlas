@@ -11,6 +11,10 @@
       "bad_count": 0,
       "first_bad": []
     },
+    "Hankel_C_equals_Hankel_F_through_order_6": {
+      "bad_count": 0,
+      "first_bad": []
+    },
     "T_C_equals_F_recurrence": {
       "bad_count": 0,
       "first_bad": []
@@ -56,6 +60,24 @@
       104960,
       739162,
       5280932
+    ]
+  },
+  "sample_hankel_determinants": {
+    "C": [
+      1,
+      6,
+      180,
+      28296,
+      23762160,
+      103179627360
+    ],
+    "F": [
+      1,
+      6,
+      180,
+      28296,
+      23762160,
+      103179627360
     ]
   },
   "status": "pass"

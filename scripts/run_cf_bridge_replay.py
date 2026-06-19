@@ -51,6 +51,43 @@ def f_from_franel(franel_values: list[int], m: int) -> int:
     return sum(comb(m, n) * (-1) ** n * 8 ** (m - n) * franel_values[n] for n in range(m + 1))
 
 
+def det_int(matrix: list[list[int]]) -> int:
+    """Return the exact integer determinant using the Bareiss algorithm."""
+    if not matrix:
+        return 1
+
+    a = [row[:] for row in matrix]
+    n = len(a)
+    sign = 1
+    previous = 1
+
+    for k in range(n - 1):
+        pivot = next((i for i in range(k, n) if a[i][k] != 0), None)
+        if pivot is None:
+            return 0
+        if pivot != k:
+            a[k], a[pivot] = a[pivot], a[k]
+            sign *= -1
+
+        pivot_value = a[k][k]
+        for i in range(k + 1, n):
+            for j in range(k + 1, n):
+                a[i][j] = (a[i][j] * pivot_value - a[i][k] * a[k][j]) // previous
+        previous = pivot_value
+
+        for i in range(k + 1, n):
+            a[i][k] = 0
+
+    return sign * a[n - 1][n - 1]
+
+
+def hankel_determinants(values: list[int], max_size: int) -> list[int]:
+    return [
+        det_int([[values[i + j] for j in range(size)] for i in range(size)])
+        for size in range(1, max_size + 1)
+    ]
+
+
 def first_bad(left: list[int], right: list[int]) -> list[dict[str, int]]:
     return [
         {"n": n, "left": a, "right": b, "difference": a - b}
@@ -69,11 +106,15 @@ def main() -> int:
     c_franel = [c_from_franel(r_values, m) for m in range(BOUND + 1)]
     f_franel = [f_from_franel(r_values, m) for m in range(BOUND + 1)]
 
+    hankel_c = hankel_determinants(c_values, 6)
+    hankel_f = hankel_determinants(f_recurrence, 6)
+
     checks = {
         "T_C_equals_F_recurrence": first_bad(t_c, f_recurrence),
         "T_is_involutive_on_C": first_bad(t_t_c, c_values),
         "C_matches_Franel_route": first_bad(c_values, c_franel),
         "F_matches_Franel_route": first_bad(f_recurrence, f_franel),
+        "Hankel_C_equals_Hankel_F_through_order_6": first_bad(hankel_c, hankel_f),
     }
     bad_count = sum(len(items) for items in checks.values())
 
@@ -87,6 +128,10 @@ def main() -> int:
             "C": c_values[:10],
             "F": f_recurrence[:10],
             "Franel": r_values[:10],
+        },
+        "sample_hankel_determinants": {
+            "C": hankel_c,
+            "F": hankel_f,
         },
     }
 

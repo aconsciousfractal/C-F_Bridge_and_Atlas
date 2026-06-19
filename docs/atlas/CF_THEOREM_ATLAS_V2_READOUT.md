@@ -48,6 +48,18 @@ rowland_yassawi_level_2b_status: open
 | Rowland-Yassawi fixed-modulus theorem certificates | closed Level 2a theorem-import-by-reference metadata |
 | C/F-like edge watch triage | closed known metadata |
 
+## 2026-06-19 Extension Notes
+
+| extension | status |
+| --- | --- |
+| C/F Hankel determinant invariance | closed as an internal corollary of the involutive binomial bridge; finite replay added through order 6 |
+| Liu normalization bridge | closed as a convention map: $v_m^{(C)}(9)=(-1)^mF_m$ and $v_m^{(F)}(9)=(-1)^mC_m$ |
+| Franel source-layer exposition | strengthened as provenance/context, not as automatic theorem transfer |
+| Dwork complement wording | sharpened to distinguish $\Lambda_{C,1}$, $9-\Lambda_{C,1}$, and the independent F-side model $Q_F$ |
+| Rowland-Yassawi automata | remains fixed-modulus Level 2a; all-good-primes Level 2b remains open |
+| BTY / Atkin-Lehner $\chi(w_d)$ | remains open pending row-specific multiplier data |
+| periods, mod-p Galois, q-bridge | watch tracks only; no paper claim activated |
+
 ## Remaining Hard Blocks
 
 ```yaml
