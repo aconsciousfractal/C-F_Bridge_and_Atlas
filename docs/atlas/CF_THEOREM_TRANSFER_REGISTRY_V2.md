@@ -26,8 +26,8 @@ base_statement_count: 20
 base_watch_count: 0
 v2_supplement_count: 11
 v2_base_supplement_count: 11
-extension_2026_06_19_count: 5
-total_public_registry_extension_rows: 16
+extension_2026_06_20_count: 6
+total_public_registry_extension_rows: 17
 new_theorem_transfer_edges_promoted_in_phase7: 0
 phase7_watch_rows_reclassified: 8
 phase7_reclassification: closed_known_metadata
@@ -68,12 +68,12 @@ under the inert transform `a=0, s=1`. The two C/F-to-Franel watch rows are
 known inverse Franel transform metadata. None is promoted as a new theorem
 transfer.
 
-## 2026-06-19 Extension Addendum
+## 2026-06-20 Extension Addendum
 
 The following easy extensions are now paper-facing or replay-facing
 supplements.  They do not alter the frozen V1 registry count or the frozen V2
-base supplement count of 11.  The 2026-06-19 addendum contributes five
-paper-facing extension rows, giving 16 public registry/readout rows when the
+base supplement count of 11.  The 2026-06-20 addendum contributes six
+paper-facing extension rows, giving 17 public registry/readout rows when the
 frozen V2 base and the addendum are read together.
 
 | supplement class | public artifact | claim level | status |
@@ -83,6 +83,7 @@ frozen V2 base and the addendum are read together.
 | Franel source-layer clarification | `paper/cf_bridge_relation_atlas.tex` | source provenance metadata | closed explanatory layer |
 | Dwork complement split | `paper/cf_bridge_relation_atlas.tex` | guardrail metadata | `9 - Lambda_C1` complement witness closed; comparison to `Q_F` open |
 | Atkin-Lehner W2 parameter/theta audit | `paper/cf_bridge_relation_atlas.tex` | closed internal result plus guardrail | `W_2` gives affine parameter normalization and swaps theta forms; catalog bridge is not literally `W_2`; BTY `chi(w_d)` remains open |
+| Chan-Cooper five-companion Lucas lane | `paper/cf_bridge_relation_atlas.tex` | closed internal result plus guardrail | direct binomial Lucas/Kummer proof for `V6A,V6B,V6C,V8,V9` companion rows; adjacent source layer, not C/F transfer or BTY import |
 
 ## Guardrails
 
@@ -94,6 +95,7 @@ frozen V2 base and the addendum are read together.
 - V2 does not treat Dwork metadata as an active C/F theorem transfer.
 - V2 does not create new C/F-like edges from the Phase 7 watch rows.
 - V2 keeps `HYP-LOW-CARRY-ID` as the Straub derivative-transfer blocker.
+- V2 treats the Chan-Cooper five-companion Lucas lane as an adjacent direct proof, not as a C/F theorem transfer and not as a BTY import.
 
 ## Next Action
 

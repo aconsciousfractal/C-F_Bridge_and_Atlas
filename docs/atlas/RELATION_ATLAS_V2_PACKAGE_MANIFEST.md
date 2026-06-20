@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-06
 **Public package update:** 2026-05-10
-**Paper-facing extension addendum:** 2026-06-19
+**Paper-facing extension addendum:** 2026-06-20
 **Roadmap lineage:** Phase 8 + RY-31 sync
 **Status:** curated public companion package with RY fixed-modulus theorem-certificate overlay
 **Claim level:** package manifest, not a proof artifact
@@ -39,10 +39,10 @@ below are paths that exist in this standalone repository.
 The original V2 atlas contains 11 frozen supplement classes.  In this public
 companion package, those classes are represented by the registry/readout
 documents and by the curated JSON artifacts above rather than by copying every
-development note as a separate Markdown file.  The 2026-06-19 paper-facing
-addendum adds five extension rows: Hankel, Liu, Franel, Dwork complement
-wording, and Atkin-Lehner W2 normalization.  These rows do not alter the frozen
-V2 base manifest count.
+development note as a separate Markdown file.  The 2026-06-20 paper-facing
+addendum adds six extension rows: Hankel, Liu, Franel, Dwork complement
+wording, Atkin-Lehner W2 normalization, and the Chan-Cooper five-companion
+Lucas lane.  These rows do not alter the frozen V2 base manifest count.
 
 | supplement class | public representation |
 | --- | --- |
@@ -56,8 +56,8 @@ V2 base manifest count.
 
 ```yaml
 v2_base_supplement_count: 11
-extension_2026_06_19_count: 5
-total_public_registry_extension_rows: 16
+extension_2026_06_20_count: 6
+total_public_registry_extension_rows: 17
 ```
 
 The public package keeps the frozen V2 base count and records later

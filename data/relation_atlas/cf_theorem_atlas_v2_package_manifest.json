@@ -25,8 +25,8 @@
     "ry_level2a_fixed_modulus_certificate_count": 6,
     "ry_level2b_status": "open",
     "v2_base_supplement_count": 11,
-    "extension_2026_06_19_count": 5,
-    "total_public_registry_extension_rows": 16
+    "extension_2026_06_20_count": 6,
+    "total_public_registry_extension_rows": 17
   },
   "trigger": {
     "reason": "Phase 7 changed 8 watch rows to closed_known_metadata; RY-30 added fixed-modulus Level 2a theorem certificates",
@@ -62,15 +62,16 @@
     "data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json"
   ],
   "paper_facing_extension_addendum": {
-    "date": "2026-06-19",
-    "row_count": 5,
+    "date": "2026-06-20",
+    "row_count": 6,
     "rows": [
       "C/F Hankel determinant invariance",
       "Liu binomial-transform normalization",
       "Franel source-layer clarification",
       "Dwork complement split",
-      "Atkin-Lehner W2 parameter/theta audit"
+      "Atkin-Lehner W2 parameter/theta audit",
+      "Chan-Cooper five-companion Lucas lane"
     ],
-    "guardrail": "addendum rows do not alter the frozen V2 base supplement count"
+    "guardrail": "addendum rows do not alter the frozen V2 base supplement count; Chan-Cooper row is adjacent direct Lucas proof, not C/F transfer or BTY import"
   }
 }

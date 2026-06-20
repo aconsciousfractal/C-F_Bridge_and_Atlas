@@ -485,7 +485,7 @@ are:
   without an explicit operation.
 \end{enumerate}
 
-\section{Three source-layer examples}
+\section{Source-layer examples}
 \label{sec:source-layers}
 
 \subsection{Sun layer}
@@ -518,6 +518,111 @@ atlas records explicit small automata for Cooper, Franel, and C/F small
 moduli, including C/F mod $2$, mod $3$, mod $4$, and mod $9$ metadata.  These
 are explicit automaton or prime-power metadata; they are not a full
 Rowland--Yassawi theorem import.
+
+\subsection{Chan--Cooper companion Lucas lane}
+
+The BTY/Chan--Cooper audit separates the raw weight-one problem from a
+weight-two Chan--Cooper companion layer.  The raw weight-one
+$\chi(w_d)$ values remain uncomputed.  However, the five companion rows
+$V6A,V6B,V6C,V8,V9$ admit direct Chan--Cooper binomial formulas
+\cite{chan_cooper_2012_rational_analogues}, and their companion coefficient
+sequences satisfy Lucas congruences modulo every prime by a direct
+Lucas--Kummer argument.  This result is not a C/F bridge transfer and is not
+a BTY Theorem~1.1 import.
+
+Let
+\[
+  U_i(n)=\binom{2n}{n}s_i(n).
+\]
+The source formulas are
+\[
+  s_{6A}(n)=\sum_{j=0}^n(-8)^{n-j}\binom{n}{j}
+          \sum_{\ell=0}^j\binom{j}{\ell}^3,
+\]
+\[
+  s_{6B}(n)=\sum_{j=0}^n\binom{n}{j}^2\binom{2j}{j},
+  \qquad
+  s_{6C}(n)=\sum_{j=0}^n\binom{n}{j}^3,
+\]
+\[
+  s_8(n)=\sum_j4^{n-2j}\binom{n}{2j}\binom{2j}{j}^2,
+\]
+and
+\[
+  s_9(n)=\sum_j(-3)^{n-3j}
+  \binom{n}{j}\binom{n-j}{j}\binom{n-2j}{j}.
+\]
+The sums are taken over the natural ranges where the displayed binomial
+coefficients are defined.
+
+\begin{theorem}[Chan--Cooper companion Lucas rows]
+\label{thm:chan-cooper-companion-lucas}
+The five sequences
+\[
+  U_{6A},U_{6B},U_{6C},U_8,U_9
+\]
+satisfy Lucas congruences modulo every prime.  The negative-$q$ level-8
+sequence
+\[
+  U_8^-(n)=(-1)^nU_8(n)
+\]
+also satisfies Lucas congruences modulo every prime.
+\end{theorem}
+
+\begin{proof}
+We use the standard Lucas theorem for binomial and multinomial coefficients,
+together with the Kummer carry criterion.
+
+First, the sequence $a^n$ satisfies Lucas congruences modulo every prime.  If
+$p\nmid a$, this follows from Fermat's theorem; if $p\mid a$, the sequence is
+congruent to $1,0,0,\ldots$ modulo $p$.  Products of Lucas sequences are
+Lucas, and the central binomial sequence $\binom{2n}{n}$ is Lucas, with
+digit-doubling carries producing zero factors.
+
+The Franel cubic sum
+\[
+  R(n)=\sum_j\binom{n}{j}^3
+\]
+is Lucas by applying Lucas theorem termwise.  This proves the claim for
+$s_{6C}$.  The same argument, with the central binomial factor
+$\binom{2j}{j}$, proves the claim for
+\[
+  s_{6B}(n)=\sum_j\binom{n}{j}^2\binom{2j}{j}.
+\]
+For $s_{6A}$, write
+\[
+  s_{6A}(n)=\sum_j\binom{n}{j}R(j)(-8)^{n-j}.
+\]
+This is a binomial convolution of Lucas sequences, hence is Lucas.
+
+For $s_8$, when $p$ is odd, Lucas and Kummer factor the summand
+\[
+  4^{n-2j}\binom{n}{2j}\binom{2j}{j}^2
+\]
+digitwise; carry cases vanish modulo $p$.  For $p=2$, one has $s_8(0)=1$
+and $s_8(n)\equiv0\pmod2$ for $n>0$, since the $j=0$ term contains $4^n$
+and $\binom{2j}{j}$ is even for $j>0$.
+
+For $s_9$, when $p\ne3$, the multinomial form
+\[
+  (-3)^{n-3j}\frac{n!}{j!j!j!(n-3j)!}
+\]
+factors digitwise in carry-free cases, and carry cases vanish modulo $p$.
+For $p=3$, if $n>3j$, the factor $(-3)^{n-3j}$ is divisible by $3$.  If
+$n=3j$ and $j>0$, then $(3j)!/(j!^3)$ is divisible by $3$, since adding
+$j+j+j$ in base $3$ creates a carry.  Thus $s_9(0)=1$ and
+$s_9(n)\equiv0\pmod3$ for $n>0$.
+
+Multiplication by $\binom{2n}{n}$ preserves Lucas congruences, so the five
+$U_i(n)$ are Lucas.  Finally, $(-1)^n$ is Lucas for odd primes and is
+invisible modulo $2$, so $U_8^-(n)=(-1)^nU_8(n)$ is Lucas as well.
+\end{proof}
+
+This theorem is independent of the C/F bridge.  It is also independent of the
+BTY theorem-transfer mechanism.  The level-6 rows have a separate local
+BTY/Atkin--Lehner audit, and the $V8,V9$ normalizer geometry remains useful
+modular context, but neither is used in the proof above.  No raw weight-one
+$\chi(w_d)$ values are computed here.
 
 Other source layers, including Liu's binomial-transform congruence profile,
 Straub's Gessel--Lucas theorem, and Beukers--Tsai--Ye's modular-form Lucas
@@ -895,6 +1000,7 @@ A representative public excerpt is:
 \texttt{sun\_raw\_c} & raw C & RV-108 & no C/F transfer & separate proof obligation\\
 \texttt{dwork\_ct} & $\Lambda_{C,1}$ & $9-\Lambda_{C,1}$ & CT complement & closed metadata\\
 \texttt{ry\_automata} & small moduli & automata & fixed-modulus data & closed metadata\\
+\shortstack[l]{\texttt{chan\_cooper}\\\texttt{five\_companion}\\\texttt{lucas}} & Chan--Cooper & $U_i$ rows & direct Lucas proof & closed internal result\\
 \hline
 \end{tabular}
 \end{center}
@@ -950,7 +1056,10 @@ Franel--Domb bridge manuscript rather than by the C/F bridge
 congruence metadata with convention guards \cite{liu_2025_binomial_transforms}.
 In the Liu audit, thirteen rows match the normalized catalog directly, while
 the $\eta$ and $s18$ rows are stored with an explicit convention map rather
-than as failures.  Straub's
+than as failures.  Chan--Cooper supplies the companion binomial formulas for
+the five rows in Theorem~\ref{thm:chan-cooper-companion-lucas}; the Lucas proof
+there is internal and does not import a BTY theorem
+\cite{chan_cooper_2012_rational_analogues}.  Straub's
 Gessel--Lucas theorem is imported by reference where its hypotheses are used,
 but the separate C/F derivative-transfer problem remains guarded by its
 low-carry proof obligation \cite{straub_2024_gessel_lucas}.

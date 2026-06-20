@@ -22,8 +22,8 @@ Level 2b layer remains open.
 base_registry_statement_count: 20
 v2_supplement_count: 11
 v2_base_supplement_count: 11
-extension_2026_06_19_count: 5
-total_public_registry_extension_rows: 16
+extension_2026_06_20_count: 6
+total_public_registry_extension_rows: 17
 phase7_input_watch_rows: 8
 phase7_closed_known_metadata_rows: 8
 phase7_still_watch_rows: 0
@@ -61,6 +61,7 @@ rowland_yassawi_level_2b_status: open
 | Dwork complement wording | distinguishes $\Lambda_{C,1}$, $9-\Lambda_{C,1}$, and independent $Q_F$ | no mutation or Newton-equivalence claim |
 | Atkin-Lehner W2 normalization | closed parameter/theta audit: $t_C\vert W_2=1-8t_F^{\rm cat}$ and W2 swaps the C/F theta forms up to explicit constants | catalog bridge is affine-normalized, not literal W2 |
 | Rowland-Yassawi automata | fixed-modulus Level 2a only; all-good-primes Level 2b remains open | no full Rowland-Yassawi import |
+| Chan--Cooper five-companion Lucas lane | closed internal direct Lucas result for $V6A,V6B,V6C,V8,V9$ companion rows | not C/F transfer; not BTY import; raw $\chi(w_d)$ still blocked |
 | BTY / Atkin-Lehner $\chi(w_d)$ | remains open pending row-specific multiplier data | W2 audit does not compute BTY multipliers |
 | periods, mod-p Galois, q-bridge | watch tracks only | no paper claim activated |
 

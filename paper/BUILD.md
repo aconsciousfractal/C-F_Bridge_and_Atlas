@@ -1,4 +1,4 @@
-﻿# Build Notes
+# Build Notes
 
 Build from this directory:
 
@@ -19,7 +19,7 @@ The current unified-folder build succeeded with BibTeX and no undefined
 references or citations:
 
 ```text
-cf_bridge_relation_atlas.pdf: 11 pages
+cf_bridge_relation_atlas.pdf: 16 pages
 log scan: no undefined references/citations, no overfull/underfull warnings
 ```
 
