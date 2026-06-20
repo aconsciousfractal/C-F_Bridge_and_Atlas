@@ -16,6 +16,7 @@ Base registry:
 ```text
 docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V1.md
 data/relation_atlas/cf_theorem_transfer_registry_v1.json
+data/relation_atlas/cf_theorem_transfer_registry_2026_06_extension.json
 ```
 
 ## Summary
@@ -78,12 +79,12 @@ frozen V2 base and the addendum are read together.
 
 | supplement class | public artifact | claim level | status |
 | --- | --- | --- | --- |
-| C/F Hankel determinant invariance | `paper/cf_bridge_relation_atlas.tex`; `scripts/run_cf_bridge_replay.py` | closed internal result | proved in paper; replayed through order 6 |
-| Liu binomial-transform normalization | `paper/cf_bridge_relation_atlas.tex` | convention-mapped metadata | closed normalization map |
-| Franel source-layer clarification | `paper/cf_bridge_relation_atlas.tex` | source provenance metadata | closed explanatory layer |
-| Dwork complement split | `paper/cf_bridge_relation_atlas.tex` | guardrail metadata | `9 - Lambda_C1` complement witness closed; comparison to `Q_F` open |
-| Atkin-Lehner W2 parameter/theta audit | `paper/cf_bridge_relation_atlas.tex` | closed internal result plus guardrail | `W_2` gives affine parameter normalization and swaps theta forms; catalog bridge is not literally `W_2`; BTY `chi(w_d)` remains open |
-| Chan-Cooper five-companion Lucas lane | `paper/cf_bridge_relation_atlas.tex` | closed internal result plus guardrail | direct binomial Lucas/Kummer proof for `V6A,V6B,V6C,V8,V9` companion rows; adjacent source layer, not C/F transfer or BTY import |
+| C/F Hankel determinant invariance | `paper/cf_bridge_relation_atlas.tex`; `scripts/run_cf_bridge_replay.py` | `closed_internal_result` | proved in paper; replayed through order 6; ordinary Hankel determinants only |
+| Liu binomial-transform normalization | `paper/cf_bridge_relation_atlas.tex` | `closed_metadata` | closed normalization map; no blanket Liu theorem import |
+| Franel source-layer clarification | `paper/cf_bridge_relation_atlas.tex` | `closed_metadata` | closed explanatory layer; no automatic Franel theorem promotion |
+| Dwork complement split | `paper/cf_bridge_relation_atlas.tex` | `closed_metadata` | `9 - Lambda_C1` complement witness closed; comparison to `Q_F` open; no mutation or Newton-equivalence claim |
+| Atkin-Lehner W2 parameter/theta audit | `paper/cf_bridge_relation_atlas.tex` | `closed_internal_result` | `W_2` gives affine parameter normalization and swaps theta forms; catalog bridge is not literally `W_2`; BTY `chi(w_d)` remains open |
+| Chan-Cooper five-companion Lucas lane | `paper/cf_bridge_relation_atlas.tex`; `scripts/run_chan_cooper_lucas_replay.py` | `closed_internal_result` | direct binomial Lucas/Kummer proof for `V6A,V6B,V6C,V8,V9` companion rows; adjacent source layer, not C/F transfer or BTY import |
 
 ## Guardrails
 

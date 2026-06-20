@@ -27,6 +27,7 @@ below are paths that exist in this standalone repository.
 | artifact | purpose |
 | --- | --- |
 | `data/relation_atlas/cf_theorem_transfer_registry_v1.json` | V1 registry companion |
+| `data/relation_atlas/cf_theorem_transfer_registry_2026_06_extension.json` | June 2026 paper-facing extension registry companion |
 | `data/relation_atlas/cf_like_mobius_binomial_edge_scan_v1.json` | immutable V1 edge scan |
 | `data/relation_atlas/cf_like_edge_watch_triage_v1.json` | Phase 7 triage companion |
 | `data/relation_atlas/source_cartier_prime_power_metadata_v1.json` | source-Cartier alpha=2 metadata companion |

@@ -1,0 +1,95 @@
+{
+  "artifact": "cf_theorem_transfer_registry_2026_06_extension",
+  "date": "2026-06-20",
+  "claim_level": "paper_facing_extension_registry",
+  "allowed_claim_classes": [
+    "closed_internal_result",
+    "closed_metadata"
+  ],
+  "summary": {
+    "extension_statement_count": 6,
+    "closed_internal_result_count": 3,
+    "closed_metadata_count": 3,
+    "theorem_transfer_edge_count": 0
+  },
+  "statements": [
+    {
+      "statement_id": "cf_hankel_invariance",
+      "source_paper": "C/F bridge paper",
+      "source_label": "Hankel determinant corollary",
+      "source_object": "ordinary Hankel determinants of C and F",
+      "target_object": "Delta_N(C) and Delta_N(F)",
+      "rewrite": "ordinary Hankel determinants are invariant under the involutive coefficient transform",
+      "cf_role": "closed internal C/F consequence",
+      "claim_level": "closed_internal_result",
+      "guardrail": "ordinary Hankel determinants only",
+      "status": "proved in paper; replayed through order 6"
+    },
+    {
+      "statement_id": "liu_normalization_bridge",
+      "source_paper": "C/F bridge paper plus Liu normalization context",
+      "source_label": "binomial-transform normalization map",
+      "source_object": "catalog-normalized C and F rows",
+      "target_object": "Liu v_m^(C)(9), v_m^(F)(9) convention",
+      "rewrite": "v_m^(C)(9)=(-1)^m F_m and v_m^(F)(9)=(-1)^m C_m",
+      "cf_role": "normalization metadata adjacent to C/F",
+      "claim_level": "closed_metadata",
+      "guardrail": "no blanket Liu theorem import",
+      "status": "closed convention map"
+    },
+    {
+      "statement_id": "franel_source_layer_clarification",
+      "source_paper": "Barrucand/Callan/Verrill Franel transform context",
+      "source_label": "Franel source-layer exposition",
+      "source_object": "cubic Franel source sequence",
+      "target_object": "C/F bridge provenance",
+      "rewrite": "C and F are connected through classical Franel transforms",
+      "cf_role": "source provenance metadata",
+      "claim_level": "closed_metadata",
+      "guardrail": "no automatic Franel theorem promotion",
+      "status": "closed explanatory layer"
+    },
+    {
+      "statement_id": "dwork_complement_split",
+      "source_paper": "C/F bridge paper and Dwork metadata",
+      "source_label": "Dwork complement wording",
+      "source_object": "Lambda_C1",
+      "target_object": "9-Lambda_C1 and independent Q_F",
+      "rewrite": "distinguish the complement witness from independent F-side models",
+      "cf_role": "guardrail metadata adjacent to C/F",
+      "claim_level": "closed_metadata",
+      "guardrail": "no mutation or Newton-equivalence claim",
+      "status": "closed wording split; comparison to Q_F remains open"
+    },
+    {
+      "statement_id": "atkin_lehner_w2_parameter_theta_audit",
+      "source_paper": "C/F bridge paper appendix",
+      "source_label": "Atkin-Lehner W2 parameter/theta audit",
+      "source_object": "C/F modular parameter and theta forms",
+      "target_object": "W2-normalized parameter and theta swap",
+      "rewrite": "t_C|W2=1-8t_F^cat and W2 swaps theta forms up to explicit constants",
+      "cf_role": "closed modular audit plus guardrail",
+      "claim_level": "closed_internal_result",
+      "guardrail": "catalog bridge is affine-normalized, not literal W2; BTY chi(w_d) remains open",
+      "status": "closed theta-multiplier audit; guardrail retained"
+    },
+    {
+      "statement_id": "chan_cooper_five_companion_lucas",
+      "source_paper": "Chan-Cooper 2012 formulas plus internal Lucas proof",
+      "source_label": "five-companion Lucas lane",
+      "source_object": "V6A,V6B,V6C,V8,V9 companion rows",
+      "target_object": "U6A,U6B,U6C,U8,U9 and U8_minus",
+      "rewrite": "U_i(n)=binom(2n,n)s_i(n); U8_minus(n)=(-1)^n U8(n)",
+      "cf_role": "adjacent_source_layer_not_cf_transfer",
+      "claim_level": "closed_internal_result",
+      "guardrail": "not C/F transfer; not BTY import; raw chi(w_d) still blocked",
+      "status": "closed direct Lucas/Kummer proof in paper"
+    }
+  ],
+  "guardrails": [
+    "addendum rows do not alter the frozen V2 base supplement count",
+    "no new theorem-transfer edge is introduced by the Chan-Cooper lane",
+    "Chan-Cooper row is adjacent direct Lucas proof, not C/F transfer or BTY import",
+    "raw weight-one chi(w_d) remains blocked"
+  ]
+}

@@ -56,6 +56,7 @@ proof_obligation
 bounded_negative
 blocked
 watch
+explicit_automaton_metadata
 ```
 
 ## Summary

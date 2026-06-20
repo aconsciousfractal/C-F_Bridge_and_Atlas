@@ -1,0 +1,31 @@
+{
+  "artifact": "chan_cooper_lucas_replay",
+  "failures": {},
+  "guardrail": "finite sanity replay only; the all-primes Lucas theorem is proved in the paper",
+  "n_max": 120,
+  "primes": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19
+  ],
+  "sequence_count": 11,
+  "sequences": [
+    "U6A",
+    "U6B",
+    "U6C",
+    "U8",
+    "U8_minus",
+    "U9",
+    "s6A",
+    "s6B",
+    "s6C",
+    "s8",
+    "s9"
+  ],
+  "status": "pass"
+}

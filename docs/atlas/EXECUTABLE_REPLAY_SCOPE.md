@@ -16,6 +16,7 @@ the paper.
 | --- | --- |
 | `python scripts/run_cf_bridge_replay.py` | replays finite C/F bridge coefficient identities through `BOUND=30`, including ordinary Hankel determinant equality through order 6 |
 | `python scripts/run_atkin_lehner_w2_eta_multiplier_certificate.py` | reproduces the exact eta-multiplier constants used in the Atkin-Lehner W2 appendix audit |
+| `python scripts/run_chan_cooper_lucas_replay.py` | replays finite Lucas checks for the five Chan-Cooper companion rows and the negative-q level-8 sign twist |
 | `python scripts/run_atlas_schema_check.py` | validates required JSON keys for the curated atlas package |
 | `python scripts/run_atlas_count_replay.py` | replays the public atlas count summaries |
 | `python scripts/run_claim_class_audit.py` | checks allowed claim classes and known guardrails |
@@ -32,6 +33,8 @@ in the paper appendix; it is not a full modular-form proof engine.  The larger
 q-expansion/Sturm/valence and all-primes automaton certificates remain outside
 the scope of this curated public package unless archived separately.
 
-The absence of those larger certificates is reflected in the atlas guardrails:
+The Chan-Cooper replay is likewise a finite sanity check for the branch and
+sign conventions; the all-primes Lucas result is proved in the paper.  The
+absence of the larger certificates is reflected in the atlas guardrails:
 finite replay and fixed-modulus metadata are not promoted to new theorem-transfer
 proofs by themselves.

@@ -24,6 +24,10 @@ def test_atkin_lehner_w2_eta_multiplier_certificate() -> None:
     run_script("run_atkin_lehner_w2_eta_multiplier_certificate.py")
 
 
+def test_chan_cooper_lucas_replay() -> None:
+    run_script("run_chan_cooper_lucas_replay.py")
+
+
 def test_count_replay() -> None:
     run_script("run_atlas_count_replay.py")
 

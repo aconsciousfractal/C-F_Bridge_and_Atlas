@@ -14,6 +14,7 @@ or run the checks separately:
 ```bash
 python scripts/run_cf_bridge_replay.py
 python scripts/run_atkin_lehner_w2_eta_multiplier_certificate.py
+python scripts/run_chan_cooper_lucas_replay.py
 python scripts/run_atlas_schema_check.py
 python scripts/run_atlas_count_replay.py
 python scripts/run_claim_class_audit.py
@@ -22,12 +23,14 @@ python scripts/run_public_repo_audit.py
 
 The scripts use only the Python standard library.  The C/F replay records
 coefficient identities through `BOUND=30` and ordinary Hankel determinant
-equality through order 6.  The Atkin-Lehner W2 replay records the exact
+equality through order 6.  The Chan-Cooper replay checks the five companion
+Lucas rows through `N_MAX=120` for primes up to 19.  The Atkin-Lehner W2 replay records the exact
 eta-multiplier arithmetic used in the paper appendix. Successful runs write:
 
 ```text
 results/cf_bridge_replay.json
 results/atkin_lehner_w2_eta_multiplier_certificate.json
+results/chan_cooper_lucas_replay.json
 results/atlas_count_replay.json
 results/claim_class_audit.json
 ```

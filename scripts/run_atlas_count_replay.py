@@ -37,10 +37,17 @@ EXPECTED = {
         "phase7_still_watch_rows": 0,
         "phase7_new_theorem_edges": 0,
         "phase7_new_proof_obligations": 0,
-        "active_or_blocked_open_problem_count": 6,
+        "active_or_blocked_open_problem_count_at_v2_freeze": 6,
+        "post_sun_3_5_active_or_blocked_open_problem_count": 4,
         "closed_or_reconciled_open_problem_count": 4,
         "ry_level2a_fixed_modulus_certificate_count": 6,
         "ry_level2b_status": "open",
+    },
+    "extension_registry": {
+        "extension_statement_count": 6,
+        "closed_internal_result_count": 3,
+        "closed_metadata_count": 3,
+        "theorem_transfer_edge_count": 0,
     },
     "edge_scan": {
         "checked_transform_count": 17684,
@@ -119,6 +126,7 @@ def main() -> int:
     actual = {
         "registry": replay_registry(load_json("cf_theorem_transfer_registry_v1.json")),
         "manifest": load_json("cf_theorem_atlas_v2_package_manifest.json")["summary"],
+        "extension_registry": load_json("cf_theorem_transfer_registry_2026_06_extension.json")["summary"],
         "edge_scan": replay_edge_scan(load_json("cf_like_mobius_binomial_edge_scan_v1.json")),
         "watch_triage": load_json("cf_like_edge_watch_triage_v1.json")["summary"],
         "opposite_side": load_json("cf_opposite_side_candidates.json")["summary"],

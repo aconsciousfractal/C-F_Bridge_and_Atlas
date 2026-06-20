@@ -29,6 +29,13 @@ EXPECTED = {
         "v2_data_artifacts",
         "v2_supplements",
     },
+    "cf_theorem_transfer_registry_2026_06_extension.json": {
+        "artifact",
+        "allowed_claim_classes",
+        "summary",
+        "statements",
+        "guardrails",
+    },
     "cf_like_mobius_binomial_edge_scan_v1.json": {
         "artifact",
         "summary",

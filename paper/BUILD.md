@@ -28,3 +28,10 @@ environment-level warnings, not paper failures.
 
 Before public release, run a build from a clean clone or clean exported folder,
 not only from the current working tree.
+
+2026-06-20 red-team export check: full LaTeX/BibTeX build, focused log scan,
+`python scripts/run_all_reproducibility_checks.py`, and `pytest -q` passed from
+a clean exported folder outside the working tree.
+
+For future public releases, repeat a build from a clean clone or clean exported
+folder, not only from the current working tree.

@@ -20,6 +20,7 @@ NON_PROOF_LEVELS = {
     "watch",
     "explicit_automaton_metadata",
     "closed_known_metadata",
+    "closed_metadata",
 }
 
 PROOFISH_STATUSES = {
@@ -32,6 +33,20 @@ PROOFISH_STATUSES = {
 def load_json(name: str) -> dict[str, Any]:
     with (DATA / name).open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def audit_claim_level_membership(name: str) -> list[str]:
+    payload = load_json(name)
+    allowed = set(payload.get("allowed_claim_classes", []))
+    failures: list[str] = []
+    if not allowed:
+        return failures
+    for row in payload.get("statements", []):
+        sid = row.get("statement_id")
+        level = row.get("claim_level")
+        if level not in allowed:
+            failures.append(f"{name}:{sid}: claim_level {level} not in allowed_claim_classes")
+    return failures
 
 
 def audit_registry() -> list[str]:
@@ -75,7 +90,13 @@ def audit_watch_triage() -> list[str]:
 
 
 def main() -> int:
-    failures = audit_registry() + audit_edge_scan() + audit_watch_triage()
+    failures = (
+        audit_claim_level_membership("cf_theorem_transfer_registry_v1.json")
+        + audit_claim_level_membership("cf_theorem_transfer_registry_2026_06_extension.json")
+        + audit_registry()
+        + audit_edge_scan()
+        + audit_watch_triage()
+    )
 
     RESULTS.mkdir(exist_ok=True)
     out = RESULTS / "claim_class_audit.json"

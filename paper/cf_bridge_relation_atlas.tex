@@ -524,7 +524,7 @@ Rowland--Yassawi theorem import.
 The BTY/Chan--Cooper audit separates the raw weight-one problem from a
 weight-two Chan--Cooper companion layer.  The raw weight-one
 $\chi(w_d)$ values remain uncomputed.  However, the five companion rows
-$V6A,V6B,V6C,V8,V9$ admit direct Chan--Cooper binomial formulas
+\(\mathrm{V6A}\), \(\mathrm{V6B}\), \(\mathrm{V6C}\), \(\mathrm{V8}\), and \(\mathrm{V9}\) admit direct Chan--Cooper binomial formulas
 \cite{chan_cooper_2012_rational_analogues}, and their companion coefficient
 sequences satisfy Lucas congruences modulo every prime by a direct
 Lucas--Kummer argument.  This result is not a C/F bridge transfer and is not
@@ -553,7 +553,28 @@ and
   \binom{n}{j}\binom{n-j}{j}\binom{n-2j}{j}.
 \]
 The sums are taken over the natural ranges where the displayed binomial
-coefficients are defined.
+coefficients are defined.  The Chan--Cooper table gives the positive-$q$
+coefficient sequence $U_8$; the atlas-normalized local \(\mathrm{V8}\)
+branch uses $Z_8(-q)$, hence the coefficient sequence
+$U_8^-(n)=(-1)^nU_8(n)$.  We record both because Lucas congruences are
+preserved by this sign twist.
+
+\begin{lemma}[Lucas summation closure]
+\label{lem:lucas-summation-closure}
+Let $S(n)=\sum_j f(n,j)$ be a finite integer-valued sum, with $f(n,j)=0$
+outside its natural support.  Fix a prime $p$ and write
+$n=n_0+pN$ and $j=j_0+pJ$, with $0\le n_0,j_0<p$.  Suppose the
+carry-free terms satisfy
+\[
+  f(n_0+pN,j_0+pJ)\equiv f(n_0,j_0)f(N,J)\pmod p
+\]
+and all carry cases vanish modulo $p$.  Then
+\[
+  S(n_0+pN)\equiv S(n_0)S(N)\pmod p.
+\]
+Consequently, if the hypothesis holds for every prime $p$, then $S$
+satisfies Lucas congruences modulo every prime.
+\end{lemma}
 
 \begin{theorem}[Chan--Cooper companion Lucas rows]
 \label{thm:chan-cooper-companion-lucas}
@@ -571,7 +592,7 @@ also satisfies Lucas congruences modulo every prime.
 
 \begin{proof}
 We use the standard Lucas theorem for binomial and multinomial coefficients,
-together with the Kummer carry criterion.
+together with the Kummer carry criterion and Lemma~\ref{lem:lucas-summation-closure}.
 
 First, the sequence $a^n$ satisfies Lucas congruences modulo every prime.  If
 $p\nmid a$, this follows from Fermat's theorem; if $p\mid a$, the sequence is
@@ -620,7 +641,7 @@ invisible modulo $2$, so $U_8^-(n)=(-1)^nU_8(n)$ is Lucas as well.
 
 This theorem is independent of the C/F bridge.  It is also independent of the
 BTY theorem-transfer mechanism.  The level-6 rows have a separate local
-BTY/Atkin--Lehner audit, and the $V8,V9$ normalizer geometry remains useful
+BTY/Atkin--Lehner audit, and the \(\mathrm{V8}\) and \(\mathrm{V9}\) normalizer geometry remains useful
 modular context, but neither is used in the proof above.  No raw weight-one
 $\chi(w_d)$ values are computed here.
 
@@ -1004,12 +1025,20 @@ A representative public excerpt is:
 \hline
 \end{tabular}
 \end{center}
-The full machine-readable table is the JSON file
+The frozen V1 machine-readable table is the JSON file
 \begin{center}
 \texttt{data/relation\_atlas/}\\
 \texttt{cf\_theorem\_transfer\_registry\_v1.json}.
 \end{center}
-The excerpt is included only to make the atlas semantics visible in the paper.
+The June 2026 paper-facing addendum rows, including Hankel, Atkin--Lehner
+$W_2$, and Chan--Cooper Lucas, are recorded separately in
+\begin{center}
+\texttt{data/relation\_atlas/}\\
+\texttt{cf\_theorem\_transfer\_registry\_}\\
+\texttt{2026\_06\_extension.json}
+\end{center}
+and summarized in the V2 registry/readout documents.  The excerpt is included
+only to make the atlas semantics visible in the paper.
 
 \section{Open problems and blocking lemmas}
 \label{app:open-problems}

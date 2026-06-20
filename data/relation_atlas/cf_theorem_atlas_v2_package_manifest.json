@@ -13,7 +13,6 @@
   "phase": "Phase 8 - Atlas V2 Package",
   "status": "complete",
   "summary": {
-    "active_or_blocked_open_problem_count": 6,
     "base_registry_statement_count": 20,
     "closed_or_reconciled_open_problem_count": 4,
     "phase7_closed_known_metadata_rows": 8,
@@ -26,7 +25,9 @@
     "ry_level2b_status": "open",
     "v2_base_supplement_count": 11,
     "extension_2026_06_20_count": 6,
-    "total_public_registry_extension_rows": 17
+    "total_public_registry_extension_rows": 17,
+    "active_or_blocked_open_problem_count_at_v2_freeze": 6,
+    "post_sun_3_5_active_or_blocked_open_problem_count": 4
   },
   "trigger": {
     "reason": "Phase 7 changed 8 watch rows to closed_known_metadata; RY-30 added fixed-modulus Level 2a theorem certificates",
@@ -46,7 +47,8 @@
     "package_manifest": "data/relation_atlas/cf_theorem_atlas_v2_package_manifest.json",
     "source_cartier_prime_power_metadata": "data/relation_atlas/source_cartier_prime_power_metadata_v1.json",
     "rowland_yassawi_fixed_modulus_theorem_certificates": "data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json",
-    "registry_v1": "data/relation_atlas/cf_theorem_transfer_registry_v1.json"
+    "registry_v1": "data/relation_atlas/cf_theorem_transfer_registry_v1.json",
+    "registry_2026_06_extension": "data/relation_atlas/cf_theorem_transfer_registry_2026_06_extension.json"
   },
   "v2_supplements": [
     "docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md",
@@ -59,7 +61,8 @@
     "data/relation_atlas/cf_like_edge_watch_triage_v1.json",
     "data/relation_atlas/cf_opposite_side_candidates.json",
     "data/relation_atlas/source_cartier_prime_power_metadata_v1.json",
-    "data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json"
+    "data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json",
+    "data/relation_atlas/cf_theorem_transfer_registry_2026_06_extension.json"
   ],
   "paper_facing_extension_addendum": {
     "date": "2026-06-20",

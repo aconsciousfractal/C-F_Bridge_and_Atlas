@@ -29,7 +29,8 @@ phase7_closed_known_metadata_rows: 8
 phase7_still_watch_rows: 0
 phase7_new_theorem_edges: 0
 phase7_new_proof_obligations: 0
-active_or_blocked_open_problem_count: 6
+active_or_blocked_open_problem_count_at_v2_freeze: 6
+post_sun_3_5_active_or_blocked_open_problem_count: 4
 closed_or_reconciled_open_problem_count: 4
 rowland_yassawi_level_2a_fixed_modulus_certificate_count: 6
 rowland_yassawi_level_2b_status: open
@@ -51,7 +52,7 @@ rowland_yassawi_level_2b_status: open
 | Rowland-Yassawi fixed-modulus theorem certificates | closed Level 2a theorem-import-by-reference metadata |
 | C/F-like edge watch triage | closed known metadata |
 
-## 2026-06-19 Extension Notes
+## 2026-06-20 Extension Notes
 
 | extension | status | guardrail |
 | --- | --- | --- |
@@ -61,7 +62,7 @@ rowland_yassawi_level_2b_status: open
 | Dwork complement wording | distinguishes $\Lambda_{C,1}$, $9-\Lambda_{C,1}$, and independent $Q_F$ | no mutation or Newton-equivalence claim |
 | Atkin-Lehner W2 normalization | closed parameter/theta audit: $t_C\vert W_2=1-8t_F^{\rm cat}$ and W2 swaps the C/F theta forms up to explicit constants | catalog bridge is affine-normalized, not literal W2 |
 | Rowland-Yassawi automata | fixed-modulus Level 2a only; all-good-primes Level 2b remains open | no full Rowland-Yassawi import |
-| Chan--Cooper five-companion Lucas lane | closed internal direct Lucas result for $V6A,V6B,V6C,V8,V9$ companion rows | not C/F transfer; not BTY import; raw $\chi(w_d)$ still blocked |
+| Chan--Cooper five-companion Lucas lane | closed internal direct Lucas result for $\mathrm{V6A},\mathrm{V6B},\mathrm{V6C},\mathrm{V8},\mathrm{V9}$ companion rows; finite replay included | not C/F transfer; not BTY import; raw $\chi(w_d)$ still blocked |
 | BTY / Atkin-Lehner $\chi(w_d)$ | remains open pending row-specific multiplier data | W2 audit does not compute BTY multipliers |
 | periods, mod-p Galois, q-bridge | watch tracks only | no paper claim activated |
 

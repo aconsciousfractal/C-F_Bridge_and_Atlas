@@ -15,8 +15,14 @@
       "new_promoted_edge_count": 0,
       "watch_hit_count": 8
     },
+    "extension_registry": {
+      "closed_internal_result_count": 3,
+      "closed_metadata_count": 3,
+      "extension_statement_count": 6,
+      "theorem_transfer_edge_count": 0
+    },
     "manifest": {
-      "active_or_blocked_open_problem_count": 6,
+      "active_or_blocked_open_problem_count_at_v2_freeze": 6,
       "base_registry_statement_count": 20,
       "closed_or_reconciled_open_problem_count": 4,
       "extension_2026_06_20_count": 6,
@@ -25,6 +31,7 @@
       "phase7_new_proof_obligations": 0,
       "phase7_new_theorem_edges": 0,
       "phase7_still_watch_rows": 0,
+      "post_sun_3_5_active_or_blocked_open_problem_count": 4,
       "ry_level2a_fixed_modulus_certificate_count": 6,
       "ry_level2b_status": "open",
       "total_public_registry_extension_rows": 17,

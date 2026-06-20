@@ -15,7 +15,8 @@
     "proof_obligation",
     "bounded_negative",
     "blocked",
-    "watch"
+    "watch",
+    "explicit_automaton_metadata"
   ],
   "summary": {
     "statement_count": 20,
