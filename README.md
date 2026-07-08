@@ -31,6 +31,21 @@ CITATION.cff          citation metadata
 LICENSE               MIT license
 ```
 
+## Claim Boundary
+
+Companion claim-discipline docs were added on 2026-07-08 (after
+publication; the paper is unchanged). The authoritative discipline is the
+machine-readable one (`docs/atlas/EXECUTABLE_REPLAY_SCOPE.md` + the
+claim-class audit); the additions are thin:
+
+- `CLAIM_LEDGER.md` — index of the proved results, the certified finite
+  layer, the machine-audited atlas metadata, and the explicitly
+  out-of-package certificates.
+- `PUBLIC_CLAIM_BOUNDARY.md` — quoting boundary (finite replay and
+  fixed-modulus metadata never promote to new theorem-transfer proofs).
+- `README_REVIEWER.md` — 10/30-minute reviewer paths (all reproducibility
+  checks PASS + 6 tests green on 2026-07-08).
+
 ## Quick Check
 
 ```bash
