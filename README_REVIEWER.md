@@ -42,4 +42,4 @@ modify the paper.
 - No full Sturm/valence certificate; no complete Rowland-Yassawi
   automaton archive (explicitly out of package).
 - Finite replays never substitute for the paper's proofs.
-- No git tags; cite by commit (HEAD at retrofit: 60a54ef).
+- No git tags; cite by the current commit hash (run `git rev-parse HEAD`).
