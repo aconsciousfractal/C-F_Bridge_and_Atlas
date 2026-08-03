@@ -1,9 +1,12 @@
 ﻿cff-version: 1.2.0
 message: "If you use this companion package, please cite the associated paper."
 title: "C/F Bridge And Relation Atlas Companion"
+version: "1.0.0"
+date-released: "2026-08-03"
 authors:
   - family-names: "Babanskyy"
     given-names: "Oleksiy"
+    orcid: "https://orcid.org/0009-0001-6176-6208"
 year: 2026
 license: MIT
 repository-code: "https://github.com/aconsciousfractal/C-F_Bridge_and_Atlas"
@@ -13,4 +16,5 @@ preferred-citation:
   authors:
     - family-names: "Babanskyy"
       given-names: "Oleksiy"
+      orcid: "https://orcid.org/0009-0001-6176-6208"
   year: 2026

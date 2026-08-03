@@ -1,27 +1,29 @@
 #!/usr/bin/env python3
-"""Audit that the public companion does not cite missing development paths."""
+"""Audit public links, package paths, and forbidden local/process residue."""
 
 from __future__ import annotations
 
 import json
 import re
 from pathlib import Path
+from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_EXTENSIONS = {".bib", ".cff", ".json", ".md", ".py", ".tex", ".txt", ".yml", ".yaml"}
 BAD_PATTERNS = [
-    re.compile(r"P:\\\\", re.IGNORECASE),
-    re.compile(r"GitHub_puba", re.IGNORECASE),
-    re.compile(r"\bPAPP\b", re.IGNORECASE),
-    re.compile(r"public_companion_staging", re.IGNORECASE),
-    re.compile(r"paper_ab", re.IGNORECASE),
-    re.compile(r"docs/05_relation_atlas"),
-    re.compile(r"projects/Apery"),
-    re.compile(r"scripts/cf_like_edge_watch_triage\.py"),
+    re.compile(r"(?:[A-Z]:\\(?:Users|Repositories|tmp)\\|C:/Users/)", re.IGNORECASE),
+    re.compile(r"GitHub_puba|public_companion_staging|paper_ab", re.IGNORECASE),
+    re.compile(r"docs/05_relation_atlas|projects/Apery|scripts/cf_like_edge_watch_triage\.py"),
+    re.compile(r"\bPAPP\b|Gate-Disciplined", re.IGNORECASE),
+    re.compile(r"\bphase(?:[-_ ]?\d)|\broadmap(?:\b|_)|next[_ -]?action", re.IGNORECASE),
+    re.compile(r"\binternal\b|\bprivate\b", re.IGNORECASE),
+    re.compile(r"after publication|paper is unchanged|no git tags", re.IGNORECASE),
+    re.compile(r"\.codex|external[- ]agent", re.IGNORECASE),
 ]
 ALLOWLIST = {
     Path("scripts/run_public_repo_audit.py"),
+    Path("scripts/verify_public_package.py"),
 }
 PATH_PREFIXES = ("data/", "docs/", "paper/", "results/", "scripts/", "tests/")
 
@@ -33,10 +35,7 @@ def rel(path: Path) -> Path:
 def iter_text_files() -> list[Path]:
     files: list[Path] = []
     for path in ROOT.rglob("*"):
-        if not path.is_file():
-            continue
-        parts = set(path.parts)
-        if ".git" in parts or "__pycache__" in parts:
+        if not path.is_file() or ".git" in path.parts or "__pycache__" in path.parts:
             continue
         if path.suffix.lower() in TEXT_EXTENSIONS:
             files.append(path)
@@ -59,8 +58,7 @@ def scan_for_bad_patterns() -> list[str]:
 
 def load_manifest() -> dict:
     path = ROOT / "data" / "relation_atlas" / "cf_theorem_atlas_v2_package_manifest.json"
-    with path.open("r", encoding="utf-8") as handle:
-        return json.load(handle)
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def iter_manifest_paths(payload: object) -> list[str]:
@@ -77,26 +75,47 @@ def iter_manifest_paths(payload: object) -> list[str]:
 
 
 def check_manifest_paths() -> list[str]:
+    return [path for path in sorted(set(iter_manifest_paths(load_manifest()))) if not (ROOT / path).exists()]
+
+
+def check_markdown_links() -> list[str]:
     failures: list[str] = []
-    for public_path in sorted(set(iter_manifest_paths(load_manifest()))):
-        if not (ROOT / public_path).exists():
-            failures.append(public_path)
+    for source in ROOT.rglob("*.md"):
+        if ".git" in source.parts:
+            continue
+        text = source.read_text(encoding="utf-8")
+        for target in re.findall(r"(?<!!)\[[^\]]+\]\(([^)]+)\)", text):
+            target = unquote(target.split("#", 1)[0].strip())
+            if not target or re.match(r"^(?:https?://|mailto:)", target):
+                continue
+            if not (source.parent / target).resolve().exists():
+                failures.append(f"{rel(source)} -> {target}")
+    return failures
+
+
+def check_json_syntax() -> list[str]:
+    failures: list[str] = []
+    for path in sorted((ROOT / "data" / "relation_atlas").glob("*.json")):
+        try:
+            json.loads(path.read_text(encoding="utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            failures.append(f"{rel(path)}: {exc}")
     return failures
 
 
 def main() -> int:
-    bad_patterns = scan_for_bad_patterns()
-    missing_paths = check_manifest_paths()
-
-    if bad_patterns or missing_paths:
-        if bad_patterns:
-            print("stale internal references:")
-            for failure in bad_patterns:
-                print(f"- {failure}")
-        if missing_paths:
-            print("missing manifest paths:")
-            for failure in missing_paths:
-                print(f"- {failure}")
+    failures = {
+        "forbidden residue": scan_for_bad_patterns(),
+        "missing manifest paths": check_manifest_paths(),
+        "broken Markdown links": check_markdown_links(),
+        "invalid JSON": check_json_syntax(),
+    }
+    active = {label: items for label, items in failures.items() if items}
+    if active:
+        for label, items in active.items():
+            print(f"{label}:")
+            for item in items:
+                print(f"- {item}")
         raise SystemExit(1)
 
     print("public repo audit: PASS")

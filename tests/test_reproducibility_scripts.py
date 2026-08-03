@@ -34,3 +34,11 @@ def test_count_replay() -> None:
 
 def test_claim_class_audit() -> None:
     run_script("run_claim_class_audit.py")
+
+
+def test_public_repo_audit() -> None:
+    run_script("run_public_repo_audit.py")
+
+
+def test_public_package_verifier() -> None:
+    run_script("verify_public_package.py")

@@ -17,7 +17,7 @@ RESULTS = ROOT / "results"
 EXPECTED = {
     "registry": {
         "statement_count": 20,
-        "closed_internal_result_count": 3,
+        "proved_in_paper_count": 3,
         "conditional_transfer_count": 6,
         "source_attached_conjecture_count": 1,
         "theorem_import_by_reference_count": 5,
@@ -32,11 +32,11 @@ EXPECTED = {
         "v2_base_supplement_count": 11,
         "extension_2026_06_20_count": 6,
         "total_public_registry_extension_rows": 17,
-        "phase7_input_watch_rows": 8,
-        "phase7_closed_known_metadata_rows": 8,
-        "phase7_still_watch_rows": 0,
-        "phase7_new_theorem_edges": 0,
-        "phase7_new_proof_obligations": 0,
+        "finite_edge_input_watch_rows": 8,
+        "finite_edge_closed_known_metadata_rows": 8,
+        "finite_edge_still_watch_rows": 0,
+        "finite_edge_new_theorem_edges": 0,
+        "finite_edge_new_proof_obligations": 0,
         "active_or_blocked_open_problem_count_at_v2_freeze": 6,
         "post_sun_3_5_active_or_blocked_open_problem_count": 4,
         "closed_or_reconciled_open_problem_count": 4,
@@ -45,7 +45,7 @@ EXPECTED = {
     },
     "extension_registry": {
         "extension_statement_count": 6,
-        "closed_internal_result_count": 3,
+        "proved_in_paper_count": 3,
         "closed_metadata_count": 3,
         "theorem_transfer_edge_count": 0,
     },
@@ -97,7 +97,7 @@ def replay_registry(payload: dict[str, Any]) -> dict[str, Any]:
     levels = Counter(row["claim_level"] for row in payload["statements"])
     return {
         "statement_count": len(payload["statements"]),
-        "closed_internal_result_count": levels["closed_internal_result"],
+        "proved_in_paper_count": levels["proved_in_paper"],
         "conditional_transfer_count": levels["conditional_theorem_transfer"],
         "source_attached_conjecture_count": levels["source_attached_conjecture"],
         "theorem_import_by_reference_count": levels["theorem_import_by_reference"],

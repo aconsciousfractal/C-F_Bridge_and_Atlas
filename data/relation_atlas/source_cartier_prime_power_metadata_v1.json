@@ -3,8 +3,8 @@
   "status": "closed_metadata",
   "claim_level": "explicit_prime_power_automaton_metadata",
   "date": "2026-05-06",
-  "scope": "internal fixed-modulus alpha=2 source-Cartier artifacts",
-  "product_status": "internal_only",
+  "scope": "curated fixed-modulus alpha=2 source-Cartier artifacts",
+  "product_status": "supplementary_metadata",
   "theorem_import_by_reference": false,
   "prime_filter": {
     "source_safe": false,
@@ -73,7 +73,7 @@
         "not all-prime",
         "not all-alpha",
         "not a theorem import",
-        "not a replacement for Phase 6 alpha=1 metadata"
+        "not a replacement for the bounded scan alpha=1 metadata"
       ]
     },
     {
@@ -258,5 +258,5 @@
     }
   ],
   "closed_metadata_meaning": "The fixed artifact is built, replayed, validator-backed, and source-Cartier traceable. It does not certify all-prime or all-alpha Rowland-Yassawi applicability.",
-  "next_action": "RY-26 closes the built-in p in {2,3}, alpha=2 fixture grid as internal metadata. The next step is an alpha=2 product-route decision or a Level 2a theorem-certificate trial, not a broad search."
+  "scope_note": "RY-26 closes the built-in p in {2,3}, alpha=2 fixture grid as curated metadata. The next step is an alpha=2 product-route decision or a Level 2a theorem-certificate trial, not a broad search."
 }

@@ -2,12 +2,10 @@
   "registry_version": "cf_theorem_transfer_registry.v1",
   "date": "2026-05-03",
   "validation_date": "2026-05-05",
-  "roadmap": "ROADMAP_V3.md Phase 2",
+  "public_scope": "public claim-class guardrails the registry audit",
   "claim_level": "guarded theorem-transfer registry, not a proof artifact",
-  "phase1_closeout_reconciled": true,
-  "phase1_closeout_source": "docs/02_modular_cf/PHASE1_CF_PAPER_NOTE_CLOSEOUT.md",
   "allowed_claim_classes": [
-    "closed_internal_result",
+    "proved_in_paper",
     "theorem_import_by_reference",
     "conditional_theorem_transfer",
     "finite_exact_replay",
@@ -20,7 +18,7 @@
   ],
   "summary": {
     "statement_count": 20,
-    "closed_internal_result_count": 3,
+    "proved_in_paper_count": 3,
     "conditional_transfer_count": 6,
     "source_attached_conjecture_count": 1,
     "theorem_import_by_reference_count": 5,
@@ -31,55 +29,55 @@
   },
   "statements": [
     {
-      "statement_id": "phase1_cf_mobius_binomial_bridge",
+      "statement_id": "cf_mobius_binomial_bridge",
       "source_paper": "C/F bridge paper note",
       "source_label": "Theorem 1",
       "source_object": "Zagier C generating function C(x)",
       "target_object": "Zagier F generating function F(x)",
       "rewrite": "F(x)=(1-9x)^(-1) C(-x/(1-9x))",
-      "cf_role": "closed internal C/F bridge used as the registry transport primitive",
-      "claim_level": "closed_internal_result",
-      "finite_replay": "coefficient and transform-network replays attached in Phase 1 note context",
-      "literature_status": "internal closed result with external Zagier sequence provenance",
+      "cf_role": "closed package-local C/F bridge used as the registry transport primitive",
+      "claim_level": "proved_in_paper",
+      "finite_replay": "coefficient and transform-network replays attached in the paper and finite replay package",
+      "literature_status": "result proved in the paper with external Zagier sequence provenance",
       "missing_opposite": "none for the bridge itself",
       "proof_obligation": "none for this bridge; publication still needs source citations for sequence provenance",
-      "status": "closed_internal_result",
-      "next_action": "use as the transport primitive for all C/F theorem-transfer rows"
+      "status": "proved_in_paper",
+      "scope_note": "use as the transport primitive for all C/F theorem-transfer rows"
     },
     {
-      "statement_id": "phase1_cf_coefficient_transform_involution",
+      "statement_id": "cf_coefficient_transform_involution",
       "source_paper": "C/F bridge paper note",
       "source_label": "Corollary 1",
       "source_object": "C_n coefficients",
       "target_object": "F_n coefficients and inverse transform",
       "rewrite": "F_n=sum_{k<=n} binom(n,k)(-1)^k 9^(n-k) C_k, with inverse C_n=sum_{k<=n} binom(n,k)(-1)^k 9^(n-k) F_k",
       "cf_role": "coefficient-level C/F transfer contract",
-      "claim_level": "closed_internal_result",
-      "finite_replay": "coefficient replay attached in Phase 1 note context",
-      "literature_status": "internal corollary of the C/F bridge",
+      "claim_level": "proved_in_paper",
+      "finite_replay": "coefficient replay attached in the paper and finite replay package",
+      "literature_status": "corollary proved in the paper of the C/F bridge",
       "missing_opposite": "none",
       "proof_obligation": "none after Theorem 1",
-      "status": "closed_internal_result",
-      "next_action": "use to normalize finite coefficient checks and row-level transforms"
+      "status": "proved_in_paper",
+      "scope_note": "use to normalize finite coefficient checks and row-level transforms"
     },
     {
-      "statement_id": "phase1_cf_ode_pullback",
+      "statement_id": "cf_ode_pullback",
       "source_paper": "C/F bridge paper note",
       "source_label": "Corollary 2",
       "source_object": "C differential equation",
       "target_object": "F differential equation",
       "rewrite": "pull back the C operator along x -> -x/(1-9x) and apply the prefactor (1-9x)^(-1)",
       "cf_role": "ODE-level C/F transfer contract",
-      "claim_level": "closed_internal_result",
-      "finite_replay": "operator/generating-function replay attached in Phase 1 note context",
-      "literature_status": "internal corollary of the C/F bridge",
+      "claim_level": "proved_in_paper",
+      "finite_replay": "operator/generating-function replay attached in the paper and finite replay package",
+      "literature_status": "corollary proved in the paper of the C/F bridge",
       "missing_opposite": "none",
       "proof_obligation": "none after Theorem 1",
-      "status": "closed_internal_result",
-      "next_action": "use as the guardrail for ODE-style theorem imports"
+      "status": "proved_in_paper",
+      "scope_note": "use as the guardrail for ODE-style theorem imports"
     },
     {
-      "statement_id": "phase1_cf_sun_q_to_tc_transfer_contract",
+      "statement_id": "cf_sun_q_to_tc_transfer_contract",
       "source_paper": "C/F bridge paper note",
       "source_label": "Corollary 3",
       "source_object": "Sun Q_n source-side congruence rows",
@@ -92,10 +90,10 @@
       "missing_opposite": "does not produce raw C statements",
       "proof_obligation": "none for the sign rewrite; source theorems remain external",
       "status": "conditional_theorem_transfer",
-      "next_action": "keep specific Sun rows as theorem-carrying instances; use this row as the contract"
+      "scope_note": "keep specific Sun rows as theorem-carrying instances; use this row as the contract"
     },
     {
-      "statement_id": "phase1_cf_ct_newton_guardrail",
+      "statement_id": "cf_ct_newton_guardrail",
       "source_paper": "C/F bridge paper guardrail",
       "source_label": "CT/Newton guardrail",
       "source_object": "sequence-level C/F bridge",
@@ -104,11 +102,11 @@
       "cf_role": "prevents false promotion of Dwork or CT metadata across the C/F bridge",
       "claim_level": "blocked",
       "finite_replay": "not applicable; this is a wording and theorem-use guardrail",
-      "literature_status": "local guardrail tied to Phase 1 note and Dwork metadata rows",
+      "literature_status": "local guardrail tied to the paper note and Dwork metadata rows",
       "missing_opposite": "direct CT/Newton operation remains absent",
       "proof_obligation": "find an explicit Laurent/diagonal operation before any CT/Newton transfer claim",
       "status": "blocked",
-      "next_action": "keep visible while validating Dwork and Rowland-Yassawi downstream rows"
+      "scope_note": "keep visible while validating Dwork and Rowland-Yassawi downstream rows"
     },
     {
       "statement_id": "sun_2022_intro_1_3_minus8",
@@ -124,7 +122,7 @@
       "missing_opposite": "raw C version is not produced by this row",
       "proof_obligation": "none for the rewrite; source theorem remains external",
       "status": "conditional_theorem_transfer",
-      "next_action": "use as Phase 3 opposite-side seed: ask whether a raw-C theorem exists"
+      "scope_note": "use as the comparison register opposite-side seed: ask whether a raw-C theorem exists"
     },
     {
       "statement_id": "sun_2022_intro_1_3_minus9",
@@ -140,7 +138,7 @@
       "missing_opposite": "raw C version is not produced by this row",
       "proof_obligation": "none for the rewrite; source theorem remains external",
       "status": "conditional_theorem_transfer",
-      "next_action": "use as Phase 3 opposite-side seed"
+      "scope_note": "use as the comparison register opposite-side seed"
     },
     {
       "statement_id": "sun_2022_theorem_3_4_eq_3_2",
@@ -156,7 +154,7 @@
       "missing_opposite": "raw C analogue not extracted",
       "proof_obligation": "none for sign rewrite; source theorem external",
       "status": "conditional_theorem_transfer",
-      "next_action": "mine raw-C or F-native opposite-side variants in Phase 3"
+      "scope_note": "mine raw-C or F-native opposite-side variants in the comparison register"
     },
     {
       "statement_id": "sun_2022_theorem_3_4_eq_3_3",
@@ -172,7 +170,7 @@
       "missing_opposite": "raw C analogue not extracted",
       "proof_obligation": "none for sign rewrite; source theorem external",
       "status": "conditional_theorem_transfer",
-      "next_action": "mine raw-C or F-native opposite-side variants in Phase 3"
+      "scope_note": "mine raw-C or F-native opposite-side variants in the comparison register"
     },
     {
       "statement_id": "sun_2022_theorem_3_4_eq_3_4",
@@ -188,7 +186,7 @@
       "missing_opposite": "raw C analogue not extracted",
       "proof_obligation": "none for sign rewrite; source theorem external",
       "status": "conditional_theorem_transfer",
-      "next_action": "mine raw-C or F-native opposite-side variants in Phase 3"
+      "scope_note": "mine raw-C or F-native opposite-side variants in the comparison register"
     },
     {
       "statement_id": "sun_2022_conjecture_3_5_raw_c",
@@ -204,7 +202,7 @@
       "missing_opposite": "closed T(C) theorem transfer does not prove raw C",
       "proof_obligation": "prove raw_C_54 == R_p mod p^2",
       "status": "source_attached_conjecture",
-      "next_action": "carry as Phase 4/5 open problem, non-blocking for atlas"
+      "scope_note": "carry as the open-question register open problem, non-blocking for atlas"
     },
     {
       "statement_id": "liu_2025_binomial_transform_profile",
@@ -220,8 +218,8 @@
       "missing_opposite": "no direct theorem transfer row yet beyond metadata",
       "proof_obligation": "none for classified metadata; clean unqualified 15/15 import remains false",
       "status": "theorem_import_by_reference_with_normalization_guard",
-      "v4_update": "Phase 5 closes eta and s18 as convention-mapped metadata: 13 direct replay-pass rows, 2 guarded rows, 0 unresolved failures; clean unqualified 15/15 import remains false.",
-      "next_action": "keep row-level normalization guards in Paper B and future data exports"
+      "v4_update": "the normalization audit closes eta and s18 as convention-mapped metadata: 13 direct replay-pass rows, 2 guarded rows, 0 unresolved failures; clean unqualified 15/15 import remains false.",
+      "scope_note": "keep row-level normalization guards in Paper B and future data exports"
     },
     {
       "statement_id": "straub_2023_theorem_1_1",
@@ -237,7 +235,7 @@
       "missing_opposite": "no C/F-specific opposite-side theorem mined yet",
       "proof_obligation": "none for metadata import",
       "status": "theorem_import_by_reference",
-      "next_action": "Phase 3 should ask whether C/F transform preserves useful Straub row forms"
+      "scope_note": "the comparison register should ask whether C/F transform preserves useful Straub row forms"
     },
     {
       "statement_id": "straub_2023_theorem_1_3",
@@ -253,7 +251,7 @@
       "missing_opposite": "C/F derivative-transfer behavior not mined",
       "proof_obligation": "encode A'(k) artifacts for target rows before row-level replay",
       "status": "theorem_import_by_reference",
-      "next_action": "defer broad derivative mining until Phase 3 candidate selection"
+      "scope_note": "defer broad derivative mining until the comparison register candidate selection"
     },
     {
       "statement_id": "bty_2024_theorem_1_1_row_registry",
@@ -269,7 +267,7 @@
       "missing_opposite": "Cooper rows pending; C/F weight-1 rows belong to Theorem 1.3 gap",
       "proof_obligation": "respect row-level hypotheses and prime exclusions",
       "status": "theorem_import_by_reference",
-      "next_action": "carry ready rows into Phase 3 mining with row-level hypothesis labels"
+      "scope_note": "carry ready rows into the comparison register mining with row-level hypothesis labels"
     },
     {
       "statement_id": "bty_2024_theorem_1_3_weight1_rows",
@@ -285,7 +283,7 @@
       "missing_opposite": "C/F BTY weight-1 theorem rows not ready",
       "proof_obligation": "derive row-specific chi(w_d) values",
       "status": "proof_obligation",
-      "next_action": "turn into Phase 4 open problem and optional finite diagnostic replay"
+      "scope_note": "turn into the open-question register open problem and optional finite diagnostic replay"
     },
     {
       "statement_id": "dwork_mellit_vlasenko_ct_metadata",
@@ -301,7 +299,7 @@
       "missing_opposite": "Dwork transfer beyond sequence-level C/F bridge is open",
       "proof_obligation": "find explicit Laurent/diagonal operation or keep guardrail",
       "status": "finite_exact_replay",
-      "next_action": "Phase 3 should classify Dwork opposite-side candidates and blocked Newton rows"
+      "scope_note": "the comparison register should classify Dwork opposite-side candidates and blocked Newton rows"
     },
     {
       "statement_id": "dwork_catalog_f_p_blocked",
@@ -317,7 +315,7 @@
       "missing_opposite": "no Dwork-ready catalog P_F opposite row",
       "proof_obligation": "none unless a new F Laurent model is proposed",
       "status": "blocked",
-      "next_action": "keep visible as blocked row in Phase 3 and Phase 4"
+      "scope_note": "keep visible as blocked row in the comparison register and the open-question register"
     },
     {
       "statement_id": "rowland_yassawi_2015_contract",
@@ -333,7 +331,7 @@
       "missing_opposite": "C/F mod 2 and mod 3 automata are closed as explicit metadata; C/F prime-power automata remain unconstructed",
       "proof_obligation": "for further C/F automata choose target prime powers, source-safe prime filters, and transition/Cartier constructions before automaton claims",
       "status": "theorem_import_by_reference",
-      "next_action": "keep as source contract; C/F mod 2 and mod 3 are explicit metadata, while prime-power automata remain future diagnostic work"
+      "scope_note": "keep as source contract; C/F mod 2 and mod 3 are explicit metadata, while prime-power automata remain future diagnostic work"
     },
     {
       "statement_id": "rowland_yassawi_cooper_s7_pilot",
@@ -346,10 +344,10 @@
       "claim_level": "explicit_automaton_metadata",
       "finite_replay": "V4 probe verifies first 80 diagonal terms against mod 2 and mod 3 automata",
       "literature_status": "direct automaton artifacts plus guarded Rowland-Yassawi source context",
-      "missing_opposite": "C/F rational diagonal contracts are closed in Phase 6x.3 and C/F mod 2/mod 3 automata are closed in Phase 6x.4-6x.6; prime-power behavior remains unclassified",
+      "missing_opposite": "C/F rational diagonal contracts are closed in the rational-diagonal layer and C/F mod 2/mod 3 automata are closed in the finite-automaton layer; prime-power behavior remains unclassified",
       "proof_obligation": "full Rowland-Yassawi theorem application still requires source-level finite bad-prime/singularity filter",
       "status": "closed_metadata",
-      "next_action": "keep as Cooper pilot metadata; C/F has rational diagonal contracts but still needs modulus selection, prime/singularity guardrails, and transition construction; Franel has separate Lucas/binomial automaton metadata outside the Rowland-Yassawi theorem import"
+      "scope_note": "keep as Cooper pilot metadata; C/F has rational diagonal contracts but still needs modulus selection, prime/singularity guardrails, and transition construction; Franel has separate Lucas/binomial automaton metadata outside the Rowland-Yassawi theorem import"
     }
   ]
 }

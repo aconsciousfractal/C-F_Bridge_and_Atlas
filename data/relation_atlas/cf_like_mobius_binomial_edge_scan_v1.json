@@ -1,8 +1,8 @@
 {
   "artifact": "cf_like_mobius_binomial_edge_scan_v1",
   "date": "2026-05-05",
-  "roadmap": "ROADMAP_V3.md Phase 6",
-  "phase4_problem_link": "OP-CF-006",
+  "public_scope": "bounded C/F-like edge scan",
+  "related_open_question": "OP-CF-006",
   "claim_level": "bounded negative / watch metadata, not theorem proof",
   "search_form": "B(x) = (1-a*x)^(-r) A(s*x/(1-a*x))",
   "parameters": {
@@ -345,7 +345,7 @@
   "guardrails": [
     "coefficient matches are not theorem claims",
     "new_promoted_edge_count must remain 0 in this bounded scan",
-    "watch hits require the full Roadmap V3 promotion gate",
+    "watch hits require the full public claim-class guardrails promotion gate",
     "no Beta/TDA promotion follows from this scan"
   ]
 }

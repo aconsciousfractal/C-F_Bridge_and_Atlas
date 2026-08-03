@@ -1,45 +1,53 @@
-# Reviewer Guide
+# Reviewer guide
 
-Companion documentation added 2026-07-08, after publication; it does not
-modify the paper.
+This guide describes the immutable public release `v1.0.0`.
 
-## Ten-Minute Path
+## Ten-minute path
 
-1. Read the abstract in `paper/` — the bridge
-   F(x) = (1−9x)⁻¹ C(−x/(1−9x)) and its transport properties.
-2. Read `docs/atlas/EXECUTABLE_REPLAY_SCOPE.md` — the two roles of this
-   companion and, critically, "Not Included As Executable Proof
-   Certificates".
-3. Run everything:
-   `python scripts/run_all_reproducibility_checks.py`
-   (expects "all reproducibility checks: PASS"; ~1 min, verified
-   2026-07-08) and `python -m pytest -q` (6 passed).
+1. Read the abstract and main bridge theorem in
+   `paper/cf_bridge_relation_atlas.pdf`.
+2. Read `docs/atlas/EXECUTABLE_REPLAY_SCOPE.md` and
+   `PUBLIC_CLAIM_BOUNDARY.md`.
+3. Install the test dependency and run the complete check:
 
-## Thirty-Minute Path
+   ```bash
+   python -m pip install -r requirements.txt
+   python scripts/run_all_reproducibility_checks.py
+   ```
 
-4. Open `results/claim_class_audit.json` (status `pass`, empty failures)
-   and cross-check the `claim_level` fields of
-   `data/relation_atlas/cf_theorem_transfer_registry_v1.json` against its
-   `allowed_claim_classes` list (the membership audit covers the two
-   registry JSONs).
-5. Replay one lane end to end: `scripts/run_cf_bridge_replay.py` (bridge
-   coefficients through BOUND=30, Hankel order 6) against the paper's
-   bridge theorem statement.
-6. Note `scripts/run_public_repo_audit.py` — the repo mechanically checks
-   that public docs cite no missing development paths.
-7. Read `PUBLIC_CLAIM_BOUNDARY.md` and `CLAIM_LEDGER.md`.
+   Expected result: all producers pass, eight pytest tests pass, and the public
+   verifier reports a complete SHA-256 inventory.
 
-## Main Claims
+## Thirty-minute path
 
-- C/F Möbius-binomial bridge theorem with Hankel/ODE transport (proved in
-  paper; finitely replayed here).
-- Chan-Cooper companion Lucas result (proved in paper; finite replay).
-- W2 eta-multiplier exact finite arithmetic (certified finite).
-- Claim-disciplined relation atlas (machine-audited metadata).
+4. Inspect `CLAIM_LEDGER.md`. Its five rows distinguish theorem-level results,
+   certified finite arithmetic, machine-audited metadata, and excluded claims.
+5. Replay the core bridge with `scripts/run_cf_bridge_replay.py`; it checks 31
+   coefficients and ordinary Hankel determinants through order 6.
+6. Inspect `results/claim_class_audit.json` and
+   `results/atlas_count_replay.json` against the registries in
+   `data/relation_atlas/`.
+7. Run `scripts/verify_public_package.py` directly to check exact inventory,
+   hashes, central counts, links, release metadata, and forbidden local/process
+   residue.
 
-## Known Limits
+## Main claims
 
-- No full Sturm/valence certificate; no complete Rowland-Yassawi
-  automaton archive (explicitly out of package).
-- Finite replays never substitute for the paper's proofs.
-- No git tags; cite by the current commit hash (run `git rev-parse HEAD`).
+- The Möbius-binomial C/F bridge and its coefficient, Hankel, ODE, and
+  constant-term consequences are proved in the paper.
+- The Chan-Cooper companion Lucas result is proved in the paper; the included
+  computation is a bounded sanity replay.
+- The `W2` eta-multiplier computation is an exact finite certificate, not a
+  full modular-form proof engine.
+- Atlas rows are claim-classified transfer metadata unless the paper or a cited
+  source explicitly proves them.
+
+## Known limits
+
+- No full Sturm/valence certificate archive is shipped.
+- No complete Rowland-Yassawi all-good-primes/all-alpha automaton archive is
+  shipped.
+- Finite replays never promote metadata into a theorem.
+
+For citation, use the annotated tag and GitHub release `v1.0.0`, not a mutable
+branch name.

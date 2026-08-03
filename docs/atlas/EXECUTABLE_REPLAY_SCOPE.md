@@ -20,7 +20,7 @@ the paper.
 | `python scripts/run_atlas_schema_check.py` | validates required JSON keys for the curated atlas package |
 | `python scripts/run_atlas_count_replay.py` | replays the public atlas count summaries |
 | `python scripts/run_claim_class_audit.py` | checks allowed claim classes and known guardrails |
-| `python scripts/run_public_repo_audit.py` | checks that public docs/data do not cite missing development paths |
+| `python scripts/run_public_repo_audit.py` | checks links, release wording, and forbidden local/process residue |
 
 ## Not Included As Executable Proof Certificates
 

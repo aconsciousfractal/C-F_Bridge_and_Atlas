@@ -5,7 +5,7 @@
   "rowland_yassawi_level": "2a",
   "date": "2026-05-06",
   "scope": "selected source-locked rational diagonal models at fixed p and alpha",
-  "product_status": "internal_only",
+  "product_status": "supplementary_metadata",
   "active_transfer": false,
   "theorem_import_by_reference": true,
   "full_all_prime_theorem_import": false,
@@ -173,5 +173,5 @@
       }
     }
   ],
-  "next_action": "RY-31 should sync theorem-certificate overlays into the atlas readout/manifest or decide whether to revisit the deferred public alpha=2 fixture route."
+  "scope_note": "RY-31 should sync theorem-certificate overlays into the atlas readout/manifest or decide whether to revisit the deferred public alpha=2 fixture route."
 }

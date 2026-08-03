@@ -49,7 +49,7 @@ between the two catalog-normalized coefficient sequences and preserves their
 ordinary Hankel determinants; it also transports the differential equation of
 C to that of F and is cross-checked by the known Franel transform route.  We
 then use this bridge as a primitive for a theorem-transfer atlas.  The atlas
-distinguishes closed internal results,
+distinguishes results proved in this paper,
 theorem imports by reference, conditional transfers, finite exact replays,
 source-attached conjectures, proof obligations, blocked rows, bounded
 negatives, watch metadata, and closed metadata.  In particular, we do not
@@ -320,7 +320,7 @@ recorded in Appendix~\ref{app:certificate}.
 \label{sec:contracts}
 
 The C/F bridge is used functorially in a small number of controlled ways.
-The closed internal consequences are the coefficient involution, the Hankel
+The consequences proved in this paper are the coefficient involution, the Hankel
 determinant invariance, the ODE pullback, and the binomial-complement
 constant-term lemma.  Together with the imported C-side Laurent model, that
 lemma gives the $9-\Lambda_{C,1}$ complement witness.  The source-layer
@@ -444,8 +444,8 @@ summarizes the ones used in this paper.
 \small
 \begin{tabular}{>{\ttfamily}p{0.42\linewidth}p{0.48\linewidth}}
 \hline
-closed\_internal\_result & Proved or certified inside the C/F package.\\
-theorem\_import\_by\_reference & External theorem used with its source label; not renamed as an internal theorem.\\
+proved\_in\_paper & Proved in the current paper.\\
+theorem\_import\_by\_reference & External theorem used with its source label; not presented as a theorem of this paper.\\
 conditional\_theorem\_transfer & Transfer valid after an explicit bridge or source assumption.\\
 closed\_metadata & Verified auxiliary record, such as a normalization map, fixed-modulus automaton, source-label reconciliation, or known literature identity; not used as a new theorem unless separately promoted through a proof route.\\
 explicit\_automaton\_metadata & Explicit finite-state or prime-power automaton data recorded as metadata; in the V2 package this is treated as a closed-metadata subtype, not as a theorem-transfer class.\\
@@ -473,9 +473,9 @@ transfers.  The complete table is part of the data package; Appendix
 \ref{app:registry} records the schema and selected rows.  The core examples
 are:
 \begin{enumerate}
-\item the C/F bridge, a closed internal result;
-\item the coefficient involution, a closed internal result;
-\item the ODE pullback, a closed internal result;
+\item the C/F bridge, proved in this paper;
+\item the coefficient involution, proved in this paper;
+\item the ODE pullback, proved in this paper;
 \item Sun's F-side source rows transferred only to $T(C)$;
 \item Sun's raw-C target, retained in the historical V1/V2 atlas as a
   source-attached conjecture and proof obligation, but now marked in the
@@ -704,7 +704,7 @@ automatically promoted.
 The data package contains registry rows, claim classes, source labels, proof
 obligations, open-problem statuses, edge-scan triage records, manifests, and
 readouts.  The paper-facing purpose is reproducibility of claim status: a
-reader should be able to tell which rows are proved internally, which are
+reader should be able to tell which rows are proved in this paper, which are
 imported by reference, which are finite replays, and which are blocked.
 The package is based on the V2 manifest, with the V1 registry retained as
 immutable provenance for the original C/F theorem-transfer rows.
@@ -991,7 +991,7 @@ Each registry row uses the following schema:
 \[
 \begin{array}{ll}
 \texttt{statement\_id} & \text{row identifier}\\
-\texttt{source\_paper} & \text{external or internal source}\\
+\texttt{source\_paper} & \text{external source or current paper}\\
 \texttt{source\_label} & \text{the theorem, conjecture, or artifact label}\\
 \texttt{source\_object} & \text{source sequence or model}\\
 \texttt{target\_object} & \text{target sequence or model}\\
@@ -1002,7 +1002,7 @@ Each registry row uses the following schema:
 \texttt{literature\_status} & \text{source status}\\
 \texttt{proof\_obligation} & \text{missing lemma, if any}\\
 \texttt{status} & \text{current row status}\\
-\texttt{next\_action} & \text{next audit/proof step}.
+\texttt{scope\_note} & \text{public limitation or remaining mathematical condition}.
 \end{array}
 \]
 
@@ -1013,15 +1013,15 @@ A representative public excerpt is:
 \hline
 \texttt{statement\_id} & source & target & rewrite/status & claim level\\
 \hline
-\texttt{cf\_bridge} & C & F & $F=\mathcal{T}(C)$ & closed internal result\\
-\texttt{cf\_involution} & C,F & F,C & $\mathcal{T}^2=1$ & closed internal result\\
-\texttt{cf\_hankel} & C,F & C,F & $\Delta_N(C)=\Delta_N(F)$ & closed internal result\\
-\texttt{cf\_ode\_pullback} & $L_C$ & $L_F$ & rational pullback & closed internal result\\
+\texttt{cf\_bridge} & C & F & $F=\mathcal{T}(C)$ & proved in paper\\
+\texttt{cf\_involution} & C,F & F,C & $\mathcal{T}^2=1$ & proved in paper\\
+\texttt{cf\_hankel} & C,F & C,F & $\Delta_N(C)=\Delta_N(F)$ & proved in paper\\
+\texttt{cf\_ode\_pullback} & $L_C$ & $L_F$ & rational pullback & proved in paper\\
 \texttt{sun\_f\_to\_tc} & Sun F-side & $T(C)$ & signed transfer only & conditional transfer\\
 \texttt{sun\_raw\_c} & raw C & RV-108 & no C/F transfer & separate proof obligation\\
 \texttt{dwork\_ct} & $\Lambda_{C,1}$ & $9-\Lambda_{C,1}$ & CT complement & closed metadata\\
 \texttt{ry\_automata} & small moduli & automata & fixed-modulus data & closed metadata\\
-\shortstack[l]{\texttt{chan\_cooper}\\\texttt{five\_companion}\\\texttt{lucas}} & Chan--Cooper & $U_i$ rows & direct Lucas proof & closed internal result\\
+\shortstack[l]{\texttt{chan\_cooper}\\\texttt{five\_companion}\\\texttt{lucas}} & Chan--Cooper & $U_i$ rows & direct Lucas proof & proved in paper\\
 \hline
 \end{tabular}
 \end{center}
@@ -1087,7 +1087,7 @@ In the Liu audit, thirteen rows match the normalized catalog directly, while
 the $\eta$ and $s18$ rows are stored with an explicit convention map rather
 than as failures.  Chan--Cooper supplies the companion binomial formulas for
 the five rows in Theorem~\ref{thm:chan-cooper-companion-lucas}; the Lucas proof
-there is internal and does not import a BTY theorem
+is given in this paper and does not import a BTY theorem
 \cite{chan_cooper_2012_rational_analogues}.  Straub's
 Gessel--Lucas theorem is imported by reference where its hypotheses are used,
 but the separate C/F derivative-transfer problem remains guarded by its

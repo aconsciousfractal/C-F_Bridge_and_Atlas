@@ -153,7 +153,7 @@
     "promotion_rule": "coefficient match alone cannot promote",
     "targeted_replay_terms": 80
   },
-  "phase": "Phase 7 - Edge Watch Triage Only",
+  "release_scope": "Curated finite edge classification",
   "status": "complete",
   "summary": {
     "blocked_count": 0,
@@ -162,7 +162,7 @@
     "decision_counts": {
       "closed_known_metadata": 8
     },
-    "phase8_trigger": true,
+    "package_update_trigger": true,
     "proof_obligation_candidate_count": 0,
     "still_watch_count": 0,
     "watch_input_count": 8

@@ -3,12 +3,12 @@
   "date": "2026-06-20",
   "claim_level": "paper_facing_extension_registry",
   "allowed_claim_classes": [
-    "closed_internal_result",
+    "proved_in_paper",
     "closed_metadata"
   ],
   "summary": {
     "extension_statement_count": 6,
-    "closed_internal_result_count": 3,
+    "proved_in_paper_count": 3,
     "closed_metadata_count": 3,
     "theorem_transfer_edge_count": 0
   },
@@ -20,8 +20,8 @@
       "source_object": "ordinary Hankel determinants of C and F",
       "target_object": "Delta_N(C) and Delta_N(F)",
       "rewrite": "ordinary Hankel determinants are invariant under the involutive coefficient transform",
-      "cf_role": "closed internal C/F consequence",
-      "claim_level": "closed_internal_result",
+      "cf_role": "C/F consequence proved in the paper",
+      "claim_level": "proved_in_paper",
       "guardrail": "ordinary Hankel determinants only",
       "status": "proved in paper; replayed through order 6"
     },
@@ -69,19 +69,19 @@
       "target_object": "W2-normalized parameter and theta swap",
       "rewrite": "t_C|W2=1-8t_F^cat and W2 swaps theta forms up to explicit constants",
       "cf_role": "closed modular audit plus guardrail",
-      "claim_level": "closed_internal_result",
+      "claim_level": "proved_in_paper",
       "guardrail": "catalog bridge is affine-normalized, not literal W2; BTY chi(w_d) remains open",
       "status": "closed theta-multiplier audit; guardrail retained"
     },
     {
       "statement_id": "chan_cooper_five_companion_lucas",
-      "source_paper": "Chan-Cooper 2012 formulas plus internal Lucas proof",
+      "source_paper": "Chan-Cooper 2012 formulas plus direct Lucas proof in the paper",
       "source_label": "five-companion Lucas lane",
       "source_object": "V6A,V6B,V6C,V8,V9 companion rows",
       "target_object": "U6A,U6B,U6C,U8,U9 and U8_minus",
       "rewrite": "U_i(n)=binom(2n,n)s_i(n); U8_minus(n)=(-1)^n U8(n)",
       "cf_role": "adjacent_source_layer_not_cf_transfer",
-      "claim_level": "closed_internal_result",
+      "claim_level": "proved_in_paper",
       "guardrail": "not C/F transfer; not BTY import; raw chi(w_d) still blocked",
       "status": "closed direct Lucas/Kummer proof in paper"
     }

@@ -24,7 +24,7 @@ NON_PROOF_LEVELS = {
 }
 
 PROOFISH_STATUSES = {
-    "closed_internal_result",
+    "proved_in_paper",
     "theorem_import_by_reference",
     "conditional_theorem_transfer",
 }

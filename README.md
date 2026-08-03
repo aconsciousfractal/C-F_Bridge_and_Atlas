@@ -1,58 +1,73 @@
-# C/F Bridge And Relation Atlas Companion
+# C/F Bridge and Relation Atlas
 
-Standalone computational companion for the paper:
+Public companion for the paper:
 
-```text
-A Mobius-binomial C/F bridge and a claim-disciplined theorem-transfer atlas
-for Apery-like sources
-```
+> *A Möbius-binomial C/F bridge and a claim-disciplined theorem-transfer atlas
+> for Apéry-like sources*
 
 Author: Oleksiy Babanskyy
+Release: `v1.0.0`
 
-This repository contains the paper source/PDF, selected relation-atlas JSON
-artifacts, human-readable atlas notes, and small reproducibility scripts. The
-scripts include finite C/F bridge coefficient and Hankel replays, the
-Chan-Cooper companion Lucas replay, the Atkin-Lehner W2 eta-multiplier
-certificate replay, and atlas audit/count checks. The package is intentionally curated: it is not a dump of the
-development workspace, and `docs/atlas/EXECUTABLE_REPLAY_SCOPE.md` states
-exactly what is and is not included as an executable certificate.
+## Start here
 
-## Layout
+1. Read the canonical paper:
+   [`paper/cf_bridge_relation_atlas.pdf`](paper/cf_bridge_relation_atlas.pdf).
+2. Use [`README_REVIEWER.md`](README_REVIEWER.md) for a short verification path.
+3. Check the exact claim boundary in
+   [`CLAIM_LEDGER.md`](CLAIM_LEDGER.md) and
+   [`PUBLIC_CLAIM_BOUNDARY.md`](PUBLIC_CLAIM_BOUNDARY.md).
+4. Reproduce the finite certificates with [`REPRODUCE.md`](REPRODUCE.md).
+5. Browse the curated atlas through
+   [`docs/atlas/README.md`](docs/atlas/README.md).
+
+## Main result and scope
+
+The paper proves the direct bridge
+
+```text
+F(x) = (1 - 9x)^(-1) C(-x / (1 - 9x))
+```
+
+between Zagier's C and F Apéry-like sequences. It derives the involutive
+coefficient transform, ordinary Hankel-determinant invariance, the differential
+operator pullback, and a constant-term complement construction. The paper also
+proves the Chan-Cooper companion Lucas lane and records the exact finite
+Atkin-Lehner `W2` multiplier arithmetic used in its appendix.
+
+The relation atlas deliberately separates:
+
+- results proved in this paper;
+- theorems imported with explicit citations;
+- conditional transfers;
+- exact finite replays and metadata;
+- conjectures, proof obligations, and blocked rows.
+
+Finite computation is evidence at its stated bound, never a replacement for a
+proof. The package does not contain a full Sturm/valence proof engine or a
+complete Rowland-Yassawi all-primes automaton archive.
+
+## Quick verification
+
+```bash
+python -m pip install -r requirements.txt
+python scripts/run_all_reproducibility_checks.py
+```
+
+The command runs all producers, the eight-test suite, the claim/count audits,
+and the fail-closed public-package verifier.
+
+## Repository map
 
 ```text
 paper/                paper source, PDF, bibliography, and build notes
-data/relation_atlas/  curated JSON artifacts used by the checks
-docs/atlas/           selected human-readable atlas artifacts and replay scope note
-scripts/              standard-library replay and audit scripts
-tests/                pytest smoke tests for the scripts
-results/              generated replay summaries
-REPRODUCE.md          command guide
-CITATION.cff          citation metadata
-LICENSE               MIT license
+data/relation_atlas/  curated machine-readable atlas records
+docs/atlas/           public artifact index and human-readable atlas notes
+scripts/              standard-library replay and verification tools
+tests/                pytest entrypoint tests
+results/              canonical finite replay summaries
+REPRODUCE.md          exact commands and artifact policy
+CITATION.cff          release citation metadata
 ```
 
-## Claim Boundary
-
-Companion claim-discipline docs were added on 2026-07-08 (after
-publication; the paper is unchanged). The authoritative discipline is the
-machine-readable one (`docs/atlas/EXECUTABLE_REPLAY_SCOPE.md` + the
-claim-class audit); the additions are thin:
-
-- `CLAIM_LEDGER.md` — index of the proved results, the certified finite
-  layer, the machine-audited atlas metadata, and the explicitly
-  out-of-package certificates.
-- `PUBLIC_CLAIM_BOUNDARY.md` — quoting boundary (finite replay and
-  fixed-modulus metadata never promote to new theorem-transfer proofs).
-- `README_REVIEWER.md` — 10/30-minute reviewer paths (all reproducibility
-  checks PASS + 6 tests green on 2026-07-08).
-
-## Quick Check
-
-```bash
-python scripts/run_all_reproducibility_checks.py
-python -m pytest
-```
-
-The checks are computational reproducibility aids. They do not replace the
-mathematical arguments in the paper. For scope details, see
-`docs/atlas/EXECUTABLE_REPLAY_SCOPE.md`.
+The checks are reproducibility aids. The mathematical proofs remain in the
+paper.

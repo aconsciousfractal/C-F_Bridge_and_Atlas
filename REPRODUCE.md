@@ -1,15 +1,27 @@
-# Reproducing The Companion Checks
+# Reproducing the C/F companion
 
-This repository is a standalone public companion for the combined C/F bridge
-and theorem-transfer atlas paper.
+## Environment
 
-From the repository root, run:
+The replay and verification scripts use the Python standard library. `pytest`
+is required only for the test suite and is declared explicitly:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+## Complete check
+
+From the repository root:
 
 ```bash
 python scripts/run_all_reproducibility_checks.py
 ```
 
-or run the checks separately:
+This runs the seven scientific/package checks, eight pytest tests, and the
+fail-closed package verifier. The command rewrites the canonical files under
+`results/`; a clean release must reproduce them without semantic drift.
+
+## Individual checks
 
 ```bash
 python scripts/run_cf_bridge_replay.py
@@ -19,13 +31,11 @@ python scripts/run_atlas_schema_check.py
 python scripts/run_atlas_count_replay.py
 python scripts/run_claim_class_audit.py
 python scripts/run_public_repo_audit.py
+python -m pytest -q
+python scripts/verify_public_package.py
 ```
 
-The scripts use only the Python standard library.  The C/F replay records
-coefficient identities through `BOUND=30` and ordinary Hankel determinant
-equality through order 6.  The Chan-Cooper replay checks the five companion
-Lucas rows through `N_MAX=120` for primes up to 19.  The Atkin-Lehner W2 replay records the exact
-eta-multiplier arithmetic used in the paper appendix. Successful runs write:
+The main outputs are:
 
 ```text
 results/cf_bridge_replay.json
@@ -35,7 +45,17 @@ results/atlas_count_replay.json
 results/claim_class_audit.json
 ```
 
-The paper can be rebuilt from `paper/`:
+`results/PUBLIC_ARTIFACTS.sha256` is the canonical LF-normalized SHA-256
+inventory for every JSON under `data/relation_atlas/` and `results/`, excluding
+the execution summary itself. Rebuild it only after an intentional artifact
+change:
+
+```bash
+python scripts/make_public_manifest.py
+python scripts/verify_public_package.py
+```
+
+## Building the paper
 
 ```bash
 cd paper
@@ -45,6 +65,8 @@ pdflatex -interaction=nonstopmode -halt-on-error cf_bridge_relation_atlas.tex
 pdflatex -interaction=nonstopmode -halt-on-error cf_bridge_relation_atlas.tex
 ```
 
-These checks are computational reproducibility aids. They do not replace the
-mathematical arguments in the paper. The exact executable scope is recorded in
-`docs/atlas/EXECUTABLE_REPLAY_SCOPE.md`.
+The release PDF has 16 pages. A valid build has no undefined references,
+overfull boxes, or LaTeX errors.
+
+The scripts provide bounded computational evidence. The paper contains the
+mathematical proofs and controls the scope of every theorem-level statement.

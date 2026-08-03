@@ -1,0 +1,70 @@
+{
+  "status": "pass",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "scripts/run_cf_bridge_replay.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/run_atkin_lehner_w2_eta_multiplier_certificate.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/run_chan_cooper_lucas_replay.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/run_atlas_schema_check.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/run_atlas_count_replay.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/run_claim_class_audit.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/run_public_repo_audit.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/verify_public_package.py"
+      ],
+      "returncode": 0
+    }
+  ]
+}

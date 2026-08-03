@@ -4,22 +4,22 @@
   "date": "2026-05-06",
   "guardrails": [
     "package manifest only, not a proof artifact",
-    "no new theorem-transfer edge introduced by Phase 8",
+    "no new theorem-transfer edge introduced by the V2 package update",
     "RY fixed-modulus theorem certificates are Level 2a only",
     "no all-good-primes/all-alpha Rowland-Yassawi Level 2b claim",
     "V1 scan artifacts remain immutable provenance",
     "V2 supplement artifacts keep their own claim levels"
   ],
-  "phase": "Phase 8 - Atlas V2 Package",
+  "release_scope": "Public relation-atlas V2 package",
   "status": "complete",
   "summary": {
     "base_registry_statement_count": 20,
     "closed_or_reconciled_open_problem_count": 4,
-    "phase7_closed_known_metadata_rows": 8,
-    "phase7_input_watch_rows": 8,
-    "phase7_new_proof_obligations": 0,
-    "phase7_new_theorem_edges": 0,
-    "phase7_still_watch_rows": 0,
+    "finite_edge_closed_known_metadata_rows": 8,
+    "finite_edge_input_watch_rows": 8,
+    "finite_edge_new_proof_obligations": 0,
+    "finite_edge_new_theorem_edges": 0,
+    "finite_edge_still_watch_rows": 0,
     "v2_supplement_count": 11,
     "ry_level2a_fixed_modulus_certificate_count": 6,
     "ry_level2b_status": "open",
@@ -30,7 +30,7 @@
     "post_sun_3_5_active_or_blocked_open_problem_count": 4
   },
   "trigger": {
-    "reason": "Phase 7 changed 8 watch rows to closed_known_metadata; RY-30 added fixed-modulus Level 2a theorem certificates",
+    "reason": "the finite edge classification changed 8 watch rows to closed_known_metadata; RY-30 added fixed-modulus Level 2a theorem certificates",
     "triggered": true
   },
   "v2_core_artifacts": {
