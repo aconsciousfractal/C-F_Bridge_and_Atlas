@@ -55,7 +55,8 @@
         "python",
         "-m",
         "pytest",
-        "-q"
+        "-q",
+        "-x"
       ],
       "returncode": 0
     },

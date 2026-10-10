@@ -1,6 +1,6 @@
 # C/F relation-atlas V2 readout
 
-Release: `v1.0.0`
+Package version: `1.0.1`
 Claim level: public count and status reconciliation
 
 ## Reconciled counts
@@ -9,7 +9,8 @@ Claim level: public count and status reconciliation
 base_registry_statement_count: 20
 v2_supplement_count: 11
 paper_facing_extension_count: 6
-total_public_registry_extension_rows: 17
+total_public_registry_extension_rows: 18
+october_statement_rows: 1
 finite_edge_input_watch_rows: 8
 finite_edge_closed_known_metadata_rows: 8
 finite_edge_still_watch_rows: 0
@@ -34,3 +35,8 @@ fixed_modulus_rowland_yassawi_certificates: 6
 The machine-readable source of these counts is
 `data/relation_atlas/cf_theorem_atlas_v2_package_manifest.json`; the replay is
 `scripts/run_atlas_count_replay.py`.
+
+
+For the current Smith consequence, source errata, literal row-ID crosswalk,
+and the limits of historical summary records, use the
+[October addendum](CF_OCTOBER_2026_ADDENDUM.md).

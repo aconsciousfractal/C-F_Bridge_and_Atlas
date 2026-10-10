@@ -28,8 +28,17 @@ EXPECTED = {
         "v2_core_artifacts",
         "v2_data_artifacts",
         "v2_supplements",
+        "v2_base_supplement_artifacts",
+        "current_addenda",
     },
     "cf_theorem_transfer_registry_2026_06_extension.json": {
+        "artifact",
+        "allowed_claim_classes",
+        "summary",
+        "statements",
+        "guardrails",
+    },
+    "cf_theorem_transfer_registry_2026_10_extension.json": {
         "artifact",
         "allowed_claim_classes",
         "summary",

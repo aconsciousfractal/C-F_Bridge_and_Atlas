@@ -1,6 +1,6 @@
-# Build Notes
+# Building the paper
 
-Build from this directory:
+From this directory, using a local LaTeX installation and BibTeX:
 
 ```bash
 pdflatex -interaction=nonstopmode -halt-on-error cf_bridge_relation_atlas.tex
@@ -9,29 +9,20 @@ pdflatex -interaction=nonstopmode -halt-on-error cf_bridge_relation_atlas.tex
 pdflatex -interaction=nonstopmode -halt-on-error cf_bridge_relation_atlas.tex
 ```
 
-Expected output:
+The output is `cf_bridge_relation_atlas.pdf`. A valid final log has no errors,
+undefined references or citations, or overfull boxes. Inspect every rendered
+page, including tables and bibliography. Repeat the suite and this build from
+a clean export of the same candidate before distributing the revision.
 
-```text
-cf_bridge_relation_atlas.pdf
-```
+For an offline MiKTeX build, add `-disable-installer -disable-write18
+-dont-parse-first-line` to each pdflatex invocation and `-disable-installer`
+to BibTeX. Missing packages then cause an explicit failure rather than a download.
+Local update reminders are separate from the compilation result.
 
-The current unified-folder build succeeded with BibTeX and no undefined
-references or citations:
+The older sixteen-page build and June2026 export notes belong to the antecedent
+package. They are not evidence that the October candidate was built.
 
-```text
-cf_bridge_relation_atlas.pdf: 16 pages
-log scan: no undefined references/citations, no overfull/underfull warnings
-```
-
-MiKTeX may emit local update/log warnings depending on the machine; those are
-environment-level warnings, not paper failures.
-
-Before public release, run a build from a clean clone or clean exported folder,
-not only from the current working tree.
-
-2026-06-20 red-team export check: full LaTeX/BibTeX build, focused log scan,
-`python scripts/run_all_reproducibility_checks.py`, and `pytest -q` passed from
-a clean exported folder outside the working tree.
-
-For future public releases, repeat a build from a clean clone or clean exported
-folder, not only from the current working tree.
+The October 10, 2026 candidate was built with the four commands above in offline
+MiKTeX mode: 16 pages, no undefined references or citations, no overfull boxes,
+and no LaTeX errors. Every rendered page was inspected. The intentionally
+disabled shell escape produces an epstopdf warning; the paper uses no EPS asset.

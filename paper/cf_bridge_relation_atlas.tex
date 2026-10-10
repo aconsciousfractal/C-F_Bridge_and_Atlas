@@ -46,8 +46,9 @@ Ap{\'e}ry-like sequences:
 \]
 Equivalently, the bridge is an involutive binomial coefficient transform
 between the two catalog-normalized coefficient sequences and preserves their
-ordinary Hankel determinants; it also transports the differential equation of
-C to that of F and is cross-checked by the known Franel transform route.  We
+ordinary Hankel determinants and, by integral unimodular congruence, their
+Smith forms. It also transports the differential equation of C to that of F
+and is cross-checked by the known Franel transform route.  We
 then use this bridge as a primitive for a theorem-transfer atlas.  The atlas
 distinguishes results proved in this paper,
 theorem imports by reference, conditional transfers, finite exact replays,
@@ -56,7 +57,7 @@ negatives, watch metadata, and closed metadata.  In particular, we do not
 derive Sun's Conjecture 3.5 from the C/F bridge, do not promote finite
 replays or coefficient matches to theorems, and do not turn Dwork or
 Rowland--Yassawi metadata into unconditional theorem claims.  Sun's raw-C
-conjecture is addressed in a separate Franel--Domb bridge manuscript
+conjecture is the subject of a separate supercongruence manuscript
 \cite{babanskyy_2026_sun35_bridge}.  The result here is a claim-disciplined
 package for using a proved C/F bridge while keeping adjacent Ap{\'e}ry-like
 source layers separate.
@@ -143,35 +144,39 @@ source and target rows.
 \subsection{Modular parameter and theta-gauge normalization}
 \label{subsec:theta-normalization}
 
-We use the modular parametrizations recorded by Beukers in the common
-$\Gamma_0(6)$ setting \cite{beukers_2025_supercongruences_modular_forms}.  In
-the C row, let $t_C(q)$ denote the source modular parameter and put
+Write $\eta_d(\tau)=\eta(d\tau)$ and $q=e^{2\pi i\tau}$.  We use the
+modular parametrizations in Beukers, Sections 8.7 and 8.10
+\cite{beukers_2025_supercongruences_modular_forms}:
 \[
-  \Theta_C(q)=C(t_C(q)).
+ t_C=\left(\frac{\eta_6^2\eta_1}{\eta_2^2\eta_3}\right)^4,
+ \qquad h=\frac{\eta_6^5\eta_2}{\eta_1^5\eta_3},
+ \qquad t_C=\frac{h}{1+9h}.
 \]
-For the F row, Beukers' source parameter is twist-guarded.  We write it as
-$t_F^{\rm source}(q)$ and use the catalog parameter
+The associated weight-one forms are
 \[
-  t_F(q)=t_F^{\rm cat}(q):=-t_F^{\rm source}(q).
+ \Theta_C=\frac{\eta_2^6\eta_3}{\eta_1^3\eta_6^2}=C(t_C),
+ \qquad
+ \Theta_F=\frac{\eta_1^6\eta_6}{\eta_2^3\eta_3^2}=F(-h).
 \]
-The F theta series used below is therefore
+The F row in the source is twisted by $(-1)^n$.  Thus the source parameter
+is $t_F^{\rm source}=h$ and the catalog parameter is
 \[
-  \Theta_F(q)=F(t_F(q))
-             =F(-t_F^{\rm source}(q))
-             =\Theta_F^{\rm source}(q).
+ t_F=t_F^{\rm cat}=-h=-\frac{t_C}{1-9t_C}.
 \]
-All $q$-expansions, cusp-order checks, and Sturm checks in this paper are in
-this common normalization.  The two F parameters are kept distinct:
+These weight-zero parameters are meromorphic modular functions on $X_0(6)$.
+The two theta forms have the same character, so their ratio also has weight
+zero and trivial character.  The eta products have no zeros in the upper
+half-plane, and their possible zeros and poles are cuspidal.  At infinity,
 \[
-  t_F^{\rm source}=\frac{t_C}{1-9t_C},\qquad
-  t_F^{\rm cat}=-\frac{t_C}{1-9t_C}.
+ t_C=q+O(q^2),\qquad h=q+O(q^2),\qquad t_F^{\rm cat}=-q+O(q^2).
 \]
-Consequently
+In particular the catalog F parameter is an invertible formal change of
+variable.  We also have
 \[
-  1+9t_F^{\rm source}=1-9t_F^{\rm cat}=\frac{1}{1-9t_C}.
+ 1+9t_F^{\rm source}=1-9t_F^{\rm cat}=\frac{1}{1-9t_C}.
 \]
-In particular, the two identities used in the bridge proof are identities of
-meromorphic modular functions on $X_0(6)$ in this normalization.
+The theta-ratio identity needed below is proved by the explicit eta-product
+valence certificate in Appendix~\ref{app:certificate}.
 
 \begin{theorem}[Zagier C/F M\"obius-binomial bridge]
 \label{thm:cf-bridge}
@@ -201,12 +206,14 @@ Thus
   F(x)=\Theta_F(q)=(1-9u)\Theta_C(q)
       =(1-9x)^{-1}C\!\left(\frac{-x}{1-9x}\right).
 \]
-The theta-gauge identities are verified by forward and inverse valence
-certificates, with a cleared-denominator Sturm backup; see
-Appendix~\ref{app:certificate}.  The same normalization also has an
-Atkin--Lehner \(W_2\) parameter and theta audit recorded in
-Appendix~\ref{app:al-w2}; this audit is explanatory and is not used as a
-substitute for the M\"obius-binomial bridge proof.
+The forward theta-ratio identity is proved by the eta-product valence
+certificate in Appendix~\ref{app:certificate}; the inverse identity follows
+algebraically from it and the parameter relation above.  Since
+$x=t_F^{\rm cat}(q)=-q+O(q^2)$ is an invertible formal change of variable,
+the resulting identity after substitution is an identity of generating
+series in $x$.  Appendix~\ref{app:al-w2} gives a separate Atkin--Lehner
+$W_2$ normalization audit, which is not a substitute for this bridge proof.
+
 \end{proof}
 
 \begin{corollary}[Coefficient transform]
@@ -271,6 +278,29 @@ Hence $\Delta_N(G)=\Delta_N(C)$.  Finally,
 so $\Delta_N(F)=\Delta_N(G)$.
 \end{proof}
 
+\begin{corollary}[Integral Hankel congruence and Smith transport]
+\label{cor:smith-transport}
+For every $N\geq1$, the ordinary Hankel matrices
+$H_N(A)=(A_{i+j})_{0\leq i,j<N}$ satisfy
+\[
+ H_N(F)=U_NH_N(C)U_N^{\,t},\qquad
+ (U_N)_{ij}=(-1)^i\binom{i}{j}(-9)^{i-j}\quad (j\leq i),
+\]
+with zero entries for $j>i$ and $U_N\in\mathrm{GL}_N(\mathbb Z)$.
+Consequently they have the same integral Smith normal form, including their
+rank and zero invariant factors, and the same local Smith form at every prime.
+\end{corollary}
+\begin{proof}
+The proof of Corollary~\ref{cor:hankel} gives $U_N=D_NB_N$.
+The integer matrix $B_N$ is unitriangular (its inverse replaces $-9$ by $9$),
+and $D_N$ has diagonal entries $\pm1$.  Thus $U_N$ and its transpose are
+unimodular.  Left and right multiplication by such matrices preserve the
+integral Smith normal form.
+\end{proof}
+This is an equality of Smith forms, not a classification of their invariant
+factors.  It applies to ordinary Hankel matrices; for example the shifted
+order-one matrices $(C_1)=(3)$ and $(F_1)=(6)$ have different Smith forms.
+
 \begin{corollary}[ODE pullback]
 \label{cor:ode}
 Let
@@ -308,13 +338,12 @@ Composing these formulas gives the same C/F bridge.
 \section{Certificate and normalization}
 \label{sec:normalization}
 
-The proof depends on four normalization checks.  First, C and F are placed in a
-common $\Gamma_0(6)$ normalization.  Second, the source F parameter is
-transported to the catalog-normalized F twist.  Third, the forward and inverse
-theta-gauge identities are certified by cusp-order and valence arguments.
-Fourth, a cleared-denominator Sturm check gives an independent backup.  The
-main text uses only the resulting identities; the certificate details are
-recorded in Appendix~\ref{app:certificate}.
+The proof uses the explicit common $\Gamma_0(6)$ eta-product normalization,
+the source-to-catalog F sign twist, and a theta-ratio valence certificate.
+The certificate lists the possible cusp poles and derives the sufficient
+vanishing at infinity directly from the eta products.  The inverse ratio
+identity is an algebraic consequence.  No large q-expansion replay is needed
+for this proof; the details are in Appendix~\ref{app:certificate}.
 
 \section{Additional functorial consequences}
 \label{sec:contracts}
@@ -348,8 +377,7 @@ For example, Sun's source rows include congruences for a sequence $Q_n$ with
 $Q_n=(-1)^nF_n$ in the relevant convention
 \cite{sun_2022_supercongruences}.  The bridge rewrites these as statements
 about $(-1)^nT(C)_n$.  Sun's raw-C conjectural congruence is not a consequence
-of this C/F bridge; it is addressed separately by a Franel--Domb bridge through
-intermediate Franel, Domb, and Rodriguez--Villegas sums
+of this C/F bridge.  A separate manuscript reports its resolution
 \cite{babanskyy_2026_sun35_bridge}.
 
 \subsection{Franel network}
@@ -428,10 +456,12 @@ models such as Gorodetsky's replacement model $Q_F$
 
 The constant-term models also admit rational diagonal contracts, which support
 small automatic-congruence metadata for C/F and related rows.  This paper
-records those automata as metadata.  It does not claim a full
-Rowland--Yassawi theorem-by-reference application, because that would require
-the source-level bad-prime and singularity filters in addition to an explicit
-Cartier-state construction \cite{rowland_yassawi_2015_automatic_congruences}.
+records those automata as metadata.  It does not distribute the complete state constructions behind the recorded
+fixed-modulus automata.  Rowland--Yassawi's Theorem~2.1 requires polynomial
+numerator and denominator over $\mathbb Z_p$ with denominator constant term
+a unit; for an explicit rational diagonal there is no additional generic
+singularity filter.  Producing and verifying the relevant Cartier states is
+a separate obligation \cite{rowland_yassawi_2015_automatic_congruences}.
 
 \section{Claim classes and atlas discipline}
 \label{sec:claim-classes}
@@ -493,7 +523,7 @@ are:
 Sun supplies source congruences for F-side objects and related binomial sums
 \cite{sun_2022_supercongruences}.  The C/F bridge transfers F-side statements
 to $T(C)$.  It does not prove raw-C variants from C/F data.  The raw-C
-Conjecture 3.5 is a separate Franel--Domb theorem
+Conjecture 3.5 is the subject of a separate manuscript reporting a proof
 \cite{babanskyy_2026_sun35_bridge}, and the atlas keeps that proof route
 separate from the C/F theorem-transfer rows.
 
@@ -534,7 +564,7 @@ Let
 \[
   U_i(n)=\binom{2n}{n}s_i(n).
 \]
-The source formulas are
+The source formulas (Chan--Cooper, Table~2) are
 \[
   s_{6A}(n)=\sum_{j=0}^n(-8)^{n-j}\binom{n}{j}
           \sum_{\ell=0}^j\binom{j}{\ell}^3,
@@ -561,20 +591,19 @@ preserved by this sign twist.
 
 \begin{lemma}[Lucas summation closure]
 \label{lem:lucas-summation-closure}
-Let $S(n)=\sum_j f(n,j)$ be a finite integer-valued sum, with $f(n,j)=0$
-outside its natural support.  Fix a prime $p$ and write
-$n=n_0+pN$ and $j=j_0+pJ$, with $0\le n_0,j_0<p$.  Suppose the
-carry-free terms satisfy
+Let $S(n)=\sum_{j\ge0} f(n,j)$ be a finite integer-valued sum, with $f(n,j)=0$
+outside its natural support.  Fix a prime $p$.  Suppose that, for all
+$N,J\ge0$ and $0\le n_0,j_0<p$, including terms outside the support,
 \[
-  f(n_0+pN,j_0+pJ)\equiv f(n_0,j_0)f(N,J)\pmod p
+ f(n_0+pN,j_0+pJ)\equiv f(n_0,j_0)f(N,J)\pmod p.
 \]
-and all carry cases vanish modulo $p$.  Then
-\[
-  S(n_0+pN)\equiv S(n_0)S(N)\pmod p.
-\]
-Consequently, if the hypothesis holds for every prime $p$, then $S$
-satisfies Lucas congruences modulo every prime.
+Then $S(n_0+pN)\equiv S(n_0)S(N)\pmod p$.  If this hypothesis holds
+for every prime, $S$ satisfies Lucas congruences modulo every prime.
 \end{lemma}
+\begin{proof}
+Partition the summation index as $j=j_0+pJ$ and factor the resulting
+finite double sum modulo $p$ using the stated congruence.
+\end{proof}
 
 \begin{theorem}[Chan--Cooper companion Lucas rows]
 \label{thm:chan-cooper-companion-lucas}
@@ -620,7 +649,8 @@ For $s_8$, when $p$ is odd, Lucas and Kummer factor the summand
 \[
   4^{n-2j}\binom{n}{2j}\binom{2j}{j}^2
 \]
-digitwise; carry cases vanish modulo $p$.  For $p=2$, one has $s_8(0)=1$
+digitwise; in carry cases both the large summand and the low/high product
+vanish modulo $p$.  For $p=2$, one has $s_8(0)=1$
 and $s_8(n)\equiv0\pmod2$ for $n>0$, since the $j=0$ term contains $4^n$
 and $\binom{2j}{j}$ is even for $j>0$.
 
@@ -628,7 +658,8 @@ For $s_9$, when $p\ne3$, the multinomial form
 \[
   (-3)^{n-3j}\frac{n!}{j!j!j!(n-3j)!}
 \]
-factors digitwise in carry-free cases, and carry cases vanish modulo $p$.
+factors digitwise in carry-free cases; in carry cases both the large summand
+and the low/high product vanish modulo $p$.
 For $p=3$, if $n>3j$, the factor $(-3)^{n-3j}$ is divisible by $3$.  If
 $n=3j$ and $j>0$, then $(3j)!/(j!^3)$ is divisible by $3$, since adding
 $j+j+j$ in base $3$ creates a carry.  Thus $s_9(0)=1$ and
@@ -670,10 +701,10 @@ Branch & Blocking lemma or missing contract & Status\\
 BTY weight-one rows & row-specific $\chi(w_d)$ values & open\\
 Straub derivative transfer & low-carry identity for the corrected connection & proof obligation\\
 Dwork model comparison & controlled equivalence between complement model and $Q_F$ & open\\
-Rowland--Yassawi source application & bad-prime/singularity filter and source-style Cartier states & inactive\\
+Rowland--Yassawi source application & full model/state certificates not distributed & metadata only\\
 Edge-watch scan & no unresolved V1 watch rows remain & closed metadata\\
-Sun raw-C to RV-108 & Franel--Domb raw-C/RV bridge outside the C/F atlas & companion manuscript\\
-A2b global glue & Domb branch-multiplier identity outside the C/F atlas & companion manuscript\\
+Sun raw-C target & proof reported outside the C/F atlas & separate manuscript\\
+A2b historical branch & no independent closure asserted here & historical metadata\\
 \hline
 \end{tabular}
 \caption{Selected open-problem and blocker rows.}
@@ -683,15 +714,19 @@ A2b global glue & Domb branch-multiplier identity outside the C/F atlas & compan
 \section{Edge scan and watch-triage discipline}
 \label{sec:edge-scan}
 
-A bounded C/F-like M\"obius-binomial scan checked $17684$ transforms of the
-form
+The historical C/F-like M\"obius-binomial scan record reports $17684$
+transforms of the form
 \[
   B(x)=(1-ax)^{-r}A\!\left(\frac{sx}{1-ax}\right).
 \]
-The scan used exact integer arithmetic on $12$ coefficients, the $16$ catalog
+The recorded scan used exact integer arithmetic on $12$ coefficients, the $16$ catalog
 families recorded in the companion data, $r\in\{1,2,3\}$,
 $-200\le a\le200$, and nonzero integers $s$ with $|s|\le20$.
-It recovered known or canonical relations and promoted no new theorem edge.
+These are reported historical counts, not an exhaustive Cartesian enumeration
+of the displayed parameter ranges: the producer and eligibility trace giving
+that denominator are not included.  The present suite recounts the twelve
+stored hits and checks the recorded summaries; it does not rerun the scan.
+The record recovered known or canonical relations and promoted no new theorem edge.
 The eight previous watch hits were subsequently resolved as known metadata:
 six are alias/canonical identity hits for the Ap{\'e}ry zeta(3) and
 Almkvist--Zudilin gamma catalog rows, and two are inverse Franel-transform
@@ -723,7 +758,7 @@ executable-scope note in \texttt{docs/atlas/EXECUTABLE\_REPLAY\_SCOPE.md}.
 We do not solve every problem attached to the C/F bridge.  Instead, we give a
 normalized proof of the bridge and a reproducible model for using it without
 overclaiming.  The bridge transports generating functions, coefficients, ODEs,
-Hankel determinants, and a constant-term complement model.  The atlas records
+ordinary Hankel matrices and their Smith forms, and a constant-term complement model.  The atlas records
 adjacent theorem sources, metadata layers, finite checks, conjectures,
 blockers, and bounded negatives with distinct claim classes.  This separation
 is the main lesson:
@@ -734,118 +769,61 @@ bridge identities are powerful precisely when their scope is explicit.
 \section{Theta-gauge certificate details}
 \label{app:certificate}
 
-This appendix records the certificate data behind the theta-gauge identities
-used in Theorem~\ref{thm:cf-bridge}.
-
-By the normalization contracts in Section~\ref{subsec:theta-normalization},
-the functions below are meromorphic modular functions on $X_0(6)$ and have no
-interior poles.  Their only possible poles are cuspidal; the cusp-order tables
-bound those poles.  The certificate uses the following public data contract.
+This appendix gives a self-contained small certificate for the theta-ratio
+identity used in Theorem~\ref{thm:cf-bridge}, with the modular
+parametrizations imported in Section~\ref{subsec:theta-normalization}.
+Put
 \[
-\begin{array}{c|c|c|c|c}
-\text{object} & \text{expression} & \text{weight} & \text{character} & \text{audit source}\\
-\hline
-t_C & \text{Beukers }X_0(6)\text{ parameter} & 0 & 1 & \text{cusp orders and }q\text{-replay}\\
-t_F^{\rm source} & t_C/(1-9t_C) & 0 & 1 & \text{twist-source contract}\\
-t_F^{\rm cat} & -t_F^{\rm source} & 0 & 1 & \text{catalog twist contract}\\
-\Theta_F/\Theta_C & 1-9t_C & 0 & 1 & \text{forward valence certificate}\\
-\Theta_C/\Theta_F & 1-9t_F^{\rm cat} & 0 & 1 & \text{inverse valence certificate}
-\end{array}
+ R=\frac{\Theta_F}{\Theta_C}
+   =\frac{\eta_1^9\eta_6^3}{\eta_2^9\eta_3^3},
+ \qquad H=R-(1-9t_C).
 \]
-The checked $q$-expansion orders are recorded here as certificate data.  The
-public companion scripts reproduce the finite coefficient and atlas checks;
-larger q-expansion/Sturm certificate automation is outside the executable
-scope declared in the companion repository.
-
-\subsection{Forward valence certificate}
-
-The forward identity is
+The eta exponent vectors, in the order $1,2,3,6$, are
 \[
-  \Theta_F/\Theta_C = 1-9t_C.
+ t_C:(4,-8,-4,8),\qquad h:(-5,1,-1,5),\qquad R:(9,-9,-3,3).
 \]
-Define
+Each has weight zero, satisfies the two eta-quotient congruences modulo 24,
+and has trivial character.  Their cusp orders follow from the eta-quotient
+order formula
 \[
-  H(q)=\Theta_F(q)/\Theta_C(q)-\bigl(1-9t_C(q)\bigr).
+ \operatorname{ord}_{a/c}\!\left(\prod_{\delta\mid6}\eta_\delta^{r_\delta}\right)
+ =\frac{6}{24c\gcd(c,6/c)}
+   \sum_{\delta\mid6}\frac{\gcd(c,\delta)^2}{\delta}r_\delta,
+ \qquad c\mid6,
 \]
-The cusp-order audit on $\Gamma_0(6)$ gives
+where $c=6$ represents the cusp at infinity.  The orders are measured in
+the respective local cusp parameters:
 \[
 \begin{array}{c|rrrr}
-\text{object} & 0 & 1/2 & 1/3 & \infty\\
+\text{object}&0&1/2&1/3&\infty\\
 \hline
-t_C & 0 & -1 & 0 & 1\\
-\Theta_F/\Theta_C & 1 & -1 & 0 & 0 .
+t_C&0&-1&0&1\\
+h&-1&0&0&1\\
+R&1&-1&0&0
 \end{array}
 \]
-Thus the only possible pole of $H$ is at the cusp $1/2$, of order at most
-$1$.  The $q$-expansion replay gives $\ord_\infty(H)\geq201$.  Since this
-exceeds the possible pole order, the valence criterion forces $H=0$.
+Eta has no zeros in the upper half-plane.  Hence $H$ is a meromorphic
+function on $X_0(6)$ with no interior poles and with at most one simple
+pole, at the cusp $1/2$.
 
-\subsection{Inverse valence certificate}
-
-The inverse identity, written in the catalog parameter, is
+Using $\eta(q)=q^{1/24}\prod_{n\ge1}(1-q^n)$, the displayed products give
 \[
-  \Theta_C/\Theta_F = 1-9t_F^{\rm cat}.
+ t_C=q+O(q^2),\qquad R=1-9q+O(q^2),\qquad H=O(q^2).
 \]
-Define
+A nonzero meromorphic function on the compact curve $X_0(6)$ has equally
+many zeros and poles counted with multiplicity.  A zero of order at least
+two at infinity is incompatible with a total pole order at most one.
+Thus $H=0$ and
 \[
-  K(q)=\Theta_C(q)/\Theta_F(q)-\bigl(1-9t_F^{\rm cat}(q)\bigr).
+ \Theta_F/\Theta_C=1-9t_C.
 \]
-The inverse cusp-order audit gives
+The inverse ratio now follows algebraically:
 \[
-\begin{array}{c|rrrr}
-\text{object} & 0 & 1/2 & 1/3 & \infty\\
-\hline
-t_F^{\rm cat} & -1 & 0 & 0 & 1\\
-\Theta_C/\Theta_F & -1 & 1 & 0 & 0 .
-\end{array}
+ \Theta_C/\Theta_F=(1-9t_C)^{-1}
+  =1+9h=1-9t_F^{\rm cat}.
 \]
-Thus the only possible pole of $K$ is at the cusp $0$, of order at most $1$.
-The $q$-expansion replay gives $\ord_\infty(K)\geq201$, and the valence
-criterion gives $K=0$.
-
-\subsection{Sturm clear-denominator backup}
-
-The same two identities are also checked after clearing the possible cuspidal
-poles.  Use the eta quotient
-\[
-  M(q)=\frac{\eta(q)^3\eta(2q)^3}{\eta(3q)\eta(6q)}.
-\]
-By the Ligozat criterion, the exponent vector of $M$ satisfies the two
-congruences modulo $24$ and the total weight is $2$.  The cusp orders of $M$
-on $\Gamma_0(6)$ are
-\[
-\begin{array}{c|rrrr}
-\text{cusp} & 0 & 1/2 & 1/3 & \infty\\
-\hline
-\ord(M) & 1 & 1 & 0 & 0 .
-\end{array}
-\]
-Thus $M$ is holomorphic at every cusp and vanishes at the two cusps where a
-pole can occur in the preceding valence argument.  The deduction is explicit:
-\begin{itemize}
-\item $H$ has no possible pole except at $1/2$, of order at most $1$, while
-  $\ord_{1/2}(M)=1$; hence $MH$ is holomorphic at $1/2$.
-\item At the other cusps $H$ is holomorphic and $M$ is holomorphic, so $MH$
-  is holomorphic there as well.
-\item $K$ has no possible pole except at $0$, of order at most $1$, while
-  $\ord_{0}(M)=1$; hence $MK$ is holomorphic at $0$.
-\item At the other cusps $K$ is holomorphic and $M$ is holomorphic, so $MK$
-  is holomorphic there as well.
-\end{itemize}
-Since $H$ and $K$ have weight $0$ and trivial character in the chosen
-normalization, both $MH$ and $MK$ are holomorphic weight-$2$ forms on
-$\Gamma_0(6)$ with the character of the eta quotient $M$.  The Sturm
-criterion used here is the standard one for the corresponding character space;
-their checked $q$-expansions lie in the rational coefficient field used by the
-certificate, so the ordinary coefficient-vanishing test applies to the cleared
-forms.
-Since
-\[
-  [\mathrm{SL}_2(\mathbb Z):\Gamma_0(6)]=12,\qquad
-  \left\lfloor\frac{2\cdot12}{12}\right\rfloor=2,
-\]
-the Sturm bound is $2$.  The replay gives vanishing at infinity far beyond
-this bound, hence both cleared forms vanish identically.
+This proof requires only the two leading terms explicitly derived above,
+not a long coefficient replay or an executable Sturm certificate engine.
 
 \subsection{F twist transport dependency}
 
@@ -932,7 +910,7 @@ Using the standard Dedekind eta multiplier formula
   \qquad
   R(\gamma)=\frac{a+d}{12c}-s(d,c)-\frac14,
 \]
-the exact exponents are
+with the principal square root for $c>0$, the exact exponents are
 \[
 \begin{array}{c|cccc}
 d&1&2&3&6\\
@@ -1037,7 +1015,10 @@ $W_2$, and Chan--Cooper Lucas, are recorded separately in
 \texttt{cf\_theorem\_transfer\_registry\_}\\
 \texttt{2026\_06\_extension.json}
 \end{center}
-and summarized in the V2 registry/readout documents.  The excerpt is included
+and summarized in the V2 registry/readout documents.  The October addendum
+records Corollary~\ref{cor:smith-transport} and a source-correction overlay.
+Its JSON file is listed in the public atlas index.  The example identifiers
+above are descriptive labels, not literal V1 row IDs.  The excerpt is included
 only to make the atlas semantics visible in the paper.
 
 \section{Open problems and blocking lemmas}
@@ -1047,10 +1028,11 @@ The atlas records open work by the mathematical object that is missing.  For
 the Sun branch, the C/F theorem transports F-side statements to $T(C)$, but it
 does not itself supply the raw-C/RV-108 bridge.  In the historical V1/V2 data
 package this appears as a deferred proof obligation.  After that atlas freeze,
-the missing raw-C/RV bridge and its A2b Domb component are recorded in the
-separate Franel--Domb bridge manuscript on Sun's Conjecture 3.5
+a proof of the raw-C target is reported in the
+separate manuscript on Sun's supercongruence
 \cite{babanskyy_2026_sun35_bridge}.  We keep the registry row as provenance
 for the C/F atlas rather than reclassifying it as a C/F consequence.
+This paper does not certify that separate proof or the historical A2b branch.
 
 The modular-form and constant-term branches have different blockers.  The
 Beukers--Tsai--Ye weight-one rows require row-specific multiplier data
@@ -1058,8 +1040,11 @@ $\chi(w_d)$ before they can be used as theorem imports.  The Dwork branch has
 a proved C/F constant-term complement operation, but the stronger comparison
 between the complement model and the Gorodetsky F-side model $Q_F$ remains an
 equivalence-or-obstruction problem.  The Rowland--Yassawi branch has explicit
-small automata as metadata, but a full source-theorem application would still
-require a bad-prime/singularity filter and source-style Cartier states.
+small automata as metadata, but a complete public certificate package for
+those recorded automata would still
+require the explicit model contracts, denominator units, and the complete
+Cartier-state certificates.  The historical generic bad-prime/singularity
+wording is corrected by the October source overlay.
 
 Finally, the Straub derivative-transfer branch is not closed by the formal
 C/F coefficient involution alone.  The corrected connection term leaves a
@@ -1080,18 +1065,21 @@ rather than as an isolated coefficient coincidence.
 The remaining sources enter as theorem imports or metadata layers.  Sun
 supplies the source congruence layer and the original Conjecture 3.5 target
 \cite{sun_2022_supercongruences}; the latter is addressed in a separate
-Franel--Domb bridge manuscript rather than by the C/F bridge
+supercongruence manuscript rather than by the C/F bridge
 \cite{babanskyy_2026_sun35_bridge}.  Liu supplies binomial-transform
 congruence metadata with convention guards \cite{liu_2025_binomial_transforms}.
 In the Liu audit, thirteen rows match the normalized catalog directly, while
 the $\eta$ and $s18$ rows are stored with an explicit convention map rather
 than as failures.  Chan--Cooper supplies the companion binomial formulas for
-the five rows in Theorem~\ref{thm:chan-cooper-companion-lucas}; the Lucas proof
+the five rows in Theorem~\ref{thm:chan-cooper-companion-lucas}.  Our $U_i$
+are the central-binomial lifts of the source $s_i$, not the distinct
+Chan--Cooper $t(k)$ sequences; the Lucas proof
 is given in this paper and does not import a BTY theorem
 \cite{chan_cooper_2012_rational_analogues}.  Straub's
-Gessel--Lucas theorem is imported by reference where its hypotheses are used,
-but the separate C/F derivative-transfer problem remains guarded by its
-low-carry proof obligation \cite{straub_2024_gessel_lucas}.
+Gessel--Lucas theorem is imported only under its hypotheses $p\geq3$ and
+$0\leq k<p$, including the author's corrigendum to the printed range
+\cite{straub_gessel_lucas_corrigendum}; the separate C/F derivative-transfer
+problem remains guarded by its low-carry proof obligation \cite{straub_2024_gessel_lucas}.
 
 The Beukers--Tsai--Ye theorem is used only when row hypotheses are complete
 \cite{beukers_tsai_ye_2025_lucas}.  Mellit--Vlasenko and Gorodetsky provide

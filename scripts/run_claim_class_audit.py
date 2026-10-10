@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from run_atlas_count_replay import JUNE, OCTOBER, replay_extension, validate_statements
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "relation_atlas"
@@ -37,16 +39,13 @@ def load_json(name: str) -> dict[str, Any]:
 
 def audit_claim_level_membership(name: str) -> list[str]:
     payload = load_json(name)
-    allowed = set(payload.get("allowed_claim_classes", []))
-    failures: list[str] = []
-    if not allowed:
-        return failures
-    for row in payload.get("statements", []):
-        sid = row.get("statement_id")
-        level = row.get("claim_level")
-        if level not in allowed:
-            failures.append(f"{name}:{sid}: claim_level {level} not in allowed_claim_classes")
-    return failures
+    try:
+        validate_statements(payload, name)
+        if name in (JUNE, OCTOBER):
+            replay_extension(payload, october=name == OCTOBER)
+    except ValueError as error:
+        return [str(error)]
+    return []
 
 
 def audit_registry() -> list[str]:
@@ -93,6 +92,7 @@ def main() -> int:
     failures = (
         audit_claim_level_membership("cf_theorem_transfer_registry_v1.json")
         + audit_claim_level_membership("cf_theorem_transfer_registry_2026_06_extension.json")
+        + audit_claim_level_membership(OCTOBER)
         + audit_registry()
         + audit_edge_scan()
         + audit_watch_triage()

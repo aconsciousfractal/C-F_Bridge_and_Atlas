@@ -28,6 +28,38 @@ ALLOWLIST = {
 PATH_PREFIXES = ("data/", "docs/", "paper/", "results/", "scripts/", "tests/")
 
 
+def check_historical_external_references() -> list[str]:
+    """Unavailable historical outputs are explicit exclusions, never delivered files."""
+    data = ROOT / "data" / "relation_atlas"
+    overlay = json.loads((data / "cf_theorem_transfer_registry_2026_10_extension.json").read_text(encoding="utf-8"))
+    excluded = overlay["historical_external_references"]
+    failures: list[str] = []
+    if len(excluded) != 24 or len(set(excluded)) != 24:
+        failures.append("historical exclusion inventory must contain exactly 24 unique references")
+    found: set[str] = set()
+
+    def walk(value: object) -> list[str]:
+        if isinstance(value, dict):
+            return [p for item in value.values() for p in walk(item)]
+        if isinstance(value, list):
+            return [p for item in value for p in walk(item)]
+        return [value] if isinstance(value, str) and value.startswith("outputs/") else []
+
+    for path in data.glob("*.json"):
+        if path.name == "cf_theorem_transfer_registry_2026_10_extension.json":
+            continue
+        refs = set(walk(json.loads(path.read_text(encoding="utf-8"))))
+        if refs and path.name not in {"source_cartier_prime_power_metadata_v1.json", "rowland_yassawi_fixed_modulus_theorem_certificates_v1.json"}:
+            failures.append(f"undeclared historical output category: {path.name}")
+        found.update(refs)
+    if found != set(excluded):
+        failures.append("historical external-reference inventory differs from received records")
+    for ref in excluded:
+        if not ref.startswith("outputs/_validation/") or ".." in Path(ref).parts or ":" in ref:
+            failures.append(f"unsafe historical reference: {ref}")
+    return failures
+
+
 def rel(path: Path) -> Path:
     return path.relative_to(ROOT)
 
@@ -109,6 +141,7 @@ def main() -> int:
         "missing manifest paths": check_manifest_paths(),
         "broken Markdown links": check_markdown_links(),
         "invalid JSON": check_json_syntax(),
+        "historical external references": check_historical_external_references(),
     }
     active = {label: items for label, items in failures.items() if items}
     if active:

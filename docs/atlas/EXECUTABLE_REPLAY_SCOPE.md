@@ -1,40 +1,25 @@
-# Executable Replay Scope
+# Executable replay scope
 
-This public companion has two roles:
+The scripts are reproducibility aids; the mathematical proofs are in the paper.
 
-1. It provides executable sanity checks for the finite coefficient identities and
-   the curated relation-atlas metadata used by the paper.
-2. It records the claim discipline of the atlas in machine-readable JSON.
+| Command | Scope actually checked |
+|---|---|
+| `run_cf_bridge_replay.py` | C/F coefficient identities n=0..30 and ordinary Hankel determinant equality through order6. |
+| `run_atkin_lehner_w2_eta_multiplier_certificate.py` | Exact arithmetic for four eta-multiplier factorizations. |
+| `run_chan_cooper_lucas_replay.py` | Eleven sequences, n<=120 and primes2,3,5,7,11,13,17,19. |
+| `run_atlas_schema_check.py` | Required JSON keys, including the October addendum. |
+| `run_atlas_count_replay.py` | Record recounts and declared-summary comparisons; received historical scan/build/replay totals remain identified as received. |
+| `run_claim_class_audit.py` | Allowed claim classes and explicit metadata guardrails. |
+| `run_public_repo_audit.py` | Local links, distributed paths and explicit historical path exclusions; forbidden local/process residue. |
+| `verify_public_package.py` | Complete LF-normalized inventory of included JSON artifacts, record/count consistency, claims, primary links and citation fields. |
 
-The replay scripts are deliberately small, standard-library Python programs.
-They are reproducibility aids, not replacements for the mathematical proofs in
-the paper.
+The proof of Smith equality is unimodular congruence for every N, not a finite
+Smith replay. The theta-ratio proof is an explicit small eta/valence argument;
+no large q-expansion engine is needed for it. A full Sturm/valence engine is
+not distributed. The all-primes Lucas proof is arithmetic in the paper;
+its replay is only a finite check of formulas and sign conventions.
 
-## Included Executable Checks
-
-| command | purpose |
-| --- | --- |
-| `python scripts/run_cf_bridge_replay.py` | replays finite C/F bridge coefficient identities through `BOUND=30`, including ordinary Hankel determinant equality through order 6 |
-| `python scripts/run_atkin_lehner_w2_eta_multiplier_certificate.py` | reproduces the exact eta-multiplier constants used in the Atkin-Lehner W2 appendix audit |
-| `python scripts/run_chan_cooper_lucas_replay.py` | replays finite Lucas checks for the five Chan-Cooper companion rows and the negative-q level-8 sign twist |
-| `python scripts/run_atlas_schema_check.py` | validates required JSON keys for the curated atlas package |
-| `python scripts/run_atlas_count_replay.py` | replays the public atlas count summaries |
-| `python scripts/run_claim_class_audit.py` | checks allowed claim classes and known guardrails |
-| `python scripts/run_public_repo_audit.py` | checks links, release wording, and forbidden local/process residue |
-
-## Not Included As Executable Proof Certificates
-
-The paper contains mathematical proofs for the C/F bridge theorem and discusses
-atlas theorem-transfer metadata.  This companion does not currently include a
-full modular-form q-expansion/Sturm/valence proof certificate, nor a complete
-Rowland-Yassawi all-good-primes/all-alpha automaton archive.  The W2
-eta-multiplier script covers only the finite exact multiplier arithmetic used
-in the paper appendix; it is not a full modular-form proof engine.  The larger
-q-expansion/Sturm/valence and all-primes automaton certificates remain outside
-the scope of this curated public package unless archived separately.
-
-The Chan-Cooper replay is likewise a finite sanity check for the branch and
-sign conventions; the all-primes Lucas result is proved in the paper.  The
-absence of the larger certificates is reflected in the atlas guardrails:
-finite replay and fixed-modulus metadata are not promoted to new theorem-transfer
-proofs by themselves.
+Six Cartier and six RY records summarize certificates whose full payloads
+are absent. Historical `outputs/` references are explicitly excluded and
+counted, not treated as delivered files. The old scan denominator and 80-term
+triage are not regenerated. See [the October addendum](CF_OCTOBER_2026_ADDENDUM.md).

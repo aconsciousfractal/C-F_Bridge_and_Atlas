@@ -1,0 +1,108 @@
+{
+  "artifact": "cf_theorem_transfer_registry_2026_10_extension",
+  "date": "2026-10-10",
+  "claim_level": "paper_facing_extension_registry",
+  "allowed_claim_classes": [
+    "proved_in_paper"
+  ],
+  "summary": {
+    "extension_statement_count": 1,
+    "proved_in_paper_count": 1,
+    "closed_metadata_count": 0,
+    "theorem_transfer_edge_count": 0
+  },
+  "statements": [
+    {
+      "statement_id": "cf_integral_hankel_smith_transport",
+      "source_paper": "C/F bridge paper",
+      "source_label": "cor:smith-transport",
+      "source_object": "ordinary integer Hankel matrices H_N(C), N>=1",
+      "target_object": "ordinary integer Hankel matrices H_N(F), N>=1",
+      "rewrite": "H_N(F)=U_N H_N(C) U_N^t; U_N=D_N B_N in GL_N(Z)",
+      "cf_role": "C/F consequence proved in the paper",
+      "claim_level": "proved_in_paper",
+      "status": "proved_in_paper",
+      "guardrail": "ordinary; unimodular; equality_not_classification; includes zero factors; no shifted-Hankel extension"
+    }
+  ],
+  "guardrails": [
+    "Smith equality does not classify invariant factors",
+    "V1 and June rows retained as historical provenance; use the current correction overlay for affected imports",
+    "No new theorem-transfer edge; no solver or full local Smith law"
+  ],
+  "source_corrections": [
+    {
+      "id": "sun_theorem_3_4_eq_3_4",
+      "historical_statement_id": "sun_2022_theorem_3_4_eq_3_4",
+      "source": "Sun 2022, Theorem 3.4, equation (3.4), p2739",
+      "source_Q_denominator": "-9(m+2)",
+      "transformed_C_denominator": "9(m+2)",
+      "Franel_denominator": "-9m+14",
+      "conditions": "p>3; m integral with m != +/-2 mod p and 9m-14 != 0 mod p; retain all source hypotheses",
+      "meaning": "The Q sum and Franel sum have different denominators; Q_k=(-1)^k F_k converts Q to T(C), without swapping those denominators."
+    },
+    {
+      "id": "straub_gessel_lucas",
+      "historical_statement_ids": [
+        "straub_2023_theorem_1_1",
+        "straub_2023_theorem_1_3"
+      ],
+      "source": "Straub Theorems 1.1 and 1.3 plus author corrigendum",
+      "p_minimum": 3,
+      "theorem_1_1_domain": "n,r>=1",
+      "corrected_digit_domain": "0<=k<p",
+      "corrigendum_url": "https://arminstraub.com/pub/gessel-lucas",
+      "meaning": "Retain every source hypothesis; the C/F derivative-transfer obligation remains open."
+    },
+    {
+      "id": "rowland_yassawi_rational_diagonal",
+      "source": "Rowland-Yassawi 2015, Theorem 2.1 and Algorithm 1",
+      "conditions": "R,Q in Z_p[x_1,...,x_d]; Q(0) a unit; normalize Q(0)=1 for the algorithm",
+      "meaning": "No extra generic singularity filter for an already explicit rational diagonal. Algebraic-series conversion has different hypotheses. Complete model/state payloads for the recorded automata are not shipped."
+    },
+    {
+      "id": "sun_3_5_separate_manuscript",
+      "title": "Sun's supercongruence for an Apéry-like sequence",
+      "package_version_observed": "0.1.3",
+      "url": "https://github.com/aconsciousfractal/Sun-3-5-Supercongruence",
+      "meaning": "The separate manuscript reports a proof. This Atlas revision does not certify that proof, the historical Franel-Domb route, or A2b closure."
+    }
+  ],
+  "historical_locator_crosswalk": {
+    "cf_mobius_binomial_bridge": "thm:cf-bridge",
+    "cf_coefficient_transform_involution": "cor:coeff",
+    "cf_ode_pullback": "cor:ode",
+    "cf_sun_q_to_tc_transfer_contract": "subsec:coeff-transport",
+    "cf_hankel_invariance": "cor:hankel",
+    "chan_cooper_five_companion_lucas": "thm:chan-cooper-companion-lucas"
+  },
+  "historical_external_references": [
+    "outputs/_validation/automatic_congruence_ry27b_cooper_s7_mod4_theorem_certificate.json",
+    "outputs/_validation/automatic_congruence_ry28_cooper_s7_mod9_theorem_certificate.json",
+    "outputs/_validation/automatic_congruence_ry30_zagier_c_mod4_theorem_certificate.json",
+    "outputs/_validation/automatic_congruence_ry30_zagier_c_mod9_theorem_certificate.json",
+    "outputs/_validation/automatic_congruence_ry30_zagier_f_mod4_theorem_certificate.json",
+    "outputs/_validation/automatic_congruence_ry30_zagier_f_mod9_theorem_certificate.json",
+    "outputs/_validation/prime_power_artifacts/cooper_s7_mod4_artifact.json",
+    "outputs/_validation/prime_power_artifacts/cooper_s7_mod4_build.json",
+    "outputs/_validation/prime_power_artifacts/cooper_s7_mod4_replay.json",
+    "outputs/_validation/prime_power_artifacts/cooper_s7_mod9_artifact.json",
+    "outputs/_validation/prime_power_artifacts/cooper_s7_mod9_build.json",
+    "outputs/_validation/prime_power_artifacts/cooper_s7_mod9_replay.json",
+    "outputs/_validation/prime_power_artifacts/zagier_c_mod4_artifact.json",
+    "outputs/_validation/prime_power_artifacts/zagier_c_mod4_build.json",
+    "outputs/_validation/prime_power_artifacts/zagier_c_mod4_replay.json",
+    "outputs/_validation/prime_power_artifacts/zagier_c_mod9_artifact.json",
+    "outputs/_validation/prime_power_artifacts/zagier_c_mod9_build.json",
+    "outputs/_validation/prime_power_artifacts/zagier_c_mod9_replay.json",
+    "outputs/_validation/prime_power_artifacts/zagier_f_mod4_artifact.json",
+    "outputs/_validation/prime_power_artifacts/zagier_f_mod4_build.json",
+    "outputs/_validation/prime_power_artifacts/zagier_f_mod4_replay.json",
+    "outputs/_validation/prime_power_artifacts/zagier_f_mod9_artifact.json",
+    "outputs/_validation/prime_power_artifacts/zagier_f_mod9_build.json",
+    "outputs/_validation/prime_power_artifacts/zagier_f_mod9_replay.json"
+  ],
+  "historical_reference_policy": "These outputs/ paths identify received summaries, not files distributed by this package or executable links. Six RY records and six Cartier records are counted; their original replay/build summaries are not rerun.",
+  "historical_scan_policy": "17684 transforms and 17672 negatives are reported historical counts; producer/eligibility trace absent. The suite recounts 12 stored hits, not the rectangular parameter product or the 80-term triage.",
+  "historical_scope_note_policy": "Scope-note imperatives in frozen records document their original context, not active reader instructions."
+}

@@ -6,7 +6,7 @@ Public companion for the paper:
 > for Apéry-like sources*
 
 Author: Oleksiy Babanskyy
-Release: `v1.0.0`
+Package version: `1.0.1`
 
 ## Start here
 
@@ -29,7 +29,7 @@ F(x) = (1 - 9x)^(-1) C(-x / (1 - 9x))
 ```
 
 between Zagier's C and F Apéry-like sequences. It derives the involutive
-coefficient transform, ordinary Hankel-determinant invariance, the differential
+coefficient transform, ordinary integral Hankel congruence and Smith equality, the differential
 operator pullback, and a constant-term complement construction. The paper also
 proves the Chan-Cooper companion Lucas lane and records the exact finite
 Atkin-Lehner `W2` multiplier arithmetic used in its appendix.
@@ -53,7 +53,7 @@ python -m pip install -r requirements.txt
 python scripts/run_all_reproducibility_checks.py
 ```
 
-The command runs all producers, the eight-test suite, the claim/count audits,
+The command runs all producers, the thirteen-test suite, the claim/count audits,
 and the fail-closed public-package verifier.
 
 ## Repository map
@@ -71,3 +71,8 @@ CITATION.cff          release citation metadata
 
 The checks are reproducibility aids. The mathematical proofs remain in the
 paper.
+
+
+For the current Smith consequence, source errata, literal row-ID crosswalk,
+and the limits of historical summary records, use the
+[October addendum](docs/atlas/CF_OCTOBER_2026_ADDENDUM.md).

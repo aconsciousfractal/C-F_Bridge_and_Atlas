@@ -1,16 +1,17 @@
 # C/F theorem-transfer registry V2 index
 
-Release: `v1.0.0`
+Package version: `1.0.1`
 Claim level: guarded registry index, not a proof artifact
 
-The V2 index preserves the 20-row base registry and records 11 supplementary
-metadata classes. A six-row paper-facing extension is counted separately.
+The V2 index preserves the 20-row base registry and records 11 historical supplementary
+artifact units. A six-row paper-facing extension is counted separately.
 
 ```yaml
 base_registry_statement_count: 20
 v2_base_supplement_count: 11
 paper_facing_extension_count: 6
-total_public_registry_extension_rows: 17
+total_public_registry_extension_rows: 18
+october_statement_rows: 1
 finite_edge_input_watch_rows: 8
 finite_edge_closed_known_metadata_rows: 8
 finite_edge_new_theorem_edges: 0
@@ -24,10 +25,10 @@ ry_all_good_primes_status: open
 |---|---|---|
 | Dwork C/F complement | `closed_metadata` | Constant-term complement only; no Newton equivalence. |
 | Liu normalization | `closed_metadata` | Row-level convention map; no blanket theorem import. |
-| Cooper and Franel automata | `explicit_automaton_metadata` | Explicit finite-state records. |
+| Cooper and Franel automata | `explicit_automaton_metadata` | Received finite-state summaries; full transition payloads absent. |
 | C/F rational diagonals and small-modulus automata | `closed_metadata` | Fixed models/moduli only. |
 | Source-Cartier alpha-2 records | `explicit_automaton_metadata` | Curated fixed-modulus records. |
-| Rowland-Yassawi fixed-modulus certificates | theorem import by reference at fixed modulus | Six public certificates; no all-primes claim. |
+| Rowland-Yassawi fixed-modulus certificates | theorem import by reference at fixed modulus | Six received certificate summaries; original payloads absent; no all-primes claim. |
 | Straub derivative transport | `proof_obligation` | Low-carry identity is missing. |
 | Finite edge classification | `closed_known_metadata` | Eight aliases/known inverse transforms; zero new theorem edges. |
 
@@ -40,3 +41,8 @@ closed metadata. None creates a new theorem-transfer edge.
 
 The exact rows and counts live in
 `data/relation_atlas/cf_theorem_transfer_registry_2026_06_extension.json`.
+
+
+For the current Smith consequence, source errata, literal row-ID crosswalk,
+and the limits of historical summary records, use the
+[October addendum](CF_OCTOBER_2026_ADDENDUM.md).

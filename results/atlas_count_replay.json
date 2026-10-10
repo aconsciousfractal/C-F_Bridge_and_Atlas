@@ -2,10 +2,7 @@
   "actual": {
     "cartier_metadata": {
       "build_bad_count": 0,
-      "build_replay_n_terms": 64,
-      "edge_count": 6,
-      "saved_artifact_replay_n_terms": 16,
-      "saved_replay_bad_count": 0
+      "edge_count": 6
     },
     "edge_scan": {
       "bounded_negative_count": 17672,
@@ -21,11 +18,18 @@
       "proved_in_paper_count": 3,
       "theorem_transfer_edge_count": 0
     },
+    "extension_registry_2026_10": {
+      "closed_metadata_count": 0,
+      "extension_statement_count": 1,
+      "proved_in_paper_count": 1,
+      "theorem_transfer_edge_count": 0
+    },
     "manifest": {
       "active_or_blocked_open_problem_count_at_v2_freeze": 6,
       "base_registry_statement_count": 20,
       "closed_or_reconciled_open_problem_count": 4,
       "extension_2026_06_20_count": 6,
+      "extension_2026_10_10_count": 1,
       "finite_edge_closed_known_metadata_rows": 8,
       "finite_edge_input_watch_rows": 8,
       "finite_edge_new_proof_obligations": 0,
@@ -34,7 +38,7 @@
       "post_sun_3_5_active_or_blocked_open_problem_count": 4,
       "ry_level2a_fixed_modulus_certificate_count": 6,
       "ry_level2b_status": "open",
-      "total_public_registry_extension_rows": 17,
+      "total_public_registry_extension_rows": 18,
       "v2_base_supplement_count": 11,
       "v2_supplement_count": 11
     },
@@ -50,8 +54,7 @@
         "new_corollary_of_CF": 9,
         "proof_obligation": 4
       },
-      "high_value_candidate_count": 14,
-      "high_value_with_replay_and_literature_count": 14
+      "high_value_candidate_count": 14
     },
     "registry": {
       "blocked_count": 2,
@@ -67,23 +70,27 @@
     },
     "rowland_yassawi": {
       "certificate_count": 6,
-      "cooper_s7_count": 2,
-      "replay_bad_count": 0,
-      "replay_n_terms": 64,
-      "zagier_cf_count": 4
+      "replay_bad_count": 0
     },
     "watch_triage": {
-      "blocked_count": 0,
-      "bounded_negative_count": 0,
       "closed_known_metadata_count": 8,
+      "decision_count": 8,
       "decision_counts": {
         "closed_known_metadata": 8
       },
-      "package_update_trigger": true,
-      "proof_obligation_candidate_count": 0,
-      "still_watch_count": 0,
-      "watch_input_count": 8
+      "still_watch_count": 0
     }
+  },
+  "count_sources": {
+    "cartier_metadata": "edge records and stored build_replay.bad_count recounted; raw automaton payloads not replayed",
+    "edge_scan": "hit classifications and promotion statuses recounted; checked_transform_count and bounded_negative_count inherited from received scan summary; no scan rerun",
+    "extension_registry": "June statement records recounted",
+    "extension_registry_2026_10": "October statement records recounted",
+    "manifest": "11 artifact units + 6 June statements + 1 October statement; remaining freeze summaries inherited; aggregate is not a theorem count",
+    "opposite_side": "candidate records, classifications and high_value flags recounted",
+    "registry": "statement records recounted",
+    "rowland_yassawi": "certificate records recounted; replay_bad_count inherited from received summary because not all raw certificate/replay payloads are present",
+    "watch_triage": "decision records recounted"
   },
   "status": "pass"
 }

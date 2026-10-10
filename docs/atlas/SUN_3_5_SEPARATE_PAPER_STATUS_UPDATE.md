@@ -1,21 +1,11 @@
-# Sun 3.5 Separate-Paper Status Update
+# Sun 3.5 separate-manuscript status
 
-**Date:** 2026-05-10
+Current correction: 10 October 2026. The V1/V2 raw-C row records the state at
+its freeze; it is retained as historical provenance.
 
-The V1/V2 relation atlas keeps the Sun raw-C row as historical provenance: at
-atlas freeze time, the C/F bridge did not provide the raw-C/RV-108 bridge.
-
-Current paper-facing status:
-
-```text
-Sun Conjecture 3.5 is addressed in the companion Franel-Domb Sun 3.5 paper.
-The resolution is not a consequence of the C/F bridge.
-The registry row is retained as provenance, not promoted as a C/F theorem row.
-```
-
-This companion package therefore supports both records:
-
-```text
-V1/V2 registry data: historical claim discipline for the C/F atlas.
-Paper readout: Sun 3.5 is addressed in the companion Franel-Domb bridge paper.
-```
+The current separate manuscript is [Sun's supercongruence for an Apéry-like
+sequence](https://github.com/aconsciousfractal/Sun-3-5-Supercongruence), whose
+companion identifies package version0.1.3. It reports a proof of Sun's
+Conjecture3.5. This Atlas does not certify that proof or promote it as a C/F
+consequence. The older Franel–Domb attribution and A2b branch are not the
+current proof citation; see [the October correction](CF_OCTOBER_2026_ADDENDUM.md).

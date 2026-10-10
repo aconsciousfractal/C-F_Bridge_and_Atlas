@@ -23,3 +23,8 @@ in `data/relation_atlas/`. The paper remains the authority for proofs.
 
 Every referenced path in the public manifest is checked mechanically by
 `scripts/verify_public_package.py`.
+
+
+For the current Smith consequence, source errata, literal row-ID crosswalk,
+and the limits of historical summary records, use the
+[October addendum](CF_OCTOBER_2026_ADDENDUM.md).

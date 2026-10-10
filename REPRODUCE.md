@@ -17,7 +17,7 @@ From the repository root:
 python scripts/run_all_reproducibility_checks.py
 ```
 
-This runs the seven scientific/package checks, eight pytest tests, and the
+This runs the seven scientific/package checks, thirteen pytest tests, and the
 fail-closed package verifier. The command rewrites the canonical files under
 `results/`; a clean release must reproduce them without semantic drift.
 
@@ -65,7 +65,7 @@ pdflatex -interaction=nonstopmode -halt-on-error cf_bridge_relation_atlas.tex
 pdflatex -interaction=nonstopmode -halt-on-error cf_bridge_relation_atlas.tex
 ```
 
-The release PDF has 16 pages. A valid build has no undefined references,
+The October package PDF has 16 pages. A valid build has no undefined references,
 overfull boxes, or LaTeX errors.
 
 The scripts provide bounded computational evidence. The paper contains the

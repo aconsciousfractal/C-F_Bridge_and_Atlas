@@ -1,6 +1,6 @@
 # Claim ledger
 
-Release: `v1.0.0`
+Package version: `1.0.1`
 
 The machine-readable registries carry row-level claim classes; this file is the
 public theorem/certificate index. The compact levels used here are:
@@ -12,7 +12,7 @@ public theorem/certificate index. The compact levels used here are:
 
 | ID | Level | Statement | Paper/source locator | Evidence in this repository |
 |---|---|---|---|---|
-| `CF-C1` | `CL5` | The Möbius-binomial bridge `F(x)=(1-9x)^(-1)C(-x/(1-9x))`, the involutive coefficient transform, ordinary Hankel invariance, ODE pullback, and constant-term complement consequence. | Main theorem and consequences in the paper. | `scripts/run_cf_bridge_replay.py` provides a bounded sanity replay. |
+| `CF-C1` | `CL5` | The Möbius-binomial bridge `F(x)=(1-9x)^(-1)C(-x/(1-9x))`, the involutive coefficient transform, ordinary integral Hankel congruence and Smith equality, ODE pullback, and constant-term complement consequence. | Main theorem and consequences in the paper. | `scripts/run_cf_bridge_replay.py` provides a bounded sanity replay. |
 | `CF-C2` | `CL5` | The Chan-Cooper five-companion Lucas result for all primes, including the level-8 sign twist. | Chan-Cooper section of the paper. | `scripts/run_chan_cooper_lucas_replay.py` checks the stated finite range. |
 | `CF-C3` | `CL3` | Exact `W2` eta-multiplier arithmetic used in the appendix. | Atkin-Lehner appendix. | `scripts/run_atkin_lehner_w2_eta_multiplier_certificate.py`. |
 | `CF-C4` | `CLM` | The curated relation atlas preserves claim classes, source labels, finite counts, and guarded theorem-transfer metadata. | Data-package section and `docs/atlas/README.md`. | Schema, count, claim-class, link, and SHA-256 audits. |
@@ -20,3 +20,8 @@ public theorem/certificate index. The compact levels used here are:
 
 Guardrail: finite replay and fixed-modulus metadata are not promoted to new
 theorem-transfer proofs by themselves.
+
+
+For the current Smith consequence, source errata, literal row-ID crosswalk,
+and the limits of historical summary records, use the
+[October addendum](docs/atlas/CF_OCTOBER_2026_ADDENDUM.md).

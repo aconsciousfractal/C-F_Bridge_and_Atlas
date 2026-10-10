@@ -25,9 +25,10 @@
     "ry_level2b_status": "open",
     "v2_base_supplement_count": 11,
     "extension_2026_06_20_count": 6,
-    "total_public_registry_extension_rows": 17,
+    "total_public_registry_extension_rows": 18,
     "active_or_blocked_open_problem_count_at_v2_freeze": 6,
-    "post_sun_3_5_active_or_blocked_open_problem_count": 4
+    "post_sun_3_5_active_or_blocked_open_problem_count": 4,
+    "extension_2026_10_10_count": 1
   },
   "trigger": {
     "reason": "the finite edge classification changed 8 watch rows to closed_known_metadata; RY-30 added fixed-modulus Level 2a theorem certificates",
@@ -76,5 +77,25 @@
       "Chan-Cooper five-companion Lucas lane"
     ],
     "guardrail": "addendum rows do not alter the frozen V2 base supplement count; Chan-Cooper row is adjacent direct Lucas proof, not C/F transfer or BTY import"
-  }
+  },
+  "v2_base_supplement_artifacts": [
+    "docs/atlas/CF_THEOREM_ATLAS_V2_READOUT.md",
+    "docs/atlas/CF_THEOREM_TRANSFER_REGISTRY_V2.md",
+    "docs/atlas/CF_OPEN_PROBLEM_ATLAS_V2.md",
+    "docs/atlas/CF_LIKE_EDGE_WATCH_TRIAGE_V1.md",
+    "docs/atlas/SUN_3_5_SEPARATE_PAPER_STATUS_UPDATE.md",
+    "docs/atlas/EXECUTABLE_REPLAY_SCOPE.md",
+    "data/relation_atlas/cf_theorem_transfer_registry_v1.json",
+    "data/relation_atlas/cf_like_edge_watch_triage_v1.json",
+    "data/relation_atlas/cf_opposite_side_candidates.json",
+    "data/relation_atlas/source_cartier_prime_power_metadata_v1.json",
+    "data/relation_atlas/rowland_yassawi_fixed_modulus_theorem_certificates_v1.json"
+  ],
+  "current_addenda": [
+    "data/relation_atlas/cf_theorem_transfer_registry_2026_06_extension.json",
+    "data/relation_atlas/cf_theorem_transfer_registry_2026_10_extension.json"
+  ],
+  "current_readout": "docs/atlas/CF_OCTOBER_2026_ADDENDUM.md",
+  "current_package_version": "1.0.1",
+  "count_unit_note": "11 historical supplement artifact units + 6 June statement rows + 1 October statement row; mixed aggregate, not number of theorems or V1 rows. v2_supplements is a 12-path historical inventory."
 }

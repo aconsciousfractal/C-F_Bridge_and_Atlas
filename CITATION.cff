@@ -1,8 +1,7 @@
 ﻿cff-version: 1.2.0
 message: "If you use this companion package, please cite the associated paper."
 title: "C/F Bridge And Relation Atlas Companion"
-version: "1.0.0"
-date-released: "2026-08-03"
+version: "1.0.1"
 authors:
   - family-names: "Babanskyy"
     given-names: "Oleksiy"

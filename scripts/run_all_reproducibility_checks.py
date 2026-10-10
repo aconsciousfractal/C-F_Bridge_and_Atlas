@@ -25,26 +25,29 @@ CHECKS = [
 
 def main() -> int:
     commands: list[dict[str, object]] = []
+    summary = ROOT / "results" / "public_reproducibility_check.json"
+    def save(status: str) -> None:
+        summary.write_text(json.dumps({"status": status, "commands": commands}, indent=2) + "\n", encoding="utf-8", newline="\n")
+    def run(command: list[str], recorded: list[str]) -> None:
+        completed = subprocess.run(command, cwd=ROOT, check=False)
+        commands.append({"command": recorded, "returncode": completed.returncode})
+        save("running" if completed.returncode == 0 else "fail")
+        if completed.returncode:
+            raise SystemExit(completed.returncode)
+    # A failed/incomplete invocation cannot leave an earlier PASS as its receipt.
+    save("running")
     for script in CHECKS:
         print(f"\n== {script} ==")
         command = [sys.executable, str(SCRIPTS / script)]
-        completed = subprocess.run(command, cwd=ROOT, check=True)
-        commands.append({"command": ["python", f"scripts/{script}"], "returncode": completed.returncode})
+        run(command, ["python", f"scripts/{script}"])
 
-    pytest_command = [sys.executable, "-m", "pytest", "-q"]
-    completed = subprocess.run(pytest_command, cwd=ROOT, check=True)
-    commands.append({"command": ["python", "-m", "pytest", "-q"], "returncode": completed.returncode})
+    pytest_command = [sys.executable, "-m", "pytest", "-q", "-x"]
+    run(pytest_command, ["python", "-m", "pytest", "-q", "-x"])
 
     verifier_command = [sys.executable, str(SCRIPTS / "verify_public_package.py")]
-    completed = subprocess.run(verifier_command, cwd=ROOT, check=True)
-    commands.append({"command": ["python", "scripts/verify_public_package.py"], "returncode": completed.returncode})
+    run(verifier_command, ["python", "scripts/verify_public_package.py"])
 
-    summary = ROOT / "results" / "public_reproducibility_check.json"
-    summary.write_text(
-        json.dumps({"status": "pass", "commands": commands}, indent=2) + "\n",
-        encoding="utf-8",
-        newline="\n",
-    )
+    save("pass")
     print(f"\nall reproducibility checks: PASS\nwrote: {summary.relative_to(ROOT)}")
     return 0
 

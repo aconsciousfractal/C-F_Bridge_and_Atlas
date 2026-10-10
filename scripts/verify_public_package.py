@@ -8,6 +8,7 @@ from pathlib import Path, PurePosixPath
 from urllib.parse import unquote
 
 from make_public_manifest import MANIFEST, ROOT, artifact_paths, artifact_sha256
+from run_atlas_count_replay import COUNT_SOURCES, EXPECTED as EXPECTED_COUNTS, assert_expected, compute_counts
 
 
 LINE_RE = re.compile(r"^([0-9a-f]{64})  ([^\\]+)$")
@@ -107,10 +108,16 @@ def main() -> int:
     w2 = artifacts["results/atkin_lehner_w2_eta_multiplier_certificate.json"]
     require(w2["status"] == "pass" and len(w2["factorizations"]) == 4, "W2 certificate drifted")
 
-    counts = artifacts["results/atlas_count_replay.json"]["actual"]
+    count_result = artifacts["results/atlas_count_replay.json"]
+    counts = compute_counts({PurePosixPath(rel).name: payload for rel, payload in artifacts.items() if rel.startswith("data/relation_atlas/")})
+    require(count_result.get("status") == "pass", "count result status drifted")
+    require(count_result.get("actual") == counts, "reported counts differ from current curated records")
+    require(count_result.get("count_sources") == COUNT_SOURCES, "count provenance annotation drifted")
+    for section in EXPECTED_COUNTS:
+        assert_expected(section, counts[section])
     require(counts["registry"]["statement_count"] == 20, "registry count drifted")
     require(counts["registry"]["proved_in_paper_count"] == 3, "proved-in-paper count drifted")
-    require(counts["manifest"]["total_public_registry_extension_rows"] == 17, "extension count drifted")
+    require(counts["manifest"]["total_public_registry_extension_rows"] == 18, "extension aggregate drifted")
     require(counts["edge_scan"]["checked_transform_count"] == 17684, "edge-scan count drifted")
     require(counts["watch_triage"]["closed_known_metadata_count"] == 8, "edge classification drifted")
     require(counts["rowland_yassawi"]["certificate_count"] == 6, "RY certificate count drifted")
@@ -129,8 +136,8 @@ def main() -> int:
         require(claim_id in ledger, f"claim ledger ID missing: {claim_id}")
 
     citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
-    require('version: "1.0.0"' in citation, "CITATION.cff version drifted")
-    require('date-released: "2026-08-03"' in citation, "CITATION.cff release date drifted")
+    require('version: "1.0.1"' in citation, "CITATION.cff version drifted")
+    require(re.search(r"^\s*date-released\s*:", citation, re.MULTILINE) is None, "CITATION.cff invents a release date")
     require("https://orcid.org/0009-0001-6176-6208" in citation, "ORCID missing")
 
     verify_links()

@@ -1,6 +1,6 @@
 # Public claim boundary
 
-Release: `v1.0.0`
+Package version: `1.0.1`
 
 Authoritative sources are the paper, `CLAIM_LEDGER.md`,
 `docs/atlas/EXECUTABLE_REPLAY_SCOPE.md`, and the machine-readable claim classes
@@ -10,6 +10,8 @@ verified by `scripts/run_claim_class_audit.py`.
 
 - The C/F bridge and its coefficient, ordinary-Hankel, ODE, and constant-term
   consequences are proved in the paper.
+- The ordinary integer Hankel matrices have the same Smith form, including
+  zero factors, by unimodular congruence. This does not classify the factors.
 - The Chan-Cooper companion Lucas result is proved in the paper.
 - The `W2` eta-multiplier constants replay exactly at the finite arithmetic
   scope used in the appendix.
@@ -29,3 +31,8 @@ verified by `scripts/run_claim_class_audit.py`.
 
 Run `scripts/verify_public_package.py` after any public-document or artifact
 change.
+
+
+For the current Smith consequence, source errata, literal row-ID crosswalk,
+and the limits of historical summary records, use the
+[October addendum](docs/atlas/CF_OCTOBER_2026_ADDENDUM.md).

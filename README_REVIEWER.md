@@ -1,6 +1,6 @@
 # Reviewer guide
 
-This guide describes the immutable public release `v1.0.0`.
+This guide describes package version `1.0.1` of the repository.
 
 ## Ten-minute path
 
@@ -15,8 +15,8 @@ This guide describes the immutable public release `v1.0.0`.
    python scripts/run_all_reproducibility_checks.py
    ```
 
-   Expected result: all producers pass, eight pytest tests pass, and the public
-   verifier reports a complete SHA-256 inventory.
+   Expected result: all producers pass, thirteen pytest tests pass, and the public
+   verifier reports a complete SHA-256 inventory of the included JSON artifacts.
 
 ## Thirty-minute path
 
@@ -49,5 +49,5 @@ This guide describes the immutable public release `v1.0.0`.
   shipped.
 - Finite replays never promote metadata into a theorem.
 
-For citation, use the annotated tag and GitHub release `v1.0.0`, not a mutable
-branch name.
+For citation of this revision, identify the repository commit and package
+version. A version field alone does not establish a tag or GitHub release.
